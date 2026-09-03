@@ -1,0 +1,59 @@
+# ══════════════════════════════════════════════════════════════════════════
+# AIRE Framework Distribution — Subscriber Registry
+# ══════════════════════════════════════════════════════════════════════════
+#
+# Every repo listed under `repos:` automatically receives the AIRE
+# framework as a Pull Request:
+#   • FIRST-TIME INSTALL — the moment the repo entry is merged into main,
+#     the distribution workflow raises an installation PR in that repo —
+#     and ONLY in the newly added repo(s); existing subscribers are not
+#     re-notified by onboarding changes to this file.
+#   • ONGOING UPDATES — every time a PR touching framework files is merged
+#     into main of THIS repo, an update PR is raised in every subscriber.
+#     Changes to non-framework files (README.md, docs, ...) never distribute.
+#
+# ── How a team onboards their repo ──────────────────────────────────────────
+#   1. The team creates a GitHub PAT that can push branches and open PRs on
+#      their repo. 
+#    Fine-grained PAT scopes: "Contents: Read & write" and "Pull requests: Read & write" 
+#    Classic PAT: `repo` scope
+#   2. An AIRE maintainer stores that PAT as an Actions secret in THIS
+#      repo:  Settings → Secrets and variables → Actions → New repository
+#      secret. Naming convention: AIRE_PAT_<TEAM_OR_REPO_NAME>.
+#   3. Add an entry under `repos:` below (repo URL + the secret's NAME) and
+#      merge it to main. The installation PR is raised automatically.
+#
+#  SECURITY: NEVER paste a raw PAT token into this file. This file only
+#    holds the NAME of the Actions secret; the token itself lives encrypted
+#    in this repo's Actions secrets. A PAT committed here would be readable
+#    by everyone with access to this repository.
+#
+# ── Entry fields ────────────────────────────────────────────────────────────
+#   repo:          (required) owner/name — full https://github.com/... URLs
+#                  are also accepted and normalized automatically
+#   token_secret:  (required) NAME of the Actions secret in this repo that
+#                  holds the team's PAT
+#   target_branch: (optional) branch the update PR targets in the subscriber
+#                  repo; defaults to that repo's default branch
+#
+# ── Fanning the SAME repo out to multiple branches ──────────────────────────
+#   List the same `repo` more than once, each with a different
+#   `target_branch` (and, if the PAT differs per branch, its own
+#   `token_secret`). Each entry gets its own head branch in the subscriber
+#   repo (aire/framework-update-<target-branch>) and its own PR, so the
+#   entries never collide — one PR per (repo, target_branch) pair.
+#
+# ── Example ─────────────────────────────────────────────────────────────────
+#   repos:
+#     - repo: awesome-product
+#       token_secret: AIRE_PAT_AWESOME_PRODUCT
+#     - repo: https://github.com/some-org/another-repo
+#       token_secret: AIRE_PAT_ANOTHER_REPO
+#       target_branch: develop
+#     - repo: https://github.com/some-org/another-repo
+#       token_secret: AIRE_PAT_ANOTHER_REPO
+#       target_branch: release/v2
+#
+# ══════════════════════════════════════════════════════════════════════════
+
+repos: []

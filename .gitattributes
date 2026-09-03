@@ -1,0 +1,8 @@
+# === AIRE — auto-managed (do not edit by hand) ===
+# 'merge=union' is a BUILT-IN git driver — no install required, no hooks.
+# It concatenates both sides of any conflicting hunk in the listed files,
+# eliminating merge conflicts on append-only artifacts like runtime-artifacts/audit.md.
+
+runtime-artifacts/audit.md merge=union
+runtime-artifacts/aire-state.md merge=union
+# === end AIRE ===

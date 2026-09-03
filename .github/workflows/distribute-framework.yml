@@ -1,0 +1,429 @@
+# ══════════════════════════════════════════════════════════════════════════
+# Distribute AIRE Framework to Subscriber Repos
+# ══════════════════════════════════════════════════════════════════════════
+# Triggers when a PR is MERGED into main (push event on main) touching either
+# the framework files or the subscriber registry. Targets are chosen by WHAT
+# actually changed in that push:
+#   • registry change only (new subscriber onboarded) → installation PR to the
+#     NEWLY ADDED repo(s) ONLY — existing subscribers are NOT touched
+#   • framework files changed on main → update PR to EVERY subscriber
+#   • anything else (README.md, docs, ...) → workflow does not distribute
+#
+# Framework payload synced into each subscriber:
+#   CLAUDE.md, .gitattributes, aire-workflow/
+#   (mirrored), .claude/skills/<each AIRE skill>/ (per-skill mirror —
+#   subscriber's own custom skills are left untouched), plus a
+#   .aire-version stamp file.
+#
+# Auth model: the subscriber's PAT lives in THIS repo's Actions secrets;
+# the registry stores only the secret's NAME (see aire-subscribers.yml).
+# ══════════════════════════════════════════════════════════════════════════
+
+name: Distribute AIRE Framework
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'CLAUDE.md'
+      - '.gitattributes'
+      - 'aire-workflow/**'
+      - '.claude/skills/**'
+      - '.github/aire-subscribers.yml'
+      - '.github/workflows/distribute-framework.yml'
+  workflow_dispatch:
+    inputs:
+      only_repo:
+        description: 'Distribute to a single repo (owner/name). Leave empty for all subscribers.'
+        required: false
+        default: ''
+
+permissions:
+  contents: read
+
+jobs:
+  # ─── Job 1: inspect WHAT changed in the push, then build the target matrix ───
+  #   framework files changed   → target ALL subscribers (update PRs)
+  #   only the registry changed → target ONLY newly added subscribers (install PRs)
+  #   neither changed           → target nobody
+  load-subscribers:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.build.outputs.matrix }}
+      has_repos: ${{ steps.build.outputs.has_repos }}
+      version: ${{ steps.build.outputs.version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history — needed to diff against the pre-push commit
+
+      - name: Build subscriber matrix
+        id: build
+        env:
+          ONLY_REPO: ${{ github.event.inputs.only_repo }}
+          EVENT_NAME: ${{ github.event_name }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+
+          # Framework version — read LIVE from the canonical line in CLAUDE.md
+          VERSION=$(sed -nE 's/^\*\*AIRE Framework Version: ([0-9]+(\.[0-9]+)?)\*\*.*/\1/p' CLAUDE.md | head -1)
+          if [ -z "$VERSION" ]; then
+            echo "::error::Could not read the canonical 'AIRE Framework Version' line from CLAUDE.md"
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+          echo "Framework version: v$VERSION"
+
+          CURRENT=$(yq -o=json -I=0 '.repos // []' .github/aire-subscribers.yml)
+
+          # ── Decide the target set from what this push actually changed ────
+          # normalize "https://github.com/owner/name(.git)" → "owner/name" for comparison.
+          # subkey adds target_branch so the SAME repo listed with different
+          # target_branch values counts as distinct subscribers (one PR each).
+          JQ_SLUG='def slug: .repo | ascii_downcase | sub("^https?://github.com/";"") | sub("\\.git$";"") | sub("/+$";"");
+                   def subkey: slug + "@" + ((.target_branch // "") | ascii_downcase);'
+
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "Manual run — targeting all subscribers (subject to only_repo filter)."
+            MATRIX="$CURRENT"
+            REASON="manual run"
+          elif [ -n "$BEFORE_SHA" ] && git cat-file -e "$BEFORE_SHA" 2>/dev/null; then
+            CHANGED_FILES=$(git diff --name-only "$BEFORE_SHA" "$GITHUB_SHA")
+            echo "Files changed in this push:"; echo "$CHANGED_FILES"
+
+            FRAMEWORK_CHANGED=false
+            echo "$CHANGED_FILES" | grep -qE '^(CLAUDE\.md|\.gitattributes|aire-workflow/|\.claude/skills/)' \
+              && FRAMEWORK_CHANGED=true
+            REGISTRY_CHANGED=false
+            echo "$CHANGED_FILES" | grep -q '^\.github/aire-subscribers\.yml$' \
+              && REGISTRY_CHANGED=true
+
+            if [ "$FRAMEWORK_CHANGED" = "true" ]; then
+              # Real framework change → every subscriber gets the update PR
+              MATRIX="$CURRENT"
+              REASON="framework files changed → all subscribers"
+            elif [ "$REGISTRY_CHANGED" = "true" ]; then
+              # Onboarding-only change → PR goes ONLY to (repo, target_branch)
+              # pairs that are in the registry now but were NOT before this push.
+              # Keyed on subkey (repo + target_branch) so re-listing an existing
+              # repo with a NEW target_branch is correctly detected as new.
+              git show "$BEFORE_SHA:.github/aire-subscribers.yml" > /tmp/prev-registry.yml 2>/dev/null \
+                || echo 'repos: []' > /tmp/prev-registry.yml
+              PREVIOUS=$(yq -o=json -I=0 '.repos // []' /tmp/prev-registry.yml)
+              MATRIX=$(jq -c -n --argjson cur "$CURRENT" --argjson prev "$PREVIOUS" \
+                "$JQ_SLUG"' ($prev | map(subkey)) as $old
+                 | $cur | map(select(subkey as $s | ($old | index($s)) == null))')
+              REASON="registry-only change → newly added subscribers only"
+            else
+              MATRIX="[]"
+              REASON="no framework or registry changes → nothing to distribute"
+            fi
+          else
+            # Pre-push commit unavailable (e.g. force-push edge case) — fall
+            # back to all subscribers; up-to-date repos are skipped anyway
+            MATRIX="$CURRENT"
+            REASON="pre-push commit unavailable → falling back to all subscribers"
+          fi
+          echo "Target selection: $REASON"
+
+          # Optional manual-run filter: distribute to a single repo only
+          if [ -n "$ONLY_REPO" ]; then
+            MATRIX=$(echo "$MATRIX" | jq -c --arg r "$ONLY_REPO" \
+              '[ .[] | select((.repo | ascii_downcase) | contains($r | ascii_downcase)) ]')
+          fi
+
+          COUNT=$(echo "$MATRIX" | jq 'length')
+          echo "matrix=$MATRIX" >> "$GITHUB_OUTPUT"
+          if [ "$COUNT" -gt 0 ]; then
+            echo "has_repos=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_repos=false" >> "$GITHUB_OUTPUT"
+            echo "No target repos for this change — nothing to distribute."
+          fi
+          echo "### Target selection: $REASON — $COUNT repo(s)" >> "$GITHUB_STEP_SUMMARY"
+          echo "Subscribers to process: $COUNT"
+
+  # ─── Job 2: fan out — one job per subscriber repo (one failure never blocks the rest) ───
+  distribute:
+    needs: load-subscribers
+    if: needs.load-subscribers.outputs.has_repos == 'true'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        subscriber: ${{ fromJson(needs.load-subscribers.outputs.matrix) }}
+    name: "→ ${{ matrix.subscriber.repo }} (${{ matrix.subscriber.target_branch || 'default' }})"
+    steps:
+      - name: Checkout AIRE (source of truth)
+        uses: actions/checkout@v4
+        with:
+          path: source
+
+      - name: Sync framework and raise PR
+        env:
+          # Dynamic secret lookup — the registry names the secret, never the token
+          TARGET_TOKEN: ${{ secrets[matrix.subscriber.token_secret] }}
+          TOKEN_SECRET_NAME: ${{ matrix.subscriber.token_secret }}
+          TARGET_REPO_RAW: ${{ matrix.subscriber.repo }}
+          TARGET_BRANCH_OVERRIDE: ${{ matrix.subscriber.target_branch }}
+          VERSION: ${{ needs.load-subscribers.outputs.version }}
+          SRC_REPO: ${{ github.repository }}
+          SRC_SHA: ${{ github.sha }}
+          SRC_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: |
+          set -euo pipefail
+
+          # ── Validate inputs ──────────────────────────────────────────────
+          if [ -z "${TARGET_TOKEN:-}" ]; then
+            echo "::error::Actions secret '${TOKEN_SECRET_NAME}' is missing or empty in the AIRE repo. Add the subscriber's PAT under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+
+          # Normalize "https://github.com/owner/name(.git)" → "owner/name"
+          REPO=$(echo "$TARGET_REPO_RAW" | sed -E 's#^https?://github.com/##; s#\.git$##; s#/+$##')
+          echo "Target repo: $REPO"
+
+          # ── Clone the subscriber repo ────────────────────────────────────
+          CLONE_URL="https://x-access-token:${TARGET_TOKEN}@github.com/${REPO}.git"
+          if [ -n "${TARGET_BRANCH_OVERRIDE:-}" ]; then
+            git clone --depth 1 -b "$TARGET_BRANCH_OVERRIDE" "$CLONE_URL" target
+            BASE_BRANCH="$TARGET_BRANCH_OVERRIDE"
+          else
+            git clone --depth 1 "$CLONE_URL" target
+            BASE_BRANCH=$(git -C target rev-parse --abbrev-ref HEAD)
+          fi
+          echo "Base branch: $BASE_BRANCH"
+
+          # ── Sync the framework payload ───────────────────────────────────
+          SRC="$GITHUB_WORKSPACE/source"
+          TGT="$GITHUB_WORKSPACE/target"
+
+          # Wholly framework-owned tree — exact mirror (stale rule files removed)
+          mkdir -p "$TGT/aire-workflow"
+          rsync -a --delete "$SRC/aire-workflow/" "$TGT/aire-workflow/"
+
+          # Top-level framework files
+          cp "$SRC/CLAUDE.md" "$TGT/CLAUDE.md"
+
+          # .gitattributes — MARKER-BLOCK MERGE, never a blind overwrite: the
+          # subscriber's own .gitattributes may hold unrelated entries (line
+          # endings, LFS, ...) outside the AIRE block. Only the fenced
+          # "# === AIRE — auto-managed ===" ... "# === end AIRE ===" block
+          # is replaced/appended; everything else in the file is preserved.
+          if [ -f "$TGT/.gitattributes" ] && grep -q '^# === AIRE ' "$TGT/.gitattributes"; then
+            awk -v block_file="$SRC/.gitattributes" '
+              BEGIN { while ((getline line < block_file) > 0) block[++n] = line }
+              /^# === AIRE / { in_block=1; for (i=1;i<=n;i++) print block[i]; next }
+              /^# === end AIRE ===/ { in_block=0; next }
+              in_block { next }
+              { print }
+            ' "$TGT/.gitattributes" > "$TGT/.gitattributes.new"
+            mv "$TGT/.gitattributes.new" "$TGT/.gitattributes"
+            echo " Merged AIRE block into existing .gitattributes (subscriber entries preserved)"
+          elif [ -f "$TGT/.gitattributes" ]; then
+            { cat "$TGT/.gitattributes"; echo ""; cat "$SRC/.gitattributes"; } > "$TGT/.gitattributes.new"
+            mv "$TGT/.gitattributes.new" "$TGT/.gitattributes"
+            echo " Appended AIRE block to existing .gitattributes (no prior markers found)"
+          else
+            cp "$SRC/.gitattributes" "$TGT/.gitattributes"
+          fi
+
+          # Skills — mirror each AIRE skill folder individually so any
+          # custom skills the subscriber authored themselves are untouched
+          mkdir -p "$TGT/.claude/skills"
+          for d in "$SRC/.claude/skills"/*/; do
+            name=$(basename "$d")
+            mkdir -p "$TGT/.claude/skills/$name"
+            rsync -a --delete "$d" "$TGT/.claude/skills/$name/"
+          done
+
+          # Skills renamed in an earlier framework version — delete the old folders. The mirror above
+          # only iterates folders that still exist HERE, so it can never remove
+          # one that was renamed away; without this the subscriber keeps the old
+          # skill next to its replacement (two competing skills, the old one
+          # still pointing at agent files aire-workflow/ no longer has).
+          # Add a name here whenever a skill folder is renamed or dropped.
+          for old in qa qa-ticket-transition; do
+            if [ -d "$TGT/.claude/skills/$old" ]; then
+              rm -rf "$TGT/.claude/skills/$old"
+              echo "Removed renamed skill folder: .claude/skills/$old"
+            fi
+          done
+
+          # Top-level framework paths that were renamed or dropped. The mirror only ever
+          # WRITES the current paths, so it can never remove one that was renamed away —
+          # without this a subscriber ends up with both trees side by side and a stale
+          # rule file resolving the dead path silently wins. Same reasoning as the
+          # renamed-skills cleanup above.
+          #
+          # Currently empty: there is no legacy path to clean (the registry has never had
+          # a subscriber, so no repo has ever received an older layout). Populate this list
+          # whenever a top-level framework path is renamed or dropped in a future release,
+          # and add "$STALE_REMOVED" to the `git add -A` pathspec below so the DELETIONS
+          # get staged too — e.g.  STALE_PATHS=".old-rule-details OLD-workflow.md"
+          STALE_PATHS=""
+          STALE_REMOVED=""
+          for old in $STALE_PATHS; do
+            if [ -e "$TGT/$old" ]; then
+              rm -rf "$TGT/$old"
+              STALE_REMOVED="$STALE_REMOVED $old"
+              echo "Removed stale framework path: $old"
+            fi
+          done
+
+          # Version stamp — records what's installed and where it came from
+          {
+            echo "AIRE Framework Version: $VERSION"
+            echo "Source: $SRC_REPO@$SRC_SHA"
+            echo "Distributed: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          } > "$TGT/.aire-version"
+
+          # ── Commit on the update branch ──────────────────────────────────
+          # ONE stable branch per (subscriber repo, base branch) pair — not
+          # versioned: if the previous AIRE PR for this base branch is
+          # still open, the new version lands on the same branch and
+          # refreshes that PR — never stacking a second open PR. A new PR is
+          # only created once the previous one was merged (or closed).
+          #
+          # The base branch is baked into the name so the SAME repo can be
+          # listed multiple times in aire-subscribers.yml with different
+          # target_branch values (e.g. to fan the framework out to several
+          # long-lived branches) without the parallel matrix jobs colliding
+          # on one shared head branch.
+          cd "$TGT"
+          SAFE_BASE=$(echo "$BASE_BRANCH" | sed -E 's/[^A-Za-z0-9._-]+/-/g')
+          BRANCH="aire/framework-update-${SAFE_BASE}"
+          git checkout -B "$BRANCH"
+          # $STALE_REMOVED is intentionally unquoted — it is a (normally empty) list of
+          # renamed-away paths whose DELETIONS must be staged alongside the current tree.
+          git add -A CLAUDE.md .gitattributes aire-workflow .claude/skills .aire-version $STALE_REMOVED
+
+          if git diff --cached --quiet; then
+            echo " $REPO is already on AIRE v${VERSION} — nothing to distribute."
+            echo "### \`$REPO\` — already up to date (v${VERSION})" >> "$GITHUB_STEP_SUMMARY"
+            exit 0
+          fi
+
+          # First-time install vs update — drives the PR title/body wording
+          if git rev-parse --verify -q "origin/${BASE_BRANCH}:.aire-version" >/dev/null || \
+             git rev-parse --verify -q "origin/${BASE_BRANCH}:aire-workflow" >/dev/null; then
+            MODE="update"
+            PR_TITLE="[AIRE] Framework update → v${VERSION}"
+          else
+            MODE="install"
+            PR_TITLE="[AIRE] First-time framework installation (v${VERSION})"
+          fi
+          echo "Mode: $MODE"
+
+          git -c user.name="aire-bot" \
+              -c user.email="aire-bot@users.noreply.github.com" \
+              commit \
+              -m "chore(aire): ${MODE} AIRE framework v${VERSION}" \
+              -m "Source: ${SRC_REPO}@${SRC_SHA}" \
+              -m "AIRE-Version: ${VERSION}"
+
+          # Force-push: if an AIRE PR is still open (even from an older
+          # version), this replaces its contents with the latest framework
+          git push -f origin "$BRANCH"
+
+          # ── Raise (or refresh) the PR ────────────────────────────────────
+          export GH_TOKEN="$TARGET_TOKEN"
+
+          CHANGED=$(git diff --stat "origin/${BASE_BRANCH}" HEAD -- | tail -1)
+
+          cat > /tmp/pr-body.md <<EOF
+          ##  AIRE Framework: v${VERSION}
+
+          $([ "$MODE" = "install" ] && echo "**First-time installation** of the AIRE framework into this repository." || echo "**Automated framework update** — the AIRE repo merged new changes into \`main\`.")
+
+          | | |
+          |---|---|
+          | **Framework version** | v${VERSION} |
+          | **Source** | [\`${SRC_REPO}@${SRC_SHA:0:7}\`](https://github.com/${SRC_REPO}/commit/${SRC_SHA}) |
+          | **Distribution run** | [workflow run](${SRC_RUN_URL}) |
+          | **Diff** | ${CHANGED:-n/a} |
+
+          ### What this PR syncs
+          - \`CLAUDE.md\` — the AIRE workflow entry point ( overwritten — re-apply any local customizations on top)
+          - \`.gitattributes\` — only the fenced AIRE block is synced (merge=union rules for append-only docs); any other entries you already have in this file are left untouched
+          - \`aire-workflow/\` — all rule detail files (exact mirror; stale files removed)
+          - \`.claude/skills/\` — AIRE skills (your own custom skills are untouched)
+          - \`.aire-version\` — installed-version stamp
+
+
+          ---
+          *Raised automatically by the AIRE distribution workflow. To stop receiving
+          updates, remove this repo from \`.github/aire-subscribers.yml\` in [${SRC_REPO}](https://github.com/${SRC_REPO}).*
+          EOF
+
+          LABEL="aire-v${VERSION}"
+          gh label create "$LABEL" --repo "$REPO" \
+            --color "5319E7" --description "Built with AIRE framework v${VERSION}" \
+            2>/dev/null || true
+
+          # PR tracking: find ALL open AIRE PRs — the stable branch AND any
+          # legacy versioned branches (aire/framework-update-vN) left behind
+          # by older workflow versions. baseRefName is fetched so the supersede
+          # sweep below can be scoped to THIS base branch only — otherwise a
+          # same-repo multi-branch fan-out (main / develop / release-v2) would
+          # have each parallel job close its siblings' legitimate PRs.
+          #   open on stable branch → refresh it in place (commits already
+          #     force-pushed above; sync title/description/label to new version)
+          #   none open             → previous PR merged/closed → create new
+          #   any OTHER open AIRE PR targeting THIS base → close as superseded
+          OPEN_JSON=$(gh pr list --repo "$REPO" --state open \
+            --json number,url,headRefName,baseRefName \
+            --jq '[ .[] | select(.headRefName | startswith("aire/framework-update")) ]' \
+            || echo '[]')
+          EXISTING=$(echo "$OPEN_JSON" | jq -r --arg b "$BRANCH" \
+            '[ .[] | select(.headRefName == $b) ] | .[0].url // empty')
+          if [ -n "$EXISTING" ]; then
+            gh pr edit "$EXISTING" --repo "$REPO" --title "$PR_TITLE" \
+              --body-file /tmp/pr-body.md --add-label "$LABEL" \
+            || gh pr edit "$EXISTING" --repo "$REPO" --title "$PR_TITLE" \
+                 --body-file /tmp/pr-body.md
+            # Drop version labels from previous refreshes (e.g. aire-v4 when
+            # the PR now carries v5) — only the current version's label stays
+            STALE_LABELS=$(gh pr view "$EXISTING" --repo "$REPO" --json labels \
+              | jq -r --arg keep "$LABEL" \
+                  '[.labels[].name | select(test("^aire-v[0-9]+(\\.[0-9]+)?$")) | select(. != $keep)] | join(",")' \
+              || true)
+            if [ -n "$STALE_LABELS" ]; then
+              gh pr edit "$EXISTING" --repo "$REPO" --remove-label "$STALE_LABELS" || true
+              echo "Removed stale version label(s): $STALE_LABELS"
+            fi
+            PR_URL="$EXISTING"
+            RESULT="existing open PR refreshed to v${VERSION}"
+            echo "Refreshed existing open PR to v${VERSION}: $PR_URL"
+          else
+            PR_URL=$(gh pr create --repo "$REPO" --head "$BRANCH" --base "$BASE_BRANCH" \
+                       --title "$PR_TITLE" --body-file /tmp/pr-body.md --label "$LABEL" \
+                     || gh pr create --repo "$REPO" --head "$BRANCH" --base "$BASE_BRANCH" \
+                          --title "$PR_TITLE" --body-file /tmp/pr-body.md)
+            RESULT="new ${MODE} PR raised (v${VERSION})"
+            echo " Raised PR: $PR_URL"
+          fi
+
+          # Supersede any OTHER open AIRE PR (duplicates / legacy versioned
+          # branches) that targets THIS SAME base branch, so the subscriber has
+          # exactly ONE open AIRE PR per base branch. Scoped by baseRefName so
+          # sibling multi-branch PRs (a different target_branch) are never closed.
+          CLOSED=0
+          while read -r n; do
+            [ -z "$n" ] && continue
+            gh pr comment "$n" --repo "$REPO" \
+              --body " Superseded by ${PR_URL} (AIRE framework v${VERSION}). Closing this outdated framework PR." || true
+            gh pr close "$n" --repo "$REPO" --delete-branch || true
+            CLOSED=$((CLOSED + 1))
+            echo " Closed superseded AIRE PR #$n"
+          done < <(echo "$OPEN_JSON" | jq -r --arg b "$BRANCH" --arg base "$BASE_BRANCH" \
+                     '.[] | select(.baseRefName == $base) | select(.headRefName != $b) | .number')
+
+          {
+            echo "### \`$REPO\` — ${RESULT}"
+            echo "$PR_URL"
+            if [ "$CLOSED" -gt 0 ]; then
+              echo " Closed $CLOSED superseded AIRE PR(s)"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"

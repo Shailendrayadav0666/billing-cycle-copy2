@@ -1,0 +1,267 @@
+# AIRE agentic eval pipeline — generated from the versioned template by filling the manifest slots.
+# 🔴 Do not hand-edit the fixed text. Every varying value comes from the `ci` manifest in
+#    tests/.evals/config.json (common/eval-framework.md Section 1). Regenerate rather than editing in place.
+name: "AIRE agentic eval pipeline"
+
+on:
+  pull_request:
+    branches:
+      - "${BASE_BRANCH}"
+${PR_BRANCH_FILTERS}
+  push:
+    branches:
+      - "${BASE_BRANCH}"
+  workflow_dispatch:
+
+# 🔴 Never add pull_request_target — it runs base secrets against untrusted head code.
+
+concurrency:
+  group: "aire-eval-${{ github.workflow }}-${{ github.ref }}"
+  cancel-in-progress: true
+
+jobs:
+  verify-and-evaluate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - name: "Checkout (full history for delta diffs)"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "Resolve EVAL_KEY"
+        id: evalkey
+        env:
+          HEAD_REF: ${{ github.head_ref }}
+          REF_NAME: ${{ github.ref_name }}
+        run: bash tests/.evals/scripts/resolve-eval-key.sh "$HEAD_REF" "$REF_NAME"
+
+      - name: "Resolve base SHA"
+        id: basesha
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            echo "sha=${{ github.event.pull_request.base.sha }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "sha=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+          fi
+
+      # ── Runtimes and tools. These two slots MUST be filled identically to the self-repair job's
+      #    copies (extract to a composite action if you prefer; do not paraphrase).
+${SETUP_STEPS}
+${INSTALL_STEPS}
+
+      # ── Compile/build BEFORE any evaluation or test step — static evals and unit tests on code that
+      #    doesn't build are meaningless. Resolved per-stack (Section 3); a stack with no compile step
+      #    (e.g. plain Python) resolves to an explicit no-op echo, never a silently omitted step. This
+      #    step is part of the SAME "must match the self-repair job" region as SETUP_STEPS/INSTALL_STEPS.
+      - name: "Compile / build"
+        id: build
+        run: ${BUILD_COMMAND}
+
+      # ── Every gate step: id + continue-on-error. NEVER `|| true`. The Verdict step decides once. ──
+      # Runs FIRST, like a normal CI pipeline (fail fast on cheap static checks before paying for the
+      # full test suite). Does NOT compute the coverage gate — the report it needs doesn't exist yet;
+      # that's the separate "Coverage gate" step below, after "Stage 2: unit + coverage" produces it.
+      - name: "Stage 1: static evals (delta-scoped)"
+        id: static
+        continue-on-error: true
+        env:
+          EVAL_KEY: "${{ steps.evalkey.outputs.key }}"
+        run: bash tests/.evals/scripts/run-static-evals.sh "${{ steps.basesha.outputs.sha }}"
+
+      - name: "Stage 2: unit + coverage"
+        id: unit
+        continue-on-error: true
+        run: ${COVERAGE_COMMAND}
+
+      # ── Runs AFTER "unit + coverage" so the report it produced exists. A separate step (not folded
+      #    back into Stage 1) so Stage 1 keeps its normal fail-fast position instead of waiting on the
+      #    full test suite. Appends to the SAME gates file Stage 1 wrote — see run-static-evals.*. ──
+      - name: "Coverage gate (delta-scoped)"
+        id: coverage
+        continue-on-error: true
+        env:
+          EVAL_KEY: "${{ steps.evalkey.outputs.key }}"
+        run: bash tests/.evals/scripts/run-static-evals.sh "${{ steps.basesha.outputs.sha }}" --coverage-only
+
+      - name: "Stage 2: behaviour (Gherkin, Podman)"
+        id: behavior
+        continue-on-error: true
+        run: |
+          mkdir -p tests/.evals/_run
+          podman build -t "${BEHAVIOR_IMAGE_TAG}" -f tests/.evals/behavior/Containerfile .
+          if [ "${{ github.base_ref }}" = "${BASE_BRANCH}" ]; then tiers="b1 b2 b3"; else tiers="b1 b2"; fi
+          for skip in b1 b2 b3; do
+            case " $tiers " in *" $skip "*) ;; *) echo "N/A" > "tests/.evals/_run/behavior${skip^^}.status" ;; esac
+          done
+          step_fail=0
+          for t in $tiers; do
+            # 🔴 `|| trc=$?` (not a bare command + separate `trc=$?` line) — GH Actions bash steps run
+            #    with `set -e` by default, so an unguarded failing command aborts the step before the
+            #    next line ever runs. `cmd || trc=$?` captures the real exit code without tripping it.
+            # 🔴 ONE combined command string, never two separate trailing argv elements — the image's
+            #    ENTRYPOINT ["/bin/sh", "-c"] requires it (behavior/Containerfile's own comment,
+            #    common/behavior-spec.md Section 5.3). Passed as separate args, POSIX `sh -c` assigns
+            #    the tier to the invoked shell's $0, not run.sh's $1 — run.sh then always sees an empty
+            #    $1 ("no tier supplied") regardless of which tier was requested.
+            trc=0
+            podman run --rm -v "$PWD:/work:Z" -w /work "${BEHAVIOR_IMAGE_TAG}" "bash tests/.evals/behavior/run.sh $t" || trc=$?
+            if [ "$trc" -eq 0 ]; then
+              echo "PASS" > "tests/.evals/_run/behavior${t^^}.status"
+            elif [ "$trc" -eq 3 ]; then
+              # N/A — no story has been dev-implement'd in this epic yet (run.sh's own pre-story
+              # exception, ci-pipeline-generation.md Section 4.0.6). Never a blocking failure.
+              echo "N/A" > "tests/.evals/_run/behavior${t^^}.status"
+            else
+              echo "FAIL" > "tests/.evals/_run/behavior${t^^}.status"
+              step_fail=1
+            fi
+          done
+          exit "$step_fail"
+
+      # 🔴 run-evals.sh's OWN precondition check (`command -v claude`) fails the judge gate outright if
+      #    this is missing — the self-repair job installs the CLI for ITSELF, later, only on failure;
+      #    that install never reaches this job. Without this step, J1/J2 fail on every single PR before
+      #    ever reaching a real judge call ("claude CLI not installed — judge cannot run").
+      - name: "Install Claude Code CLI"
+        run: npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+
+      - name: "Stage 3: judge gates J1 + J2"
+        id: judge
+        continue-on-error: true
+        env:
+          EVAL_KEY: "${{ steps.evalkey.outputs.key }}"
+          CLAUDE_CODE_OAUTH_TOKEN: "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}"
+          ANTHROPIC_API_KEY: "${{ secrets.ANTHROPIC_API_KEY }}"
+        run: bash tests/.evals/scripts/run-evals.sh "${{ steps.basesha.outputs.sha }}"
+
+      # SonarQube LAST among the gates, if: always(), continue-on-error — one input, never a kill switch.
+${SONAR_STEPS}
+
+      - name: "Record SonarQube gate status"
+        id: sonarstatus
+        if: always()
+        env:
+          SONAR_TOKEN: "${{ secrets.SONAR_TOKEN }}"
+        run: |
+          mkdir -p tests/.evals/_run
+          outcome="${{ steps.sonar.outcome }}"
+          if [ -z "$outcome" ]; then
+            echo "N/A" > tests/.evals/_run/sonarqube.status
+          elif [ "$outcome" = "success" ]; then
+            echo "PASS" > tests/.evals/_run/sonarqube.status
+          else
+            echo "FAIL" > tests/.evals/_run/sonarqube.status
+            # 🔴 auto-fix-agent.*'s triage (Section 6.4) reads tests/.evals/_run/sonar-conditions.txt to tell a
+            #    REAL quality-gate failure (real conditions reported) apart from a connection/auth
+            #    problem (gate never evaluated) — nothing wrote this file before, so every Sonar failure
+            #    was unconditionally misclassified as infrastructure, even a genuine coverage/bug/smell
+            #    finding. sonarqube-quality-gate-action@v1 only outputs PASS/WARN/FAILED, never the
+            #    underlying conditions — query the SonarQube Web API directly for them, using the
+            #    ceTaskUrl the scan step's own report-task.txt recorded.
+            # 🔴 EVERY substitution below carries its own `|| true`. Under GH Actions' default
+            #    `set -e -o pipefail`, a bare `VAR="$(cmd | cmd2)"` with no guard aborts this WHOLE
+            #    step the instant grep finds no match or curl hits any hiccup (auth, network, an
+            #    unexpected report-task.txt format) — and this step has no continue-on-error, so that
+            #    abort would fail the job independently of the Verdict step, violating V8 ("exactly
+            #    one Verdict step... is the ONLY step allowed to fail the job"). Reproduced and
+            #    verified locally before writing this guard — it is not decorative.
+            : > tests/.evals/_run/sonar-conditions.txt
+            REPORT_TASK=".scannerwork/report-task.txt"
+            if [ -f "$REPORT_TASK" ] && command -v jq >/dev/null 2>&1; then
+              CE_TASK_URL="$(grep '^ceTaskUrl=' "$REPORT_TASK" | cut -d= -f2-)" || true
+              if [ -n "$CE_TASK_URL" ]; then
+                ANALYSIS_ID="$(curl -sf -u "${SONAR_TOKEN}:" "$CE_TASK_URL" 2>/dev/null | jq -r '.task.analysisId // empty')" || true
+                if [ -n "$ANALYSIS_ID" ]; then
+                  SERVER_URL="$(grep '^serverUrl=' "$REPORT_TASK" | cut -d= -f2-)" || true
+                  curl -sf -u "${SONAR_TOKEN}:" "${SERVER_URL}/api/qualitygates/project_status?analysisId=${ANALYSIS_ID}" 2>/dev/null \
+                    | jq -r '.projectStatus.conditions[]? | select(.status=="ERROR") | "\(.metricKey) actual=\(.actualValue) threshold=\(.errorThreshold) comparator=\(.comparator)"' \
+                    > tests/.evals/_run/sonar-conditions.txt || true
+                fi
+              fi
+            fi
+          fi
+
+      - name: "Verdict"
+        id: verdict
+        if: always()
+        env:
+          EVAL_KEY: "${{ steps.evalkey.outputs.key }}"
+        run: |
+          mkdir -p tests/.evals/_run
+          : > tests/.evals/_run/failed-gates.txt
+          fail=0
+          for r in "static:${{ steps.static.outcome }}" \
+                   "unit:${{ steps.unit.outcome }}" \
+                   "coverage:${{ steps.coverage.outcome }}" \
+                   "behavior:${{ steps.behavior.outcome }}" \
+                   "judge:${{ steps.judge.outcome }}" \
+                   "sonar:${{ steps.sonar.outcome }}"; do
+            name="${r%%:*}"; outcome="${r##*:}"
+            echo "$name: $outcome"
+            if [ "$outcome" = "failure" ]; then echo "$name" >> tests/.evals/_run/failed-gates.txt; fail=1; fi
+          done
+          exit "$fail"
+
+      - name: "Stage 4: publish scorecard"
+        if: always()
+        env:
+          EVAL_KEY: "${{ steps.evalkey.outputs.key }}"
+        run: |
+          SUMMARY="reports/eval-evidence/${EVAL_KEY}/eval-summary.md"
+          if [ -f "$SUMMARY" ]; then
+            cat "$SUMMARY" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "::error::No eval-summary.md at $SUMMARY — the eval step did not produce one."
+          fi
+
+      - name: "Upload eval artifacts"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-results
+          path: |
+            tests/.evals/_run/failed-gates.txt
+            reports/eval-evidence/
+          if-no-files-found: warn
+
+  self-repair:
+    needs: verify-and-evaluate
+    if: |
+      failure() &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: "Checkout PR head"
+        uses: actions/checkout@v4
+        with:
+          ref: "${{ github.event.pull_request.head.ref }}"
+          fetch-depth: 0
+
+      - name: "Download eval artifacts"
+        uses: actions/download-artifact@v4
+        with:
+          name: eval-results
+
+      # ── Same runtimes and tools as the verify job, so re-verification after the fix can actually run. ──
+${SELF_REPAIR_SETUP_STEPS}
+
+      - name: "Compile / build"
+        id: build
+        run: ${BUILD_COMMAND}
+
+      - name: "Install Claude Code CLI"
+        run: npm install -g @anthropic-ai/claude-code@${CLAUDE_CODE_VERSION}
+
+      - name: "Autonomous self-repair"
+        env:
+          # 🔴 Emit ONLY the credential the repo actually configured. An unset secret expands to an
+          #    empty string, and an empty credential fails auth instead of falling through.
+          CLAUDE_CODE_OAUTH_TOKEN: "${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}"
+          BASE_SHA: "${{ github.event.pull_request.base.sha }}"
+        run: bash tests/.evals/scripts/auto-fix-agent.sh
