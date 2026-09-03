@@ -1,0 +1,2656 @@
+src\backend\venv\Lib\site-packages\piplicenses.py
+    F 324:0 get_packages - C (18)
+    F 194:0 normalize_version - C (13)
+    F 792:0 get_output_fields - C (12)
+    F 834:0 get_sortby - C (12)
+src\backend\venv\Lib\site-packages\pip_requirements_parser.py
+    M 2157:4 InstallRequirement.dumps - D (25)
+    M 1940:4 InstallRequirement.__init__ - C (13)
+    M 2129:4 InstallRequirement.to_dict - C (13)
+    C 2278:0 EditableRequirement - C (13)
+    F 2493:0 parse_editable - C (12)
+    F 2719:0 parse_reqparts_from_string - C (12)
+    M 1355:4 RequirementsFileParser._parse_and_recurse - C (12)
+    M 2298:4 EditableRequirement.dumps - C (12)
+    F 1618:0 url_to_path - C (11)
+src\backend\venv\Lib\site-packages\six.py
+    F 764:4 print_ - C (17)
+src\backend\venv\Lib\site-packages\typing_extensions.py
+    F 4047:4 get_annotations - E (32)
+    M 1179:8 _TypedDictMeta.__new__ - D (30)
+    M 2101:8 _ConcatenateGenericAlias.__getitem__ - D (30)
+    F 4181:4 _eval_with_owner - D (27)
+    C 3446:4 _NamedTupleMeta - D (26)
+    M 3447:8 _NamedTupleMeta.__new__ - D (25)
+    F 3187:4 _check_generic - D (23)
+    F 1627:4 _clean_optional - C (19)
+    F 3316:4 _collect_type_vars - C (18)
+    F 3366:4 _collect_parameters - C (17)
+    C 1177:4 _TypedDictMeta - C (17)
+    F 1549:4 _strip_extras - C (15)
+    F 4259:4 evaluate_forward_ref - C (14)
+    F 1359:4 _create_typeddict - C (13)
+    M 810:8 _ProtocolMeta.__instancecheck__ - C (11)
+    M 3802:8 TypeAliasType.__init__ - C (11)
+src\backend\venv\Lib\site-packages\anyio\functools.py
+    M 137:4 AsyncLRUCacheWrapper.__call__ - C (18)
+src\backend\venv\Lib\site-packages\anyio\itertools.py
+    F 394:0 islice - C (16)
+src\backend\venv\Lib\site-packages\anyio\pytest_plugin.py
+    F 210:0 pytest_collection_finish - C (11)
+src\backend\venv\Lib\site-packages\anyio\to_process.py
+    F 207:0 process_worker - C (14)
+    F 45:0 run_sync - C (13)
+src\backend\venv\Lib\site-packages\anyio\_lazyimport.py
+    F 110:0 _build_lazy_map - D (22)
+src\backend\venv\Lib\site-packages\anyio\abc\_sockets.py
+    F 32:0 _validate_socket - C (18)
+src\backend\venv\Lib\site-packages\anyio\streams\tls.py
+    M 182:4 TLSStream._call_sslobject_method - C (16)
+src\backend\venv\Lib\site-packages\anyio\_backends\_asyncio.py
+    M 453:4 CancelScope.__exit__ - C (20)
+    M 581:4 CancelScope._deliver_cancellation - C (17)
+    M 1564:4 UNIXSocketStream.receive_fds - C (15)
+    M 3067:4 AsyncIOBackend.notify_closing - C (14)
+    F 311:0 find_root_task - C (13)
+    M 182:8 Runner.run - C (13)
+    M 800:4 TaskGroup.__aexit__ - C (13)
+    M 862:4 TaskGroup._spawn - C (12)
+src\backend\venv\Lib\site-packages\anyio\_backends\_trio.py
+    M 518:4 UNIXSocketStream.receive_fds - C (13)
+    C 517:0 UNIXSocketStream - C (12)
+src\backend\venv\Lib\site-packages\anyio\_core\_sockets.py
+    F 300:0 create_tcp_listener - C (20)
+    F 145:0 connect_tcp - C (19)
+src\backend\venv\Lib\site-packages\boolean\boolean.py
+    M 180:4 BooleanAlgebra.parse - F (56)
+    M 1274:4 DualBase.simplify - D (25)
+    M 1451:4 DualBase.absorb - C (19)
+    M 393:4 BooleanAlgebra._start_operation - C (18)
+    C 100:0 BooleanAlgebra - C (12)
+    M 446:4 BooleanAlgebra.tokenize - C (11)
+    M 755:4 Expression._subs - C (11)
+src\backend\venv\Lib\site-packages\boolean\test_boolean.py
+    M 1098:4 OtherTestCase.test_parse - E (33)
+    M 690:4 DualBaseTestCase.test_simplify - D (23)
+    M 1031:4 DualBaseTestCase.test_equal - C (15)
+    M 493:4 SymbolTestCase.test_equal_symbols - C (12)
+src\backend\venv\Lib\site-packages\cachecontrol\adapter.py
+    M 80:4 CacheControlAdapter.build_response - C (12)
+src\backend\venv\Lib\site-packages\cachecontrol\controller.py
+    M 324:4 CacheController.cache_response - D (30)
+    M 169:4 CacheController.cached_request - C (18)
+src\backend\venv\Lib\site-packages\charset_normalizer\api.py
+    F 50:0 from_bytes - F (138)
+src\backend\venv\Lib\site-packages\charset_normalizer\cd.py
+    F 193:0 characters_popularity_compare - C (16)
+    F 282:0 alpha_unicode_split - C (16)
+    F 410:0 coherence_ratio - C (12)
+    F 153:0 alphabet_languages - C (11)
+src\backend\venv\Lib\site-packages\charset_normalizer\legacy.py
+    F 18:0 detect - C (18)
+src\backend\venv\Lib\site-packages\charset_normalizer\md.py
+    M 546:4 SuperWeirdWordPlugin.feed_info - E (36)
+    F 909:0 mess_ratio - C (20)
+    C 44:0 CharInfo - C (15)
+    M 784:4 ArchaicUpperLowerPlugin.feed_info - C (15)
+    M 107:4 CharInfo.__init__ - C (14)
+    C 499:0 SuperWeirdWordPlugin - C (11)
+src\backend\venv\Lib\site-packages\charset_normalizer\utils.py
+    F 358:0 cut_sequence_chunks - D (28)
+    F 39:0 _character_flags - C (17)
+src\backend\venv\Lib\site-packages\charset_normalizer\cli\__main__.py
+    F 90:0 cli_detect - F (43)
+src\backend\venv\Lib\site-packages\click\core.py
+    M 3383:4 Option.get_help_extra - E (35)
+    M 340:4 Context.__init__ - D (28)
+    M 3589:4 Option.consume_value - C (18)
+    M 1102:4 Command.get_params - C (17)
+    M 2730:4 Parameter.handle_parse_result - C (17)
+    M 3235:4 Option._parse_decls - C (16)
+    M 1417:4 Command.shell_complete - C (15)
+    M 1484:4 Command.main - C (15)
+    M 1708:4 Group.__init__ - C (14)
+    M 2603:4 Parameter.process_value - C (14)
+    M 3150:4 Option._validate - C (13)
+    M 2481:4 Parameter.consume_value - C (11)
+    M 3126:4 Option._resolve_lazy_default - C (11)
+    M 3338:4 Option.get_help_record - C (11)
+src\backend\venv\Lib\site-packages\click\exceptions.py
+    M 184:4 MissingParameter.format_message - C (13)
+src\backend\venv\Lib\site-packages\click\termui.py
+    F 641:0 style - D (21)
+    F 168:0 prompt - C (16)
+    F 616:0 _interpret_color - C (12)
+    F 289:0 confirm - C (11)
+src\backend\venv\Lib\site-packages\click\testing.py
+    M 596:4 CliRunner.invoke - C (19)
+src\backend\venv\Lib\site-packages\click\types.py
+    M 1146:4 Path.convert - C (18)
+    F 1341:0 convert_type - C (12)
+    M 655:4 _NumberRangeBase.convert - C (12)
+src\backend\venv\Lib\site-packages\click\utils.py
+    F 62:0 _make_default_short_help - C (12)
+    F 252:0 echo - C (12)
+src\backend\venv\Lib\site-packages\click\_compat.py
+    F 374:0 open_stream - D (21)
+src\backend\venv\Lib\site-packages\click\_termui_impl.py
+    F 799:0 open_url - C (19)
+    F 549:0 _pipepager - C (13)
+    M 250:4 ProgressBar.render_progress - C (11)
+src\backend\venv\Lib\site-packages\click\_textwrap.py
+    M 66:4 TextWrapper._wrap_chunks - E (31)
+src\backend\venv\Lib\site-packages\coverage\annotate.py
+    M 66:4 AnnotateReporter.annotate_file - C (16)
+src\backend\venv\Lib\site-packages\coverage\bytecode.py
+    M 160:4 BranchArcResolver.resolve - C (15)
+src\backend\venv\Lib\site-packages\coverage\cmdline.py
+    M 790:4 CoverageScript.command_line - D (25)
+    M 998:4 CoverageScript.do_run - C (18)
+    C 783:0 CoverageScript - C (12)
+    M 1064:4 CoverageScript.do_debug - C (12)
+src\backend\venv\Lib\site-packages\coverage\collector.py
+    M 439:4 Collector.flush_data - C (12)
+    M 62:4 Collector.__init__ - C (11)
+src\backend\venv\Lib\site-packages\coverage\config.py
+    M 300:4 CoverageConfig.from_file - C (18)
+src\backend\venv\Lib\site-packages\coverage\control.py
+    M 569:4 Coverage._init_for_start - D (22)
+src\backend\venv\Lib\site-packages\coverage\core.py
+    M 58:4 Core.__init__ - D (21)
+    C 47:0 Core - C (12)
+src\backend\venv\Lib\site-packages\coverage\data.py
+    F 132:0 combine_parallel_data - D (24)
+src\backend\venv\Lib\site-packages\coverage\execfile.py
+    M 180:4 PyRunner.run - C (20)
+src\backend\venv\Lib\site-packages\coverage\files.py
+    M 484:4 PathAliases.map - C (15)
+src\backend\venv\Lib\site-packages\coverage\html.py
+    M 136:4 HtmlDataGeneration.data_for_file - D (25)
+    M 469:4 HtmlReporter.write_html_page - D (22)
+    C 121:0 HtmlDataGeneration - C (15)
+    M 586:4 HtmlReporter.write_region_index_pages - C (14)
+    M 356:4 HtmlReporter.report - C (11)
+src\backend\venv\Lib\site-packages\coverage\inorout.py
+    M 445:4 InOrOut.check_include_omit_etc - D (22)
+    M 343:4 InOrOut.should_trace - D (21)
+    M 202:4 InOrOut.__init__ - C (17)
+    M 515:4 InOrOut.warn_already_imported_files - C (12)
+src\backend\venv\Lib\site-packages\coverage\lcovreport.py
+    F 121:0 lcov_arcs - C (12)
+src\backend\venv\Lib\site-packages\coverage\misc.py
+    M 163:4 Hasher.update - C (14)
+src\backend\venv\Lib\site-packages\coverage\parser.py
+    M 165:4 PythonParser._raw_parse - E (32)
+    F 650:0 is_constant_test_expr - C (12)
+    M 745:4 AstArcAnalyzer.with_jump_fixers - C (12)
+src\backend\venv\Lib\site-packages\coverage\phystokens.py
+    F 120:0 source_token_lines - C (20)
+    F 93:0 find_soft_key_lines - C (15)
+    F 23:0 _phys_tokens - C (13)
+src\backend\venv\Lib\site-packages\coverage\pytracer.py
+    M 144:4 PyTracer._trace - E (37)
+src\backend\venv\Lib\site-packages\coverage\report.py
+    M 223:4 SummaryReporter.tabular_report - C (19)
+src\backend\venv\Lib\site-packages\coverage\report_core.py
+    F 71:0 get_analysis_to_report - C (15)
+src\backend\venv\Lib\site-packages\coverage\sqldata.py
+    M 712:4 CoverageData.update - C (12)
+    M 611:4 CoverageData._choose_lines_or_arcs - C (11)
+    M 1096:4 CoverageData.contexts_by_lineno - C (11)
+src\backend\venv\Lib\site-packages\coverage\sysmon.py
+    M 317:4 SysMonitor.sysmon_py_start - C (20)
+src\backend\venv\Lib\site-packages\coverage\templite.py
+    M 121:4 Templite.__init__ - D (27)
+src\backend\venv\Lib\site-packages\coverage\xmlreport.py
+    M 173:4 XmlReporter.xml_file - C (18)
+    C 57:0 XmlReporter - C (12)
+    M 78:4 XmlReporter.report - C (11)
+src\backend\venv\Lib\site-packages\cyclonedx\model\bom.py
+    M 807:4 Bom.validate - C (17)
+src\backend\venv\Lib\site-packages\cyclonedx\model\tool.py
+    M 327:4 _ToolRepositoryHelper.xml_normalize - C (11)
+src\backend\venv\Lib\site-packages\dotenv\main.py
+    F 337:0 find_dotenv - C (11)
+src\backend\venv\Lib\site-packages\fastapi\encoders.py
+    F 129:0 jsonable_encoder - E (35)
+src\backend\venv\Lib\site-packages\fastapi\params.py
+    M 29:4 Param.__init__ - C (11)
+    M 470:4 Body.__init__ - C (11)
+src\backend\venv\Lib\site-packages\fastapi\routing.py
+    F 961:0 _populate_api_route_state - E (31)
+    M 2719:4 APIRouter.app - C (19)
+    M 1946:4 _FrontendStaticFiles.get_response - C (13)
+    M 2282:4 APIRouter.__init__ - C (13)
+    M 2811:4 APIRouter._match_low_priority - C (13)
+    M 3133:4 APIRouter.include_router - C (13)
+src\backend\venv\Lib\site-packages\fastapi\dependencies\models.py
+    F 198:0 _is_coroutine_callable_cached - C (11)
+src\backend\venv\Lib\site-packages\fastapi\dependencies\utils.py
+    F 381:0 analyze_param - F (45)
+    F 586:0 solve_dependencies - D (28)
+    F 780:0 request_params_to_args - C (20)
+    F 271:0 get_dependant - C (17)
+    F 912:0 _extract_form_body - C (15)
+    F 951:0 request_body_to_args - C (13)
+    F 1001:0 _get_body_field - C (13)
+    F 749:0 _get_multidict_value - C (12)
+src\backend\venv\Lib\site-packages\fastapi\openapi\utils.py
+    F 311:0 get_openapi_path - F (46)
+    F 585:0 get_openapi - D (27)
+    F 159:0 _get_openapi_operation_parameters - C (13)
+src\backend\venv\Lib\site-packages\fastapi\_compat\v2.py
+    F 285:0 get_definitions - C (15)
+src\backend\venv\Lib\site-packages\filelock\_api.py
+    F 129:0 _detach_grouped_contexts - C (12)
+    F 503:0 _resolve_lifetime - C (11)
+    C 340:0 FileLockMeta - C (11)
+    M 345:4 FileLockMeta.__call__ - C (11)
+src\backend\venv\Lib\site-packages\filelock\_marker.py
+    F 123:0 _build_record - C (14)
+src\backend\venv\Lib\site-packages\filelock\_read_write.py
+    M 442:4 ReadWriteLock._release - C (11)
+src\backend\venv\Lib\site-packages\filelock\_strict.py
+    M 139:4 StrictSoftFileLock._attempt_doorway - C (18)
+src\backend\venv\Lib\site-packages\filelock\_unix.py
+    M 74:8 UnixFileLock._acquire_native - C (11)
+src\backend\venv\Lib\site-packages\filelock\_soft_rw\_sync.py
+    F 850:0 _break_stale_marker - C (11)
+src\backend\venv\Lib\site-packages\h11\_connection.py
+    M 272:4 Connection._process_event - C (16)
+    F 93:0 _body_framing - C (12)
+    M 410:4 Connection._extract_next_receive_event - C (11)
+src\backend\venv\Lib\site-packages\h11\_headers.py
+    F 152:0 normalize_and_validate - C (14)
+src\backend\venv\Lib\site-packages\h11\_readers.py
+    M 156:4 ChunkedReader.__call__ - C (14)
+src\backend\venv\Lib\site-packages\idna\codec.py
+    C 83:0 IncrementalDecoder - C (12)
+    M 93:4 IncrementalDecoder._buffer_decode - C (11)
+src\backend\venv\Lib\site-packages\idna\core.py
+    F 169:0 check_bidi - D (22)
+    F 392:0 valid_contexto - C (20)
+    F 636:0 uts46_remap - C (19)
+    F 798:0 decode - C (16)
+    F 731:0 encode - C (15)
+    F 338:0 valid_contextj - C (14)
+    F 441:0 check_label - C (13)
+src\backend\venv\Lib\site-packages\iniconfig\_parse.py
+    F 102:0 _parseline - C (15)
+    F 64:0 parse_lines - C (12)
+src\backend\venv\Lib\site-packages\license_expression\_pyahocorasick.py
+    M 264:4 Trie.iter - D (21)
+src\backend\venv\Lib\site-packages\license_expression\__init__.py
+    F 1622:0 validate_symbols - D (22)
+    F 991:0 replace_with_subexpression_by_license_symbol - C (17)
+    M 247:4 Licensing.__init__ - C (13)
+    M 1188:4 LicenseSymbol.__init__ - C (12)
+    M 476:4 Licensing.parse - C (11)
+src\backend\venv\Lib\site-packages\mando\utils.py
+    F 51:0 find_param_docs - C (13)
+src\backend\venv\Lib\site-packages\mando\napoleon\docstring.py
+    M 947:4 NumpyDocstring._parse_numpydoc_see_also_section - C (20)
+    M 643:4 GoogleDocstring._parse_raises_section - C (16)
+    M 103:4 GoogleDocstring.__init__ - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\parser_block.py
+    M 60:4 ParserBlock.tokenize - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\renderer.py
+    M 109:4 RendererHTML.renderToken - C (17)
+src\backend\venv\Lib\site-packages\markdown_it\token.py
+    M 125:4 Token.as_dict - C (14)
+src\backend\venv\Lib\site-packages\markdown_it\common\utils.py
+    F 56:0 isValidEntityCode - C (14)
+src\backend\venv\Lib\site-packages\markdown_it\helpers\parse_link_destination.py
+    F 17:0 parseLinkDestination - D (22)
+src\backend\venv\Lib\site-packages\markdown_it\helpers\parse_link_title.py
+    F 25:0 parseLinkTitle - C (13)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\blockquote.py
+    F 12:0 blockquote - E (37)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\heading.py
+    F 13:0 heading - C (15)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\html_block.py
+    F 34:0 html_block - C (13)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\lheading.py
+    F 9:0 lheading - C (15)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\list.py
+    F 101:0 list_block - F (53)
+    F 37:0 skipOrderedListMarker - C (12)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\reference.py
+    F 9:0 reference - F (44)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\state_block.py
+    M 214:4 StateBlock.getLines - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\rules_block\table.py
+    F 59:0 table - F (51)
+src\backend\venv\Lib\site-packages\markdown_it\rules_core\linkify.py
+    F 15:0 linkify - E (31)
+src\backend\venv\Lib\site-packages\markdown_it\rules_core\smartquotes.py
+    F 24:0 process_inlines - F (53)
+src\backend\venv\Lib\site-packages\markdown_it\rules_core\text_join.py
+    F 15:0 text_join - C (12)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\autolink.py
+    F 12:0 autolink - C (12)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\backticks.py
+    F 9:0 backtick - C (17)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\balance_pairs.py
+    F 8:0 processDelimiters - D (24)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\emphasis.py
+    F 40:0 _postProcess - C (16)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\entity.py
+    F 12:0 entity - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\escape.py
+    F 9:0 escape - C (14)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\fragments_join.py
+    F 4:0 fragments_join - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\image.py
+    F 9:0 image - E (35)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\link.py
+    F 7:0 link - E (33)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\linkify.py
+    F 11:0 linkify - C (12)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\newline.py
+    F 7:0 newline - C (11)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\state_inline.py
+    M 121:4 StateInline.scanDelims - C (19)
+src\backend\venv\Lib\site-packages\markdown_it\rules_inline\strikethrough.py
+    F 85:0 _postProcess - C (12)
+src\backend\venv\Lib\site-packages\mdurl\_decode.py
+    F 39:0 repl_func_with_cache - C (18)
+src\backend\venv\Lib\site-packages\mdurl\_encode.py
+    F 45:0 encode - C (15)
+src\backend\venv\Lib\site-packages\mdurl\_format.py
+    F 9:0 format - C (11)
+src\backend\venv\Lib\site-packages\mdurl\_parse.py
+    M 116:4 MutableURL.parse - F (48)
+    C 105:0 MutableURL - C (19)
+src\backend\venv\Lib\site-packages\msgpack\fallback.py
+    M 685:4 Packer._pack - F (49)
+    M 488:4 Unpacker._unpack - D (30)
+    M 392:4 Unpacker._read_header - D (28)
+    M 226:4 Unpacker.__init__ - D (22)
+    M 845:4 Packer.pack_ext_type - C (13)
+src\backend\venv\Lib\site-packages\mypy\applytype.py
+    F 88:0 apply_generic_arguments - D (25)
+    F 33:0 get_target_type - D (23)
+    M 286:4 PolyTranslator.visit_instance - C (12)
+src\backend\venv\Lib\site-packages\mypy\argmap.py
+    F 27:0 map_actuals_to_formals - E (35)
+    M 174:4 ArgTypeExpander.expand_actual_type - D (22)
+    C 144:0 ArgTypeExpander - C (13)
+src\backend\venv\Lib\site-packages\mypy\binder.py
+    M 301:4 ConditionalTypeBinder.update_from_options - F (47)
+    M 465:4 ConditionalTypeBinder.assign_type - D (22)
+    F 653:0 collapse_variadic_union - C (16)
+src\backend\venv\Lib\site-packages\mypy\build.py
+    F 4250:0 load_graph - F (42)
+    M 2675:4 State.new_state - F (42)
+    F 2124:0 validate_meta - E (34)
+    F 1991:0 find_cache_meta - E (32)
+    F 4053:0 dispatch - D (27)
+    F 4469:0 find_stale_sccs - D (27)
+    F 4758:0 process_stale_scc - D (25)
+    F 4551:0 process_graph - D (24)
+    M 1017:4 BuildManager.parse_all - D (22)
+    F 3714:0 find_module_and_diagnose - D (21)
+    F 3911:0 module_not_found - C (20)
+    F 4930:0 process_stale_scc_implementation - C (20)
+    F 4705:0 maybe_load_deps - C (17)
+    F 330:0 build - C (16)
+    F 635:0 load_plugins_from_config - C (16)
+    F 4211:0 dump_graph - C (16)
+    F 4860:0 process_stale_scc_interface - C (15)
+    M 3200:4 State.parse_file - C (15)
+    M 3579:4 State.write_cache - C (15)
+    M 830:4 BuildManager.__init__ - C (14)
+    F 464:0 build_inner - C (13)
+    M 1433:4 BuildManager.submit_to_workers - C (12)
+    M 1487:4 BuildManager.wait_for_done_workers - C (12)
+    M 3352:4 State.compute_dependencies - C (12)
+    M 3629:4 State.verify_dependencies - C (12)
+    F 1765:0 read_deps_cache - C (11)
+    F 2267:0 write_cache - C (11)
+    M 1202:4 BuildManager.all_imported_modules_in_file - C (11)
+src\backend\venv\Lib\site-packages\mypy\cache.py
+    F 490:0 read_json_value - C (14)
+    F 516:0 write_json_value - C (13)
+src\backend\venv\Lib\site-packages\mypy\checker.py
+    M 3414:4 TypeChecker.check_assignment - F (73)
+    M 1435:4 TypeChecker.check_func_def - F (67)
+    M 6937:4 TypeChecker.narrow_type_by_identity_equality - F (61)
+    M 2398:4 TypeChecker.check_method_override_for_base_with_name - F (55)
+    M 2593:4 TypeChecker.check_override - F (51)
+    M 6583:4 TypeChecker.find_isinstance_check_helper - F (47)
+    M 6749:4 TypeChecker.comparison_type_narrowing_helper - F (47)
+    M 842:4 TypeChecker._visit_overloaded_func_def - F (41)
+    M 5761:4 TypeChecker.visit_decorator_inner - E (39)
+    M 5234:4 TypeChecker.check_return_stmt - E (33)
+    M 3696:4 TypeChecker.check_compatibility_all_supers - E (32)
+    M 7718:4 TypeChecker.check_subtype - E (32)
+    M 4907:4 TypeChecker.check_simple_assignment - E (31)
+    F 8698:0 conditional_types - D (30)
+    M 1016:4 TypeChecker.check_overlapping_overloads - D (30)
+    M 2793:4 TypeChecker.visit_class_def - D (29)
+    M 1657:4 TypeChecker.check_funcdef_item - D (28)
+    M 3113:4 TypeChecker.check_compatibility - D (26)
+    M 3962:4 TypeChecker.check_final - D (26)
+    M 4100:4 TypeChecker.check_assignment_to_multiple_lvalues - D (26)
+    M 4363:4 TypeChecker.check_multi_assignment_from_tuple - D (26)
+    M 7464:4 TypeChecker.find_tuple_len_narrowing - D (26)
+    M 1878:4 TypeChecker.check_for_missing_annotations - D (25)
+    M 4543:4 TypeChecker.check_lvalue - D (25)
+    M 1727:4 TypeChecker.require_correct_self_argument - D (23)
+    M 8324:4 TypeChecker.get_type_range_of_type - D (22)
+    M 5967:4 TypeChecker.visit_match_stmt - D (21)
+    M 4822:4 TypeChecker.infer_rvalue_with_fallback_context - C (19)
+    M 3607:4 TypeChecker.get_variable_type_context - C (18)
+    M 4220:4 TypeChecker.check_multi_assignment - C (18)
+    M 961:4 TypeChecker.extract_callable_type - C (17)
+    M 1954:4 TypeChecker.check_reverse_op_method - C (17)
+    M 3356:4 TypeChecker.visit_assignment_stmt - C (17)
+    M 4675:4 TypeChecker.infer_partial_type - C (17)
+    M 5125:4 TypeChecker.try_infer_partial_type_from_indexed_assignment - C (17)
+    M 6320:4 TypeChecker.partition_by_callable - C (17)
+    M 7587:4 TypeChecker.refine_tuple_type_with_len - C (17)
+    F 8876:0 builtin_item_type - C (16)
+    M 4744:4 TypeChecker.set_inferred_type - C (16)
+    F 9533:0 group_comparison_operands - C (15)
+    F 9912:0 is_equality_ambiguous_for_narrowing - C (15)
+    F 9953:0 equality_value_info - C (15)
+    M 3648:4 TypeChecker.try_infer_partial_generic_type_from_assignment - C (15)
+    M 4625:4 TypeChecker.infer_variable_type - C (15)
+    M 7991:4 TypeChecker.enter_partial_types - C (15)
+    M 8212:4 TypeChecker.conditional_types_with_intersection - C (15)
+    F 8938:0 and_conditional_maps - C (14)
+    M 5681:4 TypeChecker.analyze_range_native_int_type - C (14)
+    M 769:4 TypeChecker.accept_loop - C (13)
+    M 3050:4 TypeChecker.check_protocol_variance - C (13)
+    M 4184:4 TypeChecker.check_rvalue_count_in_assignment - C (13)
+    M 6086:4 TypeChecker.infer_variable_types_from_type_maps - C (13)
+    M 6434:4 TypeChecker.conditional_types_for_iterable - C (13)
+    M 7264:4 TypeChecker.refine_parent_types - C (13)
+    M 1248:4 TypeChecker.get_generator_receive_type - C (12)
+    M 2261:4 TypeChecker.expand_typevars - C (12)
+    M 2937:4 TypeChecker.check_enum - C (12)
+    M 3225:4 TypeChecker.check_typeddict_inheritance - C (12)
+    M 6173:4 TypeChecker.intersect_instances - C (12)
+    F 9142:0 expand_callable_variants - C (11)
+    F 9643:0 is_untyped_decorator - C (11)
+    M 589:4 TypeChecker.check_first_pass - C (11)
+    M 2577:4 TypeChecker.get_op_other_domain - C (11)
+    M 3091:4 TypeChecker.check_multiple_inheritance - C (11)
+    M 3826:4 TypeChecker.node_type_from_base - C (11)
+    M 4016:4 TypeChecker.check_assignment_to_slots - C (11)
+    M 4285:4 TypeChecker.check_multi_assignment_from_union - C (11)
+    M 5542:4 TypeChecker.check_except_handler_test - C (11)
+    M 7847:4 TypeChecker.named_type - C (11)
+    M 8287:4 TypeChecker.get_isinstance_type - C (11)
+    M 8408:4 TypeChecker.add_any_attribute_to_type - C (11)
+src\backend\venv\Lib\site-packages\mypy\checkexpr.py
+    M 511:4 ExpressionChecker.visit_call_expr_inner - F (62)
+    M 1667:4 ExpressionChecker.check_callable_call - F (62)
+    M 3892:4 ExpressionChecker.dangerous_comparison - F (42)
+    M 3600:4 ExpressionChecker.visit_op_expr - E (39)
+    M 3709:4 ExpressionChecker.visit_comparison_expr - E (38)
+    M 6136:4 ExpressionChecker.accept - E (38)
+    M 2642:4 ExpressionChecker.check_argument_types - E (33)
+    M 5317:4 ExpressionChecker.visit_tuple_expr - E (31)
+    M 2474:4 ExpressionChecker.check_argument_count - D (29)
+    M 2149:4 ExpressionChecker.infer_function_type_arguments - D (25)
+    M 4557:4 ExpressionChecker.visit_index_with_type - D (25)
+    M 5824:4 ExpressionChecker._super_arg_types - D (25)
+    M 2820:4 ExpressionChecker.check_overload_call - D (23)
+    M 1008:4 ExpressionChecker.check_typeddict_call_with_kwargs - D (22)
+    M 4158:4 ExpressionChecker.check_op_reversible - D (22)
+    M 5664:4 ExpressionChecker.infer_lambda_type_using_context - D (22)
+    M 5741:4 ExpressionChecker.visit_super_expr - D (21)
+    M 4415:4 ExpressionChecker.check_boolean_op - C (20)
+    F 6786:0 arg_approximate_similarity - C (19)
+    M 352:4 ExpressionChecker.analyze_ref_expr - C (19)
+    M 5134:4 ExpressionChecker.apply_type_arguments_to_callable - C (19)
+    M 871:4 ExpressionChecker.validate_star_typeddict_item - C (17)
+    M 1187:4 ExpressionChecker.try_infer_partial_value_type_from_call - C (17)
+    M 813:4 ExpressionChecker.validate_typeddict_kwargs - C (16)
+    M 1545:4 ExpressionChecker.check_call - C (16)
+    M 2423:4 ExpressionChecker._detect_missing_positional_arg - C (16)
+    M 2554:4 ExpressionChecker.check_for_extra_actual_arguments - C (16)
+    M 3287:4 ExpressionChecker.combine_function_signatures - C (16)
+    M 5422:4 ExpressionChecker.fast_dict_type - C (16)
+    M 1137:4 ExpressionChecker.try_infer_partial_type - C (15)
+    M 4655:4 ExpressionChecker.visit_tuple_index_helper - C (15)
+    M 4735:4 ExpressionChecker.try_getting_int_literals - C (15)
+    M 3129:4 ExpressionChecker.possible_none_type_var_overlap - C (14)
+    M 3167:4 ExpressionChecker.union_overload_result - C (14)
+    M 4304:4 ExpressionChecker.check_op - C (14)
+    M 5076:4 ExpressionChecker.split_for_callable - C (14)
+    M 397:4 ExpressionChecker.analyze_static_reference - C (13)
+    M 771:4 ExpressionChecker.check_typeddict_call - C (13)
+    M 2064:4 ExpressionChecker.infer_function_type_arguments_using_context - C (13)
+    M 2356:4 ExpressionChecker.get_arg_infer_passes - C (13)
+    M 2965:4 ExpressionChecker.plausible_overload_call_targets - C (13)
+    M 5015:4 ExpressionChecker.alias_type_in_runtime_context - C (13)
+    M 656:4 ExpressionChecker.check_str_format_call - C (12)
+    M 730:4 ExpressionChecker.defn_returns_none - C (12)
+    F 6849:0 any_causes_overload_ambiguity - C (11)
+    M 708:4 ExpressionChecker.always_returns_none - C (11)
+    M 1230:4 ExpressionChecker.apply_function_plugin - C (11)
+    M 1467:4 ExpressionChecker.check_call_expr_with_callee_type - C (11)
+    M 1936:4 ExpressionChecker.analyze_type_type_callee - C (11)
+    M 3024:4 ExpressionChecker.infer_overload_return_type - C (11)
+    M 4800:4 ExpressionChecker.visit_typeddict_index_expr - C (11)
+    M 4957:4 ExpressionChecker.visit_type_application - C (11)
+    M 5494:4 ExpressionChecker.visit_dict_expr - C (11)
+    M 6050:4 ExpressionChecker.visit_conditional_expr - C (11)
+src\backend\venv\Lib\site-packages\mypy\checkmember.py
+    F 1131:0 analyze_class_attribute_access - F (70)
+    F 853:0 analyze_var - F (44)
+    F 521:0 analyze_member_var_access - E (36)
+    F 320:0 analyze_instance_member_access - E (31)
+    F 1052:0 check_self_arg - D (21)
+    F 441:0 analyze_type_type_member_access - C (20)
+    F 241:0 _analyze_member_access - C (17)
+    F 663:0 analyze_descriptor_access - C (16)
+    F 961:0 expand_and_bind_callable - C (15)
+    F 1008:0 expand_self_type_if_needed - C (13)
+    F 1412:0 add_class_tvars - C (11)
+    F 1527:0 has_operator - C (11)
+src\backend\venv\Lib\site-packages\mypy\checkpattern.py
+    M 233:4 PatternChecker.visit_sequence_pattern - F (51)
+    M 567:4 PatternChecker.visit_class_pattern - D (29)
+    M 154:4 PatternChecker.visit_or_pattern - C (12)
+    M 716:4 PatternChecker.get_class_pattern_type_ranges - C (12)
+src\backend\venv\Lib\site-packages\mypy\checkstrformat.py
+    M 713:4 StringFormatterChecker.check_simple_str_interpolation - D (24)
+    M 333:4 StringFormatterChecker.check_specs_in_format_call - D (22)
+    M 406:4 StringFormatterChecker.perform_special_format_checks - C (20)
+    F 176:0 parse_format_value - C (14)
+    M 786:4 StringFormatterChecker.check_mapping_str_interpolation - C (14)
+    M 1017:4 StringFormatterChecker.conversion_type - C (14)
+    F 232:0 find_non_escaped_targets - C (13)
+    M 615:4 StringFormatterChecker.validate_and_transform_accessors - C (11)
+src\backend\venv\Lib\site-packages\mypy\config_parser.py
+    F 483:0 parse_section - E (32)
+    F 302:0 parse_config_file - D (23)
+    F 656:0 parse_mypy_comments - C (14)
+    F 400:0 destructure_overrides - C (12)
+src\backend\venv\Lib\site-packages\mypy\constant_fold.py
+    F 79:0 constant_fold_binary_op - D (30)
+    F 114:0 constant_fold_binary_int_op - C (20)
+    F 150:0 constant_fold_binary_float_op - C (18)
+    F 27:0 constant_fold_expr - C (17)
+src\backend\venv\Lib\site-packages\mypy\constraints.py
+    M 747:4 ConstraintBuilderVisitor.visit_instance - F (92)
+    M 1078:4 ConstraintBuilderVisitor.visit_callable_type - E (38)
+    F 109:0 infer_constraints_for_callable - E (37)
+    F 326:0 _infer_constraints - D (30)
+    F 1541:0 build_constraints_for_simple_unpack - D (27)
+    M 1266:4 ConstraintBuilderVisitor.visit_tuple_type - D (27)
+    F 1652:0 infer_callable_arguments_constraints - D (24)
+    F 519:0 any_constraints - D (21)
+    F 1725:0 filter_imprecise_kinds - C (11)
+src\backend\venv\Lib\site-packages\mypy\dmypy_server.py
+    M 607:4 Server.fine_grained_increment_follow_imports - C (20)
+    M 465:4 Server.initialize_fine_grained - C (17)
+    M 372:4 Server.cmd_recheck - C (15)
+    M 889:4 Server._find_changed - C (14)
+    M 784:4 Server.find_added_suppressed - C (12)
+    M 216:4 Server.serve - C (11)
+    M 843:4 Server.pretty_messages - C (11)
+src\backend\venv\Lib\site-packages\mypy\erasetype.py
+    M 256:4 LastKnownValueEraser.visit_union_type - C (12)
+src\backend\venv\Lib\site-packages\mypy\errors.py
+    M 769:4 Errors.add_error_info - D (25)
+    M 1021:4 Errors.format_messages_default - D (22)
+    M 594:4 Errors.report - C (19)
+    M 908:4 Errors.generate_unused_ignore_errors - C (16)
+    M 1147:4 Errors.render_messages - C (16)
+    F 1324:0 report_internal_error - C (13)
+src\backend\venv\Lib\site-packages\mypy\expandtype.py
+    M 435:4 ExpandTypeVisitor.visit_callable_type - C (18)
+src\backend\venv\Lib\site-packages\mypy\exportjson.py
+    F 333:0 convert_type - C (19)
+    F 236:0 convert_type_info - C (11)
+src\backend\venv\Lib\site-packages\mypy\exprtotype.py
+    F 64:0 expr_to_unanalyzed_type - F (54)
+src\backend\venv\Lib\site-packages\mypy\fastparse.py
+    M 909:4 ASTConverter.do_func_def - F (46)
+    M 618:4 ASTConverter.fix_function_overloads - F (42)
+    M 454:4 ASTConverter.translate_stmt_list - D (24)
+    F 187:0 parse - C (18)
+    M 766:4 ASTConverter._check_ifstmt_for_overloads - C (15)
+    M 1953:4 TypeConverter.visit_Call - C (15)
+src\backend\venv\Lib\site-packages\mypy\find_sources.py
+    M 110:4 SourceFinder.find_sources_in_dir - C (11)
+src\backend\venv\Lib\site-packages\mypy\fixup.py
+    M 61:4 NodeFixer.visit_type_info - D (22)
+src\backend\venv\Lib\site-packages\mypy\fscache.py
+    M 82:4 FileSystemCache.init_under_package_root - C (11)
+src\backend\venv\Lib\site-packages\mypy\git.py
+    F 31:0 git_revision_no_subprocess - C (12)
+src\backend\venv\Lib\site-packages\mypy\indirection.py
+    M 104:4 TypeIndirectionVisitor.visit_instance - C (12)
+src\backend\venv\Lib\site-packages\mypy\inspections.py
+    M 251:4 InspectionEngine.collect_attrs - C (14)
+    M 364:4 InspectionEngine.collect_nodes - C (12)
+    F 60:0 get_instance_fallback - C (11)
+    M 313:4 InspectionEngine.expr_attrs - C (11)
+src\backend\venv\Lib\site-packages\mypy\ipc.py
+    F 376:0 ready_to_read - D (23)
+    M 90:4 IPCBase.read_bytes - C (17)
+src\backend\venv\Lib\site-packages\mypy\join.py
+    M 471:4 TypeJoinVisitor.join_tuples - E (38)
+    M 62:4 InstanceJoiner.join_instances - D (30)
+    M 345:4 TypeJoinVisitor.visit_instance - C (18)
+    C 58:0 InstanceJoiner - C (17)
+    M 380:4 TypeJoinVisitor.visit_callable_type - C (17)
+    M 159:4 InstanceJoiner.join_instances_via_supertype - C (16)
+    F 923:0 object_or_any_from_type - C (12)
+    M 418:4 TypeJoinVisitor.visit_overloaded - C (12)
+    F 218:0 join_types - C (11)
+src\backend\venv\Lib\site-packages\mypy\literals.py
+    F 118:0 literal - C (14)
+src\backend\venv\Lib\site-packages\mypy\lookup.py
+    F 13:0 lookup_fully_qualified - C (19)
+src\backend\venv\Lib\site-packages\mypy\main.py
+    F 1408:0 process_options - F (54)
+    F 65:0 main - E (40)
+    F 1632:0 process_package_roots - C (11)
+src\backend\venv\Lib\site-packages\mypy\maptype.py
+    F 70:0 map_instance_to_direct_supertypes - C (12)
+src\backend\venv\Lib\site-packages\mypy\meet.py
+    F 351:0 is_overlapping_types - F (84)
+    F 117:0 narrow_declared_type - F (47)
+    M 874:4 TypeMeetVisitor.visit_instance - E (32)
+    M 1006:4 TypeMeetVisitor.meet_tuples - D (25)
+    F 75:0 meet_types - C (20)
+    F 1300:0 typed_dict_mapping_overlap - C (19)
+    M 1125:4 TypeMeetVisitor.resolve_typeddict_item_type - C (18)
+    M 959:4 TypeMeetVisitor.visit_callable_type - C (16)
+    M 1084:4 TypeMeetVisitor.visit_tuple_type - C (13)
+    F 711:0 are_tuples_overlapping - C (12)
+    M 1163:4 TypeMeetVisitor.visit_typeddict_type - C (11)
+src\backend\venv\Lib\site-packages\mypy\memprofile.py
+    F 20:0 collect_memory_stats - C (14)
+    F 94:0 find_recursive_objects - C (12)
+src\backend\venv\Lib\site-packages\mypy\messages.py
+    F 2649:0 format_type_inner - F (72)
+    M 2193:4 MessageBuilder.report_protocol_problems - F (60)
+    F 3046:0 pretty_callable - F (46)
+    M 593:4 MessageBuilder.incompatible_argument - F (45)
+    M 335:4 MessageBuilder.has_no_attr - E (40)
+    M 1075:4 MessageBuilder.no_variant_matches_arguments - E (39)
+    F 3246:0 get_bad_protocol_flags - C (19)
+    F 3197:0 get_conflict_protocol_types - C (18)
+    M 818:4 MessageBuilder.incompatible_argument_note - C (15)
+    M 1932:4 MessageBuilder.unexpected_typeddict_keys - C (13)
+    F 2927:0 find_type_overlaps - C (12)
+    F 3469:0 make_inferred_type_note - C (12)
+    F 2987:0 format_type_distinctly - C (11)
+    M 855:4 MessageBuilder.maybe_note_concatenate_pos_args - C (11)
+    M 918:4 MessageBuilder.too_few_arguments - C (11)
+    M 2467:4 MessageBuilder.try_report_long_tuple_assignment_error - C (11)
+src\backend\venv\Lib\site-packages\mypy\modulefinder.py
+    M 398:4 FindModuleCache._find_module - F (47)
+    M 619:4 FindModuleCache.find_modules_recursive - D (22)
+    F 884:0 compute_search_paths - C (18)
+    M 213:4 FindModuleCache.find_module_via_source_set - C (14)
+    C 172:0 FindModuleCache - C (11)
+src\backend\venv\Lib\site-packages\mypy\moduleinspect.py
+    F 50:0 get_package_properties - C (11)
+src\backend\venv\Lib\site-packages\mypy\mro.py
+    F 46:0 merge - C (13)
+src\backend\venv\Lib\site-packages\mypy\nativeparse.py
+    F 1292:0 read_expression - F (72)
+    F 312:0 read_statement - F (49)
+    F 1864:0 fix_function_overloads - F (42)
+    F 886:0 read_type - E (40)
+    F 1143:0 read_pattern - C (20)
+    F 1043:0 read_call_type - C (17)
+    F 1789:0 check_ifstmt_for_overloads - C (16)
+    F 669:0 read_func_def - C (15)
+src\backend\venv\Lib\site-packages\mypy\nodes.py
+    M 4367:4 TypeInfo.read - D (23)
+    F 5344:0 check_arg_kinds - C (20)
+    M 3969:4 TypeInfo.enum_members - C (16)
+    F 5414:0 local_definitions - C (15)
+    M 4253:4 TypeInfo.deserialize - C (13)
+    M 4986:4 SymbolTableNode.serialize - C (13)
+    M 4213:4 TypeInfo.serialize - C (12)
+    M 4083:4 TypeInfo.explain_metaclass_conflict - C (11)
+    M 5046:4 SymbolTableNode.write - C (11)
+src\backend\venv\Lib\site-packages\mypy\options.py
+    M 550:4 Options.build_per_module_cache - C (11)
+src\backend\venv\Lib\site-packages\mypy\reachability.py
+    F 108:0 infer_condition_value - D (25)
+    F 182:0 consider_sys_version_info - C (17)
+    F 226:0 consider_sys_platform - C (13)
+    F 299:0 contains_sys_version_info - C (13)
+src\backend\venv\Lib\site-packages\mypy\semanal.py
+    M 4094:4 SemanticAnalyzer.check_and_set_up_type_alias - F (59)
+    M 5955:4 SemanticAnalyzer.visit_call_expr - F (57)
+    M 998:4 SemanticAnalyzer.analyze_func_def - F (42)
+    M 1726:4 SemanticAnalyzer.visit_decorator - E (40)
+    M 8050:4 SemanticAnalyzer.try_parse_as_type_expression - E (33)
+    M 4667:4 SemanticAnalyzer.analyze_member_lvalue - E (31)
+    M 6590:4 SemanticAnalyzer._lookup - E (31)
+    M 5744:4 SemanticAnalyzer.visit_type_alias_stmt - D (30)
+    M 3848:4 SemanticAnalyzer.store_final_status - D (29)
+    M 2307:4 SemanticAnalyzer.clean_up_bases_and_infer_type_variables - D (26)
+    M 3762:4 SemanticAnalyzer.unwrap_final - D (26)
+    M 6263:4 SemanticAnalyzer.analyze_type_application_args - D (26)
+    M 1978:4 SemanticAnalyzer.analyze_class - D (24)
+    M 4787:4 SemanticAnalyzer.process_typevar_declaration - D (24)
+    M 6157:4 SemanticAnalyzer.visit_member_expr - D (24)
+    M 2991:4 SemanticAnalyzer.visit_import_from - D (23)
+    M 3916:4 SemanticAnalyzer.process_type_annotation - D (23)
+    M 5336:4 SemanticAnalyzer.process_module_assignment - D (23)
+    M 741:4 SemanticAnalyzer.add_implicit_module_attrs - D (22)
+    M 4473:4 SemanticAnalyzer.analyze_name_lvalue - D (22)
+    M 7536:4 SemanticAnalyzer.name_not_defined - D (22)
+    M 2459:4 SemanticAnalyzer.analyze_unbound_tvar_impl - D (21)
+    M 4952:4 SemanticAnalyzer.process_typevar_parameters - C (20)
+    M 5442:4 SemanticAnalyzer.process__slots__ - C (20)
+    M 7085:4 SemanticAnalyzer.add_symbol_table_node - C (20)
+    M 3309:4 SemanticAnalyzer.visit_assignment_stmt - C (19)
+    M 5286:4 SemanticAnalyzer.check_classvar - C (19)
+    M 6749:4 SemanticAnalyzer.lookup_qualified - C (19)
+    M 1139:4 SemanticAnalyzer.prepare_method_signature - C (18)
+    M 1296:4 SemanticAnalyzer.analyze_overloaded_func_def - C (18)
+    M 2857:4 SemanticAnalyzer.get_declared_metaclass - C (18)
+    M 3520:4 SemanticAnalyzer.is_type_ref - C (18)
+    M 1884:4 SemanticAnalyzer.analyze_type_param - C (17)
+    M 2660:4 SemanticAnalyzer.configure_base_classes - C (17)
+    M 4322:4 SemanticAnalyzer.analyze_type_alias_type_params - C (17)
+    M 5633:4 SemanticAnalyzer.visit_with_stmt - C (17)
+    M 7486:4 SemanticAnalyzer.current_symbol_table - C (17)
+    M 2777:4 SemanticAnalyzer.infer_metaclass_and_bases_from_compat_helpers - C (16)
+    M 3726:4 SemanticAnalyzer.apply_dynamic_class_hook - C (16)
+    M 3998:4 SemanticAnalyzer.analyze_alias - C (16)
+    M 6551:4 SemanticAnalyzer.record_imported_symbol - C (16)
+    M 3131:4 SemanticAnalyzer.report_missing_module_attribute - C (15)
+    M 3436:4 SemanticAnalyzer.should_wait_rhs - C (15)
+    M 3620:4 SemanticAnalyzer.analyze_namedtuple_assign - C (15)
+    M 1431:4 SemanticAnalyzer.analyze_overload_sigs_and_impl - C (14)
+    M 1586:4 SemanticAnalyzer.analyze_property_with_multi_part_definition - C (14)
+    M 3465:4 SemanticAnalyzer.can_be_type_alias - C (14)
+    M 1375:4 SemanticAnalyzer.process_deprecated_overload - C (13)
+    M 2199:4 SemanticAnalyzer.apply_class_plugin_hooks - C (13)
+    M 3395:4 SemanticAnalyzer.analyze_identity_global_assignment - C (13)
+    M 4609:4 SemanticAnalyzer.make_name_lvalue_point_to_existing_def - C (13)
+    M 4754:4 SemanticAnalyzer.store_declared_types - C (13)
+    M 6930:4 SemanticAnalyzer.lookup_fully_qualified_or_none - C (13)
+    M 7590:4 SemanticAnalyzer._get_names_in_scope - C (13)
+    F 8402:0 is_trivial_body - C (12)
+    M 1510:4 SemanticAnalyzer.handle_missing_overload_implementation - C (12)
+    M 1536:4 SemanticAnalyzer.process_final_in_overload - C (12)
+    M 2404:4 SemanticAnalyzer.analyze_class_typevar_declaration - C (12)
+    M 4423:4 SemanticAnalyzer.analyze_lvalue - C (12)
+    M 1180:4 SemanticAnalyzer.is_expected_self_type - C (11)
+    M 1555:4 SemanticAnalyzer.process_static_or_class_method_in_overload - C (11)
+    M 2607:4 SemanticAnalyzer.analyze_base_classes - C (11)
+    M 3240:4 SemanticAnalyzer.visit_import_all - C (11)
+    M 3575:4 SemanticAnalyzer.is_none_alias - C (11)
+    M 5095:4 SemanticAnalyzer.process_paramspec_declaration - C (11)
+    M 5169:4 SemanticAnalyzer.process_typevartuple_declaration - C (11)
+    M 5704:4 SemanticAnalyzer.visit_nonlocal_decl - C (11)
+src\backend\venv\Lib\site-packages\mypy\semanal_classprop.py
+    F 42:0 calculate_class_abstract_status - D (26)
+    F 152:0 add_type_promotion - C (15)
+src\backend\venv\Lib\site-packages\mypy\semanal_enum.py
+    M 147:4 EnumCallAnalyzer.parse_enum_call_args - E (40)
+src\backend\venv\Lib\site-packages\mypy\semanal_infer.py
+    F 20:0 infer_decorator_signature_if_simple - C (17)
+src\backend\venv\Lib\site-packages\mypy\semanal_main.py
+    F 157:0 process_top_levels - C (15)
+    F 280:0 process_top_level_function - C (11)
+src\backend\venv\Lib\site-packages\mypy\semanal_namedtuple.py
+    M 293:4 NamedTupleAnalyzer.parse_namedtuple_args - D (30)
+    M 140:4 NamedTupleAnalyzer.check_namedtuple_classdef - D (22)
+    M 457:4 NamedTupleAnalyzer.build_namedtuple_typeinfo - C (15)
+    M 221:4 NamedTupleAnalyzer.check_namedtuple - C (12)
+    C 99:0 NamedTupleAnalyzer - C (11)
+    M 621:4 NamedTupleAnalyzer.save_namedtuple_body - C (11)
+src\backend\venv\Lib\site-packages\mypy\semanal_newtype.py
+    M 54:4 NewTypeAnalyzer.process_newtype_declaration - C (19)
+    M 171:4 NewTypeAnalyzer.check_newtype_args - C (12)
+src\backend\venv\Lib\site-packages\mypy\semanal_shared.py
+    F 384:0 find_dataclass_transform_spec - C (14)
+src\backend\venv\Lib\site-packages\mypy\semanal_typeargs.py
+    M 169:4 TypeArgumentAnalyzer.validate_args - D (26)
+src\backend\venv\Lib\site-packages\mypy\semanal_typeddict.py
+    M 80:4 TypedDictAnalyzer.analyze_typeddict_classdef - E (36)
+    M 462:4 TypedDictAnalyzer.analyze_typeddict_classdef_fields - D (21)
+    M 578:4 TypedDictAnalyzer.check_typeddict - C (19)
+    M 664:4 TypedDictAnalyzer.parse_typeddict_args - C (18)
+    M 329:4 TypedDictAnalyzer.resolve_field_inheritance - C (15)
+    M 768:4 TypedDictAnalyzer.build_typeddict_typeinfo - C (12)
+src\backend\venv\Lib\site-packages\mypy\solve.py
+    F 42:0 solve_constraints - D (30)
+    F 406:0 transitive_closure - D (28)
+    F 263:0 solve_one - C (19)
+    F 191:0 solve_iteratively - C (17)
+    F 130:0 solve_with_dependent - C (16)
+    F 332:0 choose_free - C (12)
+    F 389:0 find_linear - C (11)
+    F 565:0 pre_validate_solutions - C (11)
+src\backend\venv\Lib\site-packages\mypy\stats.py
+    M 357:4 StatisticsVisitor.type - D (22)
+    M 145:4 StatisticsVisitor.visit_func_def - C (15)
+    M 199:4 StatisticsVisitor.visit_assignment_stmt - C (12)
+src\backend\venv\Lib\site-packages\mypy\strconv.py
+    M 174:4 StrConv.visit_class_def - C (20)
+    M 70:4 StrConv.func_helper - C (12)
+src\backend\venv\Lib\site-packages\mypy\stubdoc.py
+    M 187:4 DocStringParser.add_token - F (60)
+    C 168:0 DocStringParser - C (17)
+    M 107:4 FunctionSig.format_sig - C (16)
+src\backend\venv\Lib\site-packages\mypy\stubgen.py
+    M 584:4 ASTStubGenerator._get_func_args - D (28)
+    M 1432:4 ASTStubGenerator.get_str_default_of_node - D (28)
+    M 1159:4 ASTStubGenerator.is_alias_expression - D (27)
+    M 1090:4 ASTStubGenerator.process_typeddict - D (24)
+    M 831:4 ASTStubGenerator.visit_class_def - D (22)
+    M 964:4 ASTStubGenerator.visit_assignment_stmt - D (22)
+    M 650:4 ASTStubGenerator._get_func_return - C (20)
+    M 700:4 ASTStubGenerator.visit_func_def - C (18)
+    M 1252:4 ASTStubGenerator.visit_import_from - C (16)
+    M 764:4 ASTStubGenerator.process_decorator - C (14)
+    M 885:4 ASTStubGenerator.get_base_types - C (14)
+    M 1025:4 ASTStubGenerator._get_namedtuple_fields - C (14)
+    M 1373:4 ASTStubGenerator.get_str_type_of_node - C (13)
+    F 1767:0 generate_asts_for_modules - C (12)
+    F 1844:0 generate_stubs - C (12)
+    M 1398:4 ASTStubGenerator.maybe_unwrap_unary_expr - C (12)
+    M 1299:4 ASTStubGenerator.get_init - C (11)
+    M 1335:4 ASTStubGenerator.get_assign_initializer - C (11)
+src\backend\venv\Lib\site-packages\mypy\stubgenc.py
+    M 411:4 InspectionStubGenerator.generate_module - E (35)
+    M 804:4 InspectionStubGenerator.generate_class_stub - D (30)
+    F 939:0 infer_c_method_args - C (19)
+    M 270:4 InspectionStubGenerator.get_default_function_sig - C (16)
+    M 699:4 InspectionStubGenerator.generate_property_stub - C (15)
+    M 606:4 InspectionStubGenerator.generate_function_stub - C (14)
+src\backend\venv\Lib\site-packages\mypy\stubtest.py
+    F 1108:0 _verify_signature - F (53)
+    F 2034:0 get_mypy_type_of_runtime_value - E (39)
+    F 645:0 verify_typeinfo - E (33)
+    F 2357:0 test_stubs - E (33)
+    F 1871:0 safe_inspect_signature - E (32)
+    F 349:0 verify_mypyfile - D (27)
+    F 1312:0 verify_var - D (22)
+    F 1687:0 verify_typealias - C (20)
+    M 1010:4 Signature.from_overloadedfuncdef - C (20)
+    F 831:0 _verify_arg_default_value - C (18)
+    F 765:0 _verify_static_class_methods - C (16)
+    M 154:4 Error.get_description - C (14)
+    F 550:0 _verify_disjoint_base - C (13)
+    F 1236:0 verify_funcitem - C (13)
+    F 1376:0 verify_overloadedfuncdef - C (13)
+    F 1611:0 _resolve_funcitem_from_callable_type - C (13)
+    F 2166:0 build_stubs - C (13)
+    F 517:0 _shape_differs - C (12)
+    F 2266:0 get_importable_stdlib_modules - C (12)
+    M 960:4 Signature.from_funcitem - C (11)
+src\backend\venv\Lib\site-packages\mypy\stubutil.py
+    M 259:4 AnnotationPrinter.visit_unbound_type - C (16)
+    F 392:0 infer_method_arg_types - C (11)
+    M 531:4 ImportTracker.import_lines - C (11)
+src\backend\venv\Lib\site-packages\mypy\subtypes.py
+    M 492:4 SubtypeVisitor.visit_instance - F (66)
+    F 1831:0 are_parameters_compatible - F (57)
+    F 1213:0 is_protocol_implementation - E (36)
+    M 717:4 SubtypeVisitor.visit_callable_type - D (30)
+    F 295:0 _is_subtype - D (26)
+    M 844:4 SubtypeVisitor.variadic_tuple_subtype - D (26)
+    M 999:4 SubtypeVisitor.visit_overloaded - D (26)
+    F 1439:0 find_member_simple - D (24)
+    F 1505:0 get_member_flags - D (24)
+    F 1573:0 find_node_type - D (24)
+    M 777:4 SubtypeVisitor.visit_tuple_type - D (24)
+    M 1137:4 SubtypeVisitor.visit_type_type - D (24)
+    M 934:4 SubtypeVisitor.visit_typeddict_type - D (22)
+    F 1364:0 find_member - D (21)
+    F 2262:0 infer_variance - C (20)
+    F 1651:0 is_callable_compatible - C (15)
+    M 1082:4 SubtypeVisitor.visit_union_type - C (15)
+    F 2027:0 are_args_compatible - C (14)
+    F 2209:0 covers_at_runtime - C (14)
+    F 257:0 is_same_type - C (12)
+    F 2171:0 restrict_subtype_away - C (11)
+    C 413:0 SubtypeVisitor - C (11)
+src\backend\venv\Lib\site-packages\mypy\suggestions.py
+    F 954:0 refine_type - C (16)
+    M 345:4 SuggestionEngine.get_args - C (16)
+    M 656:4 SuggestionEngine.extract_from_decorator - C (16)
+    M 846:4 TypeFormatter.visit_instance - C (14)
+    F 790:0 any_score_type - C (13)
+    M 763:4 SuggestionEngine.score_type - C (13)
+    M 621:4 SuggestionEngine.find_node_by_file_and_line - C (11)
+src\backend\venv\Lib\site-packages\mypy\typeanal.py
+    M 308:4 TypeAnalyser.visit_unbound_type_nonoptional - F (74)
+    M 626:4 TypeAnalyser.try_analyze_special_unbound_type - F (60)
+    F 2206:0 instantiate_type_alias - F (47)
+    F 2626:0 validate_instance - E (31)
+    M 986:4 TypeAnalyser.analyze_unbound_type_without_type_info - D (28)
+    F 2380:0 set_any_tvars - D (25)
+    M 861:4 TypeAnalyser.analyze_type_with_type_info - D (24)
+    F 2118:0 fix_instance - D (23)
+    M 1680:4 TypeAnalyser.analyze_callable_args - D (21)
+    M 1175:4 TypeAnalyser.visit_callable_type - C (20)
+    M 1770:4 TypeAnalyser.analyze_literal_param - C (18)
+    F 2889:0 check_vec_type_args - C (17)
+    M 2745:4 FindTypeVarVisitor.visit_unbound_type - C (16)
+    M 842:4 TypeAnalyser.check_and_warn_deprecated - C (14)
+    M 1369:4 TypeAnalyser.visit_typeddict_type - C (14)
+    M 1293:4 TypeAnalyser.anal_star_arg_type - C (13)
+    M 1608:4 TypeAnalyser.analyze_callable_type - C (13)
+    M 1897:4 TypeAnalyser.bind_function_type_variables - C (12)
+    M 549:4 TypeAnalyser.pack_paramspec_args - C (11)
+    M 590:4 TypeAnalyser.apply_concatenate_operator - C (11)
+    M 1495:4 TypeAnalyser.analyze_callable_args_for_paramspec - C (11)
+    M 1548:4 TypeAnalyser.analyze_callable_args_for_concatenate - C (11)
+src\backend\venv\Lib\site-packages\mypy\typeops.py
+    F 144:0 type_object_type - D (28)
+    F 436:0 bind_self - D (22)
+    F 695:0 _remove_redundant_union_items - D (22)
+    F 820:0 false_only - D (22)
+    F 605:0 make_simplified_union - D (21)
+    F 1224:0 custom_special_method - C (16)
+    F 1045:0 is_singleton_identity_type - C (14)
+    F 551:0 callable_corresponding_argument - C (13)
+    F 324:0 class_callable - C (12)
+    F 77:0 is_recursive_pair - C (11)
+src\backend\venv\Lib\site-packages\mypy\types.py
+    M 3951:4 TypeStrVisitor.visit_callable_type - E (34)
+    M 2931:4 TupleType.slice - E (31)
+    F 4459:0 read_type - D (22)
+    M 2236:4 CallableType.copy_modified - D (22)
+    M 1765:4 Instance.read - C (18)
+    F 4317:0 flatten_nested_tuples - C (13)
+    M 3861:4 TypeStrVisitor.visit_instance - C (13)
+    M 2511:4 CallableType.with_normalized_var_args - C (12)
+    F 4267:0 flatten_nested_unions - C (11)
+src\backend\venv\Lib\site-packages\mypy\types_utils.py
+    F 59:0 is_invalid_recursive_alias - C (11)
+src\backend\venv\Lib\site-packages\mypy\util.py
+    F 976:0 get_available_threads - C (13)
+    M 683:4 FancyFormatter.initialize_unix_colors - C (11)
+src\backend\venv\Lib\site-packages\mypy\build_worker\worker.py
+    F 150:0 serve - D (22)
+    F 268:0 load_states - C (13)
+src\backend\venv\Lib\site-packages\mypy\plugins\attrs.py
+    F 701:0 _parse_converter - E (34)
+    F 425:0 _analyze_class - D (22)
+    M 135:4 Attribute.argument - D (21)
+    F 623:0 _attribute_from_attrib_maker - C (20)
+    F 338:0 attr_class_maker_callback_impl - C (19)
+    F 539:0 _attributes_from_assignment - C (12)
+    F 873:0 _add_init - C (12)
+    F 1146:0 fields_function_sig_callback - C (12)
+src\backend\venv\Lib\site-packages\mypy\plugins\common.py
+    F 101:0 find_shallow_matching_overload_item - D (24)
+    F 324:0 _add_method_by_spec - C (11)
+src\backend\venv\Lib\site-packages\mypy\plugins\dataclasses.py
+    M 513:4 DataclassTransformer.collect_attributes - F (51)
+    M 231:4 DataclassTransformer.transform - F (44)
+    M 127:4 DataclassAttribute.to_argument - C (13)
+src\backend\venv\Lib\site-packages\mypy\plugins\default.py
+    F 270:0 typed_dict_get_callback - C (19)
+    F 486:0 typed_dict_update_signature_callback - C (15)
+    M 140:4 DefaultPlugin.get_method_hook - C (14)
+    F 230:0 typed_dict_get_signature_callback - C (13)
+    F 350:0 typed_dict_pop_callback - C (13)
+src\backend\venv\Lib\site-packages\mypy\plugins\enums.py
+    F 160:0 enum_value_callback - D (25)
+    F 73:0 _infer_value_type_with_auto_fallback - C (18)
+src\backend\venv\Lib\site-packages\mypy\plugins\functools.py
+    F 152:0 handle_partial_with_callee - F (41)
+    F 337:0 partial_call_callback - D (24)
+src\backend\venv\Lib\site-packages\mypy\server\astdiff.py
+    F 230:0 snapshot_definition - D (26)
+    F 166:0 snapshot_symbol_table - C (12)
+src\backend\venv\Lib\site-packages\mypy\server\astmerge.py
+    F 148:0 replacement_map_from_symbol_table - C (15)
+src\backend\venv\Lib\site-packages\mypy\server\deps.py
+    M 435:4 DependencyVisitor.visit_assignment_stmt - F (44)
+    M 322:4 DependencyVisitor.process_type_info - C (18)
+    M 521:4 DependencyVisitor.process_lvalue - C (18)
+    M 665:4 DependencyVisitor.visit_member_expr - C (12)
+    M 256:4 DependencyVisitor.visit_func_def - C (11)
+    M 280:4 DependencyVisitor.visit_decorator - C (11)
+    M 828:4 DependencyVisitor.add_operator_method_dependency_for_type - C (11)
+    M 911:4 DependencyVisitor.attribute_triggers - C (11)
+src\backend\venv\Lib\site-packages\mypy\server\mergecheck.py
+    F 14:0 check_consistency - C (15)
+src\backend\venv\Lib\site-packages\mypy\server\objgraph.py
+    F 39:0 get_edge_candidates - C (13)
+src\backend\venv\Lib\site-packages\mypy\server\update.py
+    F 1239:0 refresh_suppressed_submodules - D (22)
+    F 1132:0 _lookup_target_impl - C (18)
+    F 968:0 reprocess_nodes - C (16)
+    F 562:0 update_module_isolated - C (15)
+    F 841:0 propagate_changes_using_dependencies - C (13)
+    M 208:4 FineGrainedBuildManager.update - C (12)
+    F 906:0 find_targets_recursive - C (11)
+    F 1329:0 sort_messages_preserving_file_order - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\data.py
+    F 56:0 parse_test_case - F (67)
+    M 311:4 DataDrivenTestCase.runtest - C (16)
+src\backend\venv\Lib\site-packages\mypy\test\helpers.py
+    F 467:0 check_test_output_files - C (12)
+    F 75:0 render_diff_range - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\testargs.py
+    M 27:4 ArgSuite.test_executable_inference - C (13)
+src\backend\venv\Lib\site-packages\mypy\test\testcheck.py
+    M 108:4 TypeCheckSuite.run_case_once - F (47)
+    M 60:4 TypeCheckSuite.run_case - C (15)
+    C 57:0 TypeCheckSuite - C (13)
+src\backend\venv\Lib\site-packages\mypy\test\testcmdline.py
+    F 52:0 test_python_cmdline - D (25)
+src\backend\venv\Lib\site-packages\mypy\test\testdeps.py
+    M 30:4 GetDependenciesSuite.run_case - C (12)
+src\backend\venv\Lib\site-packages\mypy\test\testexportjson.py
+    C 21:0 TypeExportSuite - C (19)
+    M 25:4 TypeExportSuite.run_case - C (18)
+src\backend\venv\Lib\site-packages\mypy\test\testfinegrained.py
+    M 75:4 FineGrainedSuite.run_case - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\testformatter.py
+    C 8:0 FancyErrorFormattingTestCases - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\testfscache.py
+    M 24:4 TestFileSystemCache.test_isfile_case_1 - C (14)
+    M 43:4 TestFileSystemCache.test_isfile_case_2 - C (12)
+    M 61:4 TestFileSystemCache.test_isfile_case_3 - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\testpep561.py
+    F 91:0 test_pep561 - C (20)
+src\backend\venv\Lib\site-packages\mypy\test\testpythoneval.py
+    F 41:0 test_python_evaluation - C (15)
+src\backend\venv\Lib\site-packages\mypy\test\teststubgen.py
+    C 1575:0 IsValidTypeSuite - D (27)
+    M 1576:4 IsValidTypeSuite.test_is_valid_type - D (26)
+    M 798:4 StubgenHelpersSuite.test_is_non_library_module - D (21)
+    C 787:0 StubgenHelpersSuite - C (16)
+    M 743:4 StubgenUtilSuite.test_common_dir_prefix_unix - C (14)
+    M 761:4 StubgenUtilSuite.test_common_dir_prefix_win - C (14)
+    M 858:4 StubgenPythonSuite.run_case_inner - C (12)
+src\backend\venv\Lib\site-packages\mypy\test\teststubinfo.py
+    M 9:4 TestStubInfo.test_stub_distribution_name - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\teststubtest.py
+    M 3131:4 StubtestMiscUnit.test_get_typeshed_stdlib_modules - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\testtypegen.py
+    C 19:0 TypeExportSuite - C (15)
+    M 23:4 TypeExportSuite.run_case - C (14)
+src\backend\venv\Lib\site-packages\mypy\test\testtypes.py
+    M 420:4 TypeOpsSuite.test_is_proper_subtype_and_subtype_literal_types - D (21)
+    M 366:4 TypeOpsSuite.test_is_proper_subtype - C (19)
+    M 451:4 TypeOpsSuite.test_subtype_aliases - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\test_diff_cache.py
+    C 22:0 DiffCacheIntegrationTests - F (44)
+    M 25:4 DiffCacheIntegrationTests.test_diff_cache_produces_valid_json - F (43)
+src\backend\venv\Lib\site-packages\mypy\test\test_find_sources.py
+    M 264:4 SourceFinderSuite.test_find_sources_exclude - C (17)
+    M 130:4 SourceFinderSuite.test_crawl_namespace_explicit_base - C (11)
+src\backend\venv\Lib\site-packages\mypy\test\test_nativeparse.py
+    F 171:0 format_reachable_imports - C (18)
+src\backend\venv\Lib\site-packages\mypy\test\typefixture.py
+    M 302:4 TypeFixture.make_type_info - C (12)
+src\backend\venv\Lib\site-packages\mypy\test\update_data.py
+    F 21:0 _iter_fixes - C (20)
+src\backend\venv\Lib\site-packages\mypyc\annotate.py
+    F 182:0 function_annotations - D (25)
+    M 359:4 ASTAnnotateVisitor.visit_call_expr - C (15)
+src\backend\venv\Lib\site-packages\mypyc\build.py
+    F 691:0 mypyc_build - D (21)
+    F 530:0 construct_groups - C (20)
+    F 875:0 mypycify - C (16)
+    F 785:0 get_cflags - C (15)
+    F 215:0 get_mypy_config - C (11)
+src\backend\venv\Lib\site-packages\mypyc\build_setup.py
+    F 35:0 spawn - C (13)
+src\backend\venv\Lib\site-packages\mypyc\rt_expandtype.py
+    F 15:0 expand_rtype - C (13)
+src\backend\venv\Lib\site-packages\mypyc\subtype.py
+    M 65:4 SubtypeVisitor.visit_rprimitive - C (17)
+src\backend\venv\Lib\site-packages\mypyc\analysis\attrdefined.py
+    F 128:0 analyze_always_defined_attrs_in_class - C (19)
+    F 192:0 find_always_defined_attributes - C (16)
+    F 417:0 detect_undefined_bitmap - C (14)
+src\backend\venv\Lib\site-packages\mypyc\analysis\capsule_deps.py
+    F 61:0 collect_type_deps - C (11)
+src\backend\venv\Lib\site-packages\mypyc\analysis\dataflow.py
+    F 526:0 run_analysis - D (27)
+    F 85:0 get_cfg - C (11)
+src\backend\venv\Lib\site-packages\mypyc\analysis\ircheck.py
+    F 142:0 check_op_sources_valid - C (14)
+    M 321:4 OpChecker.visit_load_literal - C (11)
+src\backend\venv\Lib\site-packages\mypyc\codegen\emit.py
+    M 643:4 Emitter.emit_cast - F (68)
+    M 981:4 Emitter.emit_unbox - F (49)
+    M 1190:4 Emitter.emit_box - D (21)
+    M 601:4 Emitter.emit_dec_ref - C (13)
+    M 506:4 Emitter.tuple_undefined_check_cond - C (11)
+src\backend\venv\Lib\site-packages\mypyc\codegen\emitclass.py
+    F 240:0 generate_class - F (41)
+    F 1225:0 generate_setter - C (18)
+    F 443:0 generate_object_struct - C (11)
+src\backend\venv\Lib\site-packages\mypyc\codegen\emitfunc.py
+    M 433:4 FunctionEmitterVisitor.visit_get_attr - D (22)
+    F 131:0 generate_native_function - C (16)
+    M 543:4 FunctionEmitterVisitor.visit_set_attr - C (16)
+    M 249:4 FunctionEmitterVisitor.visit_branch - C (15)
+    M 963:4 FunctionEmitterVisitor.reg - C (13)
+src\backend\venv\Lib\site-packages\mypyc\codegen\emitmodule.py
+    M 645:4 GroupGenerator.generate_c_for_modules - D (30)
+    M 1231:4 GroupGenerator.emit_module_exec_func - C (15)
+    F 230:0 compile_scc_to_ir - C (14)
+    F 302:0 compile_modules_to_ir - C (12)
+    M 899:4 GroupGenerator.generate_shared_lib_init - C (12)
+src\backend\venv\Lib\site-packages\mypyc\codegen\emitwrapper.py
+    F 134:0 generate_wrapper_function - C (19)
+    F 227:0 generate_legacy_wrapper_function - C (15)
+src\backend\venv\Lib\site-packages\mypyc\codegen\literals.py
+    M 33:4 Literals.record_literal - D (23)
+    M 76:4 Literals.literal_index - C (12)
+src\backend\venv\Lib\site-packages\mypyc\ir\class_ir.py
+    M 479:4 ClassIR.deserialize - C (17)
+    M 415:4 ClassIR.serialize - C (15)
+src\backend\venv\Lib\site-packages\mypyc\ir\func_ir.py
+    F 418:0 get_text_signature - C (14)
+    F 465:0 _extract_python_literal - C (11)
+src\backend\venv\Lib\site-packages\mypyc\ir\pprint.py
+    F 481:0 generate_names_for_ir - C (18)
+    F 399:0 format_blocks - C (17)
+    M 323:4 IRPrettyPrintVisitor.format - C (17)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\ast_helpers.py
+    F 56:0 maybe_process_conditional_comparison - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\builder.py
+    M 746:4 IRBuilder.get_assignment_target - D (25)
+    M 864:4 IRBuilder.assign - C (18)
+    M 1100:4 IRBuilder.get_sequence_type_from_type - C (13)
+    M 1284:4 IRBuilder.call_refexpr_with_args - C (13)
+    M 1136:4 IRBuilder.get_dict_base_type_from_type - C (12)
+    M 823:4 IRBuilder.read - C (11)
+    M 1228:4 IRBuilder.get_final_ref - C (11)
+    M 1654:4 IRBuilder.root_is_reassigned - C (11)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\classdef.py
+    F 89:0 transform_class_def - E (35)
+    F 564:0 populate_non_ext_bases - C (13)
+    F 789:0 generate_attr_defaults_init - C (13)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\constant_fold.py
+    F 39:0 constant_fold_expr - C (20)
+    F 80:0 constant_fold_binary_op_extended - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\env_class.py
+    F 248:0 add_vars_to_env - C (13)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\expression.py
+    F 163:0 transform_name_expr - D (29)
+    F 570:0 translate_super_method_call - D (28)
+    F 258:0 transform_member_expr - D (27)
+    F 413:0 transform_call_expr - D (23)
+    F 485:0 translate_method_call - D (21)
+    F 1088:0 try_specialize_in_expr - C (20)
+    F 1173:0 transform_basic_comparison - C (14)
+    F 649:0 translate_vec_create_from_iterable - C (13)
+    F 823:0 transform_index_expr - C (13)
+    F 982:0 transform_comparison_expr - C (13)
+    F 684:0 vec_from_iterable - C (12)
+    F 774:0 transform_op_expr - C (12)
+    F 355:0 check_instance_attribute_access_through_class - C (11)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\format_str_tokenizer.py
+    F 135:0 convert_format_expr_to_str - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\for_helpers.py
+    F 481:0 make_for_loop_generator - F (42)
+    F 1294:0 get_expr_length - E (33)
+    F 220:0 sequence_from_generator_preallocate_helper - C (14)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\function.py
+    F 478:0 handle_ext_method - C (17)
+    F 167:0 gen_func_item - C (15)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\ll_builder.py
+    M 969:4 LowLevelIRBuilder._construct_varargs - F (58)
+    M 1639:4 LowLevelIRBuilder.binary_op - F (51)
+    M 465:4 LowLevelIRBuilder.coerce - F (46)
+    M 1374:4 LowLevelIRBuilder.native_args_to_positional - D (27)
+    M 2953:4 LowLevelIRBuilder.translate_eq_cmp - D (23)
+    M 1468:4 LowLevelIRBuilder.gen_method_call - D (21)
+    M 2406:4 LowLevelIRBuilder.primitive_op - C (19)
+    M 2634:4 LowLevelIRBuilder.fixed_width_int_op - C (19)
+    M 1950:4 LowLevelIRBuilder.unary_not - C (18)
+    M 2206:4 LowLevelIRBuilder.bool_value - C (17)
+    M 2300:4 LowLevelIRBuilder.call_c - C (17)
+    M 1867:4 LowLevelIRBuilder.compare_tuples - C (16)
+    M 2496:4 LowLevelIRBuilder.matching_primitive_op - C (16)
+    M 2752:4 LowLevelIRBuilder.builtin_len - C (16)
+    M 1756:4 LowLevelIRBuilder.dunder_op - C (13)
+    M 757:4 LowLevelIRBuilder.coerce_fixed_width_to_int - C (12)
+    M 2378:4 LowLevelIRBuilder.matching_call_c - C (11)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\mapper.py
+    M 73:4 Mapper.type_to_rtype - F (44)
+    M 182:4 Mapper.fdef_to_sig - C (15)
+    C 55:0 Mapper - C (11)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\prepare.py
+    F 501:0 prepare_class_def - E (33)
+    F 88:0 build_type_map - D (29)
+    F 985:0 adjust_generator_classes_of_methods - D (25)
+    F 620:0 prepare_methods_and_attributes - C (17)
+    F 767:0 prepare_init_method - C (14)
+    F 193:0 load_type_map - C (13)
+    F 463:0 _check_deletable_declarations - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\specialize.py
+    F 1307:0 specialize_int_to_bytes - D (25)
+    F 872:0 translate_fstring - D (24)
+    F 720:0 translate_isinstance - D (23)
+    F 940:0 str_encode_fast_path - D (22)
+    F 992:0 bytes_decode_fast_path - D (22)
+    F 1280:0 translate_object_setattr - C (15)
+    F 809:0 translate_dict_setdefault - C (12)
+    F 1241:0 translate_object_new - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\statement.py
+    F 224:0 transform_assignment_stmt - D (27)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\util.py
+    F 125:0 default_attr_name - C (12)
+    F 323:0 is_constant - C (12)
+src\backend\venv\Lib\site-packages\mypyc\irbuild\vtable.py
+    F 11:0 compute_vtable - D (21)
+src\backend\venv\Lib\site-packages\mypyc\lib-rt\build_setup.py
+    F 35:0 spawn - C (13)
+src\backend\venv\Lib\site-packages\mypyc\test\testutil.py
+    F 264:0 infer_ir_build_options_from_test_name - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_analysis.py
+    C 27:0 TestAnalysis - C (15)
+    M 32:4 TestAnalysis.run_case - C (14)
+src\backend\venv\Lib\site-packages\mypyc\test\test_annotate.py
+    C 25:0 TestReport - C (14)
+    M 30:4 TestReport.run_case - C (13)
+src\backend\venv\Lib\site-packages\mypyc\test\test_capsule_deps.py
+    C 25:0 TestCapsuleDeps - C (12)
+    M 29:4 TestCapsuleDeps.run_case - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_cheader.py
+    C 32:0 TestHeaderInclusion - C (16)
+    M 33:4 TestHeaderInclusion.test_primitives_included_in_header - C (15)
+src\backend\venv\Lib\site-packages\mypyc\test\test_emitfunc.py
+    M 974:4 TestFunctionEmitterVisitor.assert_emit - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_emitmodule.py
+    C 23:0 TestEmitModule - C (12)
+    M 24:4 TestEmitModule.test_compile_modules_to_ir_orders_scc_members_deterministically - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_exceptions.py
+    C 31:0 TestExceptionTransform - C (13)
+    M 35:4 TestExceptionTransform.run_case - C (12)
+src\backend\venv\Lib\site-packages\mypyc\test\test_external.py
+    M 21:4 TestExternal.test_lib_rt_c_files_compile_individually - C (12)
+src\backend\venv\Lib\site-packages\mypyc\test\test_irbuild.py
+    C 77:0 TestGenOps - C (12)
+    M 82:4 TestGenOps.run_case - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_lowering.py
+    C 30:0 TestLowering - C (12)
+    M 34:4 TestLowering.run_case - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_refcount.py
+    C 32:0 TestRefCountTransform - C (12)
+    M 37:4 TestRefCountTransform.run_case - C (11)
+src\backend\venv\Lib\site-packages\mypyc\test\test_run.py
+    M 215:4 TestRun.run_case_step - F (49)
+    C 159:0 TestRun - C (15)
+src\backend\venv\Lib\site-packages\mypyc\test\test_serialization.py
+    F 34:0 assert_blobs_same - C (15)
+src\backend\venv\Lib\site-packages\mypyc\test\test_struct.py
+    M 17:4 TestStruct.test_struct_offsets - C (17)
+    C 16:0 TestStruct - C (11)
+src\backend\venv\Lib\site-packages\mypyc\transform\copy_propagation.py
+    F 25:0 do_copy_propagation - C (17)
+src\backend\venv\Lib\site-packages\mypyc\transform\exceptions.py
+    F 66:0 split_blocks_at_errors - C (17)
+src\backend\venv\Lib\site-packages\mypyc\transform\flag_elimination.py
+    F 38:0 do_flag_elimination - C (19)
+src\backend\venv\Lib\site-packages\mypyc\transform\ir_transform.py
+    M 79:4 IRTransform.transform_blocks - C (11)
+src\backend\venv\Lib\site-packages\mypyc\transform\refcount.py
+    F 110:0 transform_block - D (21)
+src\backend\venv\Lib\site-packages\mypyc\transform\spill.py
+    F 51:0 spill_regs - D (25)
+src\backend\venv\Lib\site-packages\mypyc\transform\uninit.py
+    F 39:0 split_blocks_at_uninits - C (18)
+src\backend\venv\Lib\site-packages\packageurl\validate.py
+    M 110:4 BasePurlType._validate_namespace - C (11)
+src\backend\venv\Lib\site-packages\packageurl\__init__.py
+    M 577:4 PackageURL.from_string - D (25)
+    F 251:0 normalize_qualifiers - D (24)
+    M 411:4 PackageURL.__new__ - C (13)
+src\backend\venv\Lib\site-packages\packaging\dependency_groups.py
+    M 218:4 DependencyGroupResolver._parse_group - C (11)
+src\backend\venv\Lib\site-packages\packaging\markers.py
+    F 168:0 _normalize_extras - C (13)
+    M 462:4 Marker.__setstate__ - C (11)
+src\backend\venv\Lib\site-packages\packaging\metadata.py
+    F 360:0 parse_email - D (26)
+    M 1030:4 Metadata._write_metadata - C (13)
+    M 887:4 Metadata.from_email - C (11)
+src\backend\venv\Lib\site-packages\packaging\pylock.py
+    M 749:4 Pylock.select - E (32)
+    M 584:4 Package._from_dict - C (20)
+src\backend\venv\Lib\site-packages\packaging\ranges.py
+    M 1727:4 VersionRange.to_specifier_set - D (28)
+    F 602:0 _encode_interval - D (24)
+    M 1905:4 VersionRange.contains - D (21)
+    M 1595:4 VersionRange._filter_with_admission - C (20)
+    F 673:0 _detect_not_equal - C (19)
+    F 787:0 _encode_gap - C (19)
+    F 450:0 _encode_lower - C (15)
+    F 515:0 _encode_upper - C (14)
+    F 92:0 _union_ranges - C (13)
+    F 383:0 _epoch_floor_lower - C (13)
+    F 568:0 _detect_equal_wildcard - C (13)
+    F 212:0 _predecessor_boundary - C (12)
+    M 1005:4 VersionRange._build - C (11)
+src\backend\venv\Lib\site-packages\packaging\requirements.py
+    M 125:4 Requirement.__setstate__ - C (11)
+src\backend\venv\Lib\site-packages\packaging\specifiers.py
+    M 876:4 SpecifierSet.__setstate__ - D (23)
+    M 1228:4 SpecifierSet.contains - C (20)
+    M 1089:4 SpecifierSet._check_arbitrary_unsatisfiable - C (14)
+    M 471:4 Specifier.__setstate__ - C (12)
+src\backend\venv\Lib\site-packages\packaging\tags.py
+    F 398:0 cpython_tags - D (21)
+    F 233:0 parse_tag - C (17)
+    F 683:0 mac_platforms - C (16)
+    F 365:0 _cpython_abis - C (15)
+    F 651:0 _mac_binary_formats - C (12)
+    F 479:0 _generic_abi - C (11)
+src\backend\venv\Lib\site-packages\packaging\version.py
+    F 1178:0 _cmpkey - C (19)
+    M 515:4 Version.__replace__ - C (13)
+src\backend\venv\Lib\site-packages\packaging\_manylinux.py
+    F 197:0 _is_compatible - C (11)
+src\backend\venv\Lib\site-packages\packaging\_ranges.py
+    F 529:0 filter_by_ranges - F (48)
+    F 697:0 standard_ranges - C (13)
+src\backend\venv\Lib\site-packages\packaging\licenses\__init__.py
+    F 71:0 canonicalize_license_expression - D (28)
+src\backend\venv\Lib\site-packages\pathspec\util.py
+    F 254:0 _iter_tree_entries_next - C (11)
+src\backend\venv\Lib\site-packages\pathspec\patterns\gitignore\base.py
+    M 63:1 _GitIgnoreBasePattern._translate_segment_glob - C (20)
+    C 22:0 _GitIgnoreBasePattern - C (14)
+src\backend\venv\Lib\site-packages\pathspec\patterns\gitignore\basic.py
+    M 34:1 GitIgnoreBasicPattern.__normalize_segments - D (21)
+    C 24:0 GitIgnoreBasicPattern - C (16)
+    M 128:1 GitIgnoreBasicPattern.pattern_to_regex - C (14)
+    M 248:1 GitIgnoreBasicPattern.__translate_segments - C (11)
+src\backend\venv\Lib\site-packages\pathspec\patterns\gitignore\spec.py
+    M 57:1 GitIgnoreSpecPattern.__normalize_segments - D (22)
+    C 43:0 GitIgnoreSpecPattern - C (17)
+    M 154:1 GitIgnoreSpecPattern.pattern_to_regex - C (15)
+    M 274:1 GitIgnoreSpecPattern.__translate_segments - C (11)
+src\backend\venv\Lib\site-packages\pathspec\_backends\hyperscan\gitignore.py
+    M 78:1 HyperscanGiBackend._init_db - C (18)
+src\backend\venv\Lib\site-packages\pathspec\_backends\hyperscan\pathspec.py
+    M 118:1 HyperscanPsBackend._init_db - C (11)
+src\backend\venv\Lib\site-packages\pathspec\_backends\re2\gitignore.py
+    C 36:0 Re2GiBackend - C (14)
+    M 44:1 Re2GiBackend._init_set - C (14)
+    M 135:1 Re2GiBackend.match_file - C (11)
+src\backend\venv\Lib\site-packages\pathspec\_backends\simple\gitignore.py
+    M 55:1 SimpleGiBackend.match_file - C (12)
+src\backend\venv\Lib\site-packages\pip\_internal\build_env.py
+    M 226:4 BuildEnvironment._install_requirements - C (14)
+src\backend\venv\Lib\site-packages\pip\_internal\pyproject.py
+    F 35:0 load_pyproject_toml - D (24)
+src\backend\venv\Lib\site-packages\pip\_internal\wheel_builder.py
+    F 293:0 build - C (13)
+    F 90:0 _should_cache - C (11)
+    F 205:0 _build_one_inside_env - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\autocompletion.py
+    F 15:0 autocomplete - E (39)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\base_command.py
+    M 162:4 Command._main - C (12)
+    M 94:4 Command._run_wrapper - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\index_command.py
+    M 83:4 SessionCommandMixin._build_session - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\main_parser.py
+    F 69:0 parse_command - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\parser.py
+    M 206:4 ConfigOptionParser._update_defaults - C (16)
+src\backend\venv\Lib\site-packages\pip\_internal\cli\req_command.py
+    M 206:4 RequirementCommand.get_requirements - C (14)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\check.py
+    C 19:0 CheckCommand - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\install.py
+    M 274:4 InstallCommand.run - E (40)
+    C 60:0 InstallCommand - C (14)
+    M 527:4 InstallCommand._handle_target_dir - C (14)
+    F 669:0 decide_user_install - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\list.py
+    F 313:0 format_for_columns - C (13)
+    M 164:4 ListCommand.run - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\show.py
+    F 74:0 search_packages_info - C (18)
+    F 171:0 print_results - C (13)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\uninstall.py
+    M 65:4 UninstallCommand.run - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\commands\wheel.py
+    M 104:4 WheelCommand.run - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\index\collector.py
+    F 324:0 _get_index_content - C (13)
+src\backend\venv\Lib\site-packages\pip\_internal\index\package_finder.py
+    M 157:4 LinkEvaluator.evaluate_link - D (22)
+    C 109:0 LinkEvaluator - C (13)
+    M 808:4 PackageFinder.find_all_candidates - C (12)
+src\backend\venv\Lib\site-packages\pip\_internal\locations\_distutils.py
+    F 35:0 distutils_scheme - C (20)
+src\backend\venv\Lib\site-packages\pip\_internal\locations\_sysconfig.py
+    F 124:0 get_scheme - C (18)
+src\backend\venv\Lib\site-packages\pip\_internal\locations\__init__.py
+    F 230:0 get_scheme - F (48)
+src\backend\venv\Lib\site-packages\pip\_internal\metadata\base.py
+    M 631:4 BaseEnvironment.iter_installed_distributions - C (15)
+src\backend\venv\Lib\site-packages\pip\_internal\network\auth.py
+    M 480:4 MultiDomainBasicAuth.handle_401 - C (15)
+    M 335:4 MultiDomainBasicAuth._get_new_credentials - C (14)
+    F 163:0 get_keyring_provider - C (13)
+    M 392:4 MultiDomainBasicAuth._get_url_and_credentials - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\network\session.py
+    F 111:0 user_agent - D (23)
+    M 449:4 PipSession.is_secure_origin - C (14)
+src\backend\venv\Lib\site-packages\pip\_internal\operations\check.py
+    F 67:0 check_package_set - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\operations\freeze.py
+    F 27:0 freeze - D (21)
+src\backend\venv\Lib\site-packages\pip\_internal\operations\prepare.py
+    M 559:4 RequirementPreparer._prepare_linked_requirement - C (20)
+src\backend\venv\Lib\site-packages\pip\_internal\operations\install\wheel.py
+    F 129:0 message_about_scripts_not_on_PATH - C (13)
+    F 273:0 get_console_script_specs - C (12)
+    F 422:0 _install_wheel - C (12)
+src\backend\venv\Lib\site-packages\pip\_internal\req\constructors.py
+    F 307:0 parse_req_from_line - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\req\req_file.py
+    F 222:0 handle_option_line - D (21)
+src\backend\venv\Lib\site-packages\pip\_internal\req\req_install.py
+    M 72:4 InstallRequirement.__init__ - C (18)
+    M 740:4 InstallRequirement.archive - C (12)
+src\backend\venv\Lib\site-packages\pip\_internal\req\req_uninstall.py
+    M 424:4 UninstallPathSet.from_dist - E (31)
+    F 141:0 compress_for_output_listing - C (12)
+src\backend\venv\Lib\site-packages\pip\_internal\resolution\legacy\resolver.py
+    M 191:4 Resolver._add_requirement_to_set - D (23)
+src\backend\venv\Lib\site-packages\pip\_internal\resolution\resolvelib\candidates.py
+    M 264:4 LinkCandidate.__init__ - C (14)
+src\backend\venv\Lib\site-packages\pip\_internal\resolution\resolvelib\factory.py
+    M 397:4 Factory.find_candidates - C (16)
+    M 723:4 Factory.get_installation_error - C (15)
+    M 671:4 Factory._report_single_requirement_conflict - C (13)
+    M 473:4 Factory._make_requirements_from_install_req - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\resolution\resolvelib\provider.py
+    M 108:4 PipProvider.get_preference - C (16)
+src\backend\venv\Lib\site-packages\pip\_internal\resolution\resolvelib\resolver.py
+    M 73:4 Resolver.resolve - C (18)
+    F 217:0 get_topological_weights - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\utils\subprocess.py
+    F 56:0 call_subprocess - E (31)
+src\backend\venv\Lib\site-packages\pip\_internal\utils\unpacking.py
+    F 154:0 untar_file - C (13)
+src\backend\venv\Lib\site-packages\pip\_internal\utils\urls.py
+    F 19:0 url_to_path - C (11)
+src\backend\venv\Lib\site-packages\pip\_internal\vcs\subversion.py
+    M 133:4 Subversion._get_svn_url_rev - C (15)
+src\backend\venv\Lib\site-packages\pip\_vendor\typing_extensions.py
+    M 916:8 _TypedDictMeta.__new__ - D (27)
+    C 3112:4 _NamedTupleMeta - D (26)
+    M 3113:8 _NamedTupleMeta.__new__ - D (25)
+    F 2872:4 _check_generic - C (17)
+    F 3029:4 _collect_parameters - C (17)
+    F 1173:4 _strip_extras - C (15)
+    C 915:4 _TypedDictMeta - C (15)
+    F 2989:4 _collect_type_vars - C (13)
+    M 626:8 _ProtocolMeta.__instancecheck__ - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\cachecontrol\adapter.py
+    M 80:4 CacheControlAdapter.build_response - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\cachecontrol\controller.py
+    M 323:4 CacheController.cache_response - D (28)
+    M 168:4 CacheController.cached_request - C (18)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\compat.py
+    F 205:4 which - C (14)
+    F 145:4 match_hostname - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\database.py
+    M 112:4 DistributionPath._yield_distributions - C (16)
+    M 533:4 InstalledDistribution.__init__ - C (12)
+    F 1213:0 make_graph - C (11)
+    M 699:4 InstalledDistribution.check_installed_files - C (11)
+    M 877:4 EggInfoDistribution._get_metadata - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\index.py
+    M 365:4 PackageIndex.download_file - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\locators.py
+    M 1190:4 DependencyFinder.find - D (25)
+    M 230:4 Locator.convert_url_to_download_info - C (20)
+    M 346:4 Locator.locate - C (15)
+    M 998:4 AggregatingLocator._get_project - C (14)
+    M 756:4 SimpleScrapingLocator.get_page - C (13)
+    M 724:4 SimpleScrapingLocator._fetch - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\manifest.py
+    M 132:4 Manifest.process_directive - C (20)
+    M 308:4 Manifest._translate_pattern - C (14)
+    M 200:4 Manifest._parse_directive - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\markers.py
+    C 44:0 Evaluator - C (19)
+    M 64:4 Evaluator.evaluate - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\metadata.py
+    F 121:0 _best_version - E (32)
+    M 419:4 LegacyMetadata.set - D (22)
+    M 695:4 Metadata.__getattribute__ - C (16)
+    M 486:4 LegacyMetadata.check - C (12)
+    M 746:4 Metadata.__setattr__ - C (12)
+    M 806:4 Metadata.get_requirements - C (12)
+    M 365:4 LegacyMetadata.write_file - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\scripts.py
+    M 259:4 ScriptMaker._write_script - C (16)
+    M 342:4 ScriptMaker._copy_script - C (15)
+    M 183:4 ScriptMaker._get_shebang - C (14)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\util.py
+    F 144:0 parse_requirement - D (28)
+    M 1805:4 PyPIRCFile.read - C (17)
+    F 1224:0 unarchive - C (16)
+    F 1888:0 get_host_platform - C (16)
+    F 1423:0 _iglob - C (11)
+    M 610:4 FileOperator.ensure_removed - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\version.py
+    F 184:0 _pep_440_key - C (20)
+    F 415:0 _suggest_semantic_version - C (14)
+src\backend\venv\Lib\site-packages\pip\_vendor\distlib\wheel.py
+    M 501:4 Wheel.install - F (44)
+    F 986:0 compatible_tags - E (32)
+    M 368:4 Wheel.build - D (21)
+    M 877:4 Wheel.update - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\distro\distro.py
+    M 667:4 LinuxDistribution.__init__ - C (14)
+    M 884:4 LinuxDistribution.version - C (13)
+    M 1253:4 LinuxDistribution._distro_release_info - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\idna\codec.py
+    C 64:0 IncrementalDecoder - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\idna\core.py
+    F 203:0 valid_contexto - D (23)
+    F 70:0 check_bidi - C (20)
+    F 332:0 uts46_remap - C (18)
+    F 159:0 valid_contextj - C (14)
+    F 366:0 encode - C (12)
+    F 405:0 decode - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\msgpack\fallback.py
+    M 676:4 Packer._pack - F (49)
+    M 488:4 Unpacker._unpack - E (31)
+    M 392:4 Unpacker._read_header - D (28)
+    M 226:4 Unpacker.__init__ - D (22)
+    M 836:4 Packer.pack_ext_type - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\packaging\metadata.py
+    F 286:0 parse_email - D (24)
+src\backend\venv\Lib\site-packages\pip\_vendor\packaging\specifiers.py
+    M 943:4 SpecifierSet.filter - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\packaging\tags.py
+    F 397:0 mac_platforms - C (16)
+    F 151:0 _cpython_abis - C (15)
+    F 184:0 cpython_tags - C (15)
+    F 365:0 _mac_binary_formats - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\packaging\_manylinux.py
+    F 182:0 _is_compatible - C (11)
+    F 218:0 platform_tags - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\packaging\licenses\__init__.py
+    F 60:0 canonicalize_license_expression - D (21)
+src\backend\venv\Lib\site-packages\pip\_vendor\pkg_resources\__init__.py
+    M 3202:4 Distribution.insert_on - C (20)
+    F 482:0 compatible_platforms - C (14)
+    M 2032:4 ZipProvider._extract_resource - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\platformdirs\android.py
+    F 120:0 _android_folder - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\cmdline.py
+    F 182:0 main_inner - F (92)
+    F 87:0 _print_list - C (15)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\lexer.py
+    C 779:0 ExtendedRegexLexer - D (23)
+    M 784:4 ExtendedRegexLexer.get_tokens_unprocessed - D (22)
+    C 667:0 RegexLexer - C (20)
+    M 702:4 RegexLexer.get_tokens_unprocessed - C (19)
+    M 206:4 Lexer._preprocess_lexer_input - C (16)
+    F 851:0 do_insertions - C (14)
+    M 518:4 RegexLexerMeta._process_new_state - C (14)
+    M 553:4 RegexLexerMeta._process_state - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\regexopt.py
+    F 26:0 regex_opt_inner - C (17)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\sphinxext.py
+    M 150:4 PygmentsDoc.document_lexers - C (17)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\style.py
+    M 60:4 StyleMeta.__new__ - D (23)
+    M 126:4 StyleMeta.style_for_token - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\bbcode.py
+    M 78:4 BBCodeFormatter.format_unencoded - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\groff.py
+    M 138:4 GroffFormatter.format_unencoded - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\html.py
+    M 829:4 HtmlFormatter._format_lines - D (27)
+    M 655:4 HtmlFormatter._wrap_tablelinenos - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\img.py
+    M 129:4 FontManager._create_mac - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\latex.py
+    M 333:4 LatexFormatter.format_unencoded - E (34)
+    C 147:0 LatexFormatter - C (13)
+    M 279:4 LatexFormatter._create_stylesheet - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\rtf.py
+    M 278:4 RtfFormatter.format_unencoded - D (23)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\svg.py
+    M 115:4 SvgFormatter.format_unencoded - C (15)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\formatters\terminal256.py
+    M 224:4 Terminal256Formatter._setup_styles - C (12)
+    M 252:4 Terminal256Formatter.format_unencoded - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\pygments\lexers\__init__.py
+    F 304:0 guess_lexer - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\requests\adapters.py
+    M 613:4 HTTPAdapter.send - C (19)
+    M 304:4 HTTPAdapter.cert_verify - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\requests\auth.py
+    M 126:4 HTTPDigestAuth.build_digest_header - C (19)
+src\backend\venv\Lib\site-packages\pip\_vendor\requests\models.py
+    M 137:4 RequestEncodingMixin._encode_files - D (21)
+    M 409:4 PreparedRequest.prepare_url - C (17)
+    M 494:4 PreparedRequest.prepare_body - C (17)
+    C 84:0 RequestEncodingMixin - C (13)
+    M 107:4 RequestEncodingMixin._encode_params - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\requests\sessions.py
+    M 159:4 SessionRedirectMixin.resolve_redirects - C (15)
+    M 673:4 Session.send - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\requests\utils.py
+    F 135:0 super_len - C (17)
+    F 765:0 should_bypass_proxies - C (17)
+    F 204:0 get_netrc_auth - C (13)
+    F 957:0 guess_json_utf - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\resolvelib\resolvers.py
+    M 381:4 Resolution.resolve - C (15)
+    M 270:4 Resolution._backjump - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\align.py
+    M 135:4 Align.__rich_console__ - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\ansi.py
+    M 138:4 AnsiDecoder.decode_line - D (22)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\cells.py
+    F 96:0 set_cell_size - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\color.py
+    M 513:4 Color.downgrade - C (20)
+    M 485:4 Color.get_ansi_codes - C (16)
+    M 349:4 Color.get_truecolor - C (12)
+    M 433:4 Color.parse - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\columns.py
+    M 62:4 Columns.__rich_console__ - D (21)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\console.py
+    M 631:4 Console.__init__ - D (28)
+    M 2306:4 Console.export_svg - C (19)
+    M 2023:4 Console._write_buffer - C (18)
+    M 992:4 Console.size - C (16)
+    M 1629:4 Console.print - C (16)
+    M 2200:4 Console.export_html - C (15)
+    M 169:4 ConsoleOptions.update - C (12)
+    M 1396:4 Console.render_str - C (12)
+    M 1487:4 Console._collect_renderables - C (12)
+    M 1913:4 Console.log - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\containers.py
+    M 111:4 Lines.justify - C (17)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\live.py
+    M 134:4 Live.stop - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\logging.py
+    M 132:4 RichHandler.emit - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\markup.py
+    F 106:0 render - D (21)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\padding.py
+    M 79:4 Padding.__rich_console__ - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\panel.py
+    M 141:4 Panel.__rich_console__ - C (16)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\progress.py
+    M 1416:4 Progress.update - C (14)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\progress_bar.py
+    M 156:4 ProgressBar.__rich_console__ - D (21)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\segment.py
+    M 602:4 Segment.divide - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\style.py
+    M 122:4 Style.__init__ - F (49)
+    M 285:4 Style.__str__ - E (35)
+    M 335:4 Style._make_ansi_codes - C (15)
+    M 498:4 Style.parse - C (13)
+    M 564:4 Style.get_html_style - C (12)
+    M 733:4 Style._add - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\syntax.py
+    M 634:4 Syntax._get_syntax - D (26)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\table.py
+    M 747:4 Table._render - F (49)
+    M 523:4 Table._calculate_column_widths - D (29)
+    M 588:4 Table._collapse_widths - C (14)
+    M 626:4 Table._get_cells - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\text.py
+    M 1107:4 Text.divide - C (15)
+    M 1202:4 Text.wrap - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\traceback.py
+    M 372:4 Traceback.extract - D (26)
+    M 647:4 Traceback._render_stack - C (18)
+    C 214:0 Traceback - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\tree.py
+    M 86:4 Tree.__rich_console__ - D (23)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\_inspect.py
+    M 121:4 Inspect._render - D (28)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\_log_render.py
+    M 32:4 LogRender.__call__ - C (17)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\_ratio.py
+    F 20:0 ratio_resolve - C (18)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\_windows_renderer.py
+    F 7:0 legacy_windows_render - C (20)
+src\backend\venv\Lib\site-packages\pip\_vendor\rich\_wrap.py
+    F 26:0 divide_line - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\tomli\_parser.py
+    F 672:0 parse_value - C (19)
+    F 142:0 loads - C (12)
+    C 71:0 TOMLDecodeError - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\truststore\_macos.py
+    F 380:0 _verify_peercerts_impl - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\connection.py
+    M 361:4 HTTPSConnection.connect - D (22)
+    M 246:4 HTTPConnection.request_chunked - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\connectionpool.py
+    M 535:4 HTTPConnectionPool.urlopen - E (35)
+    M 379:4 HTTPConnectionPool._make_request - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\poolmanager.py
+    M 353:4 PoolManager.urlopen - C (13)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\response.py
+    M 783:4 HTTPResponse.read_chunked - C (15)
+    M 481:4 HTTPResponse._fp_read - C (14)
+    M 317:4 HTTPResponse._init_length - C (12)
+    M 529:4 HTTPResponse.read - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\_collections.py
+    M 231:4 HTTPHeaderDict.extend - C (11)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\contrib\appengine.py
+    M 131:4 AppEngineManager.urlopen - D (21)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\contrib\securetransport.py
+    F 212:0 _read_callback - C (16)
+    F 267:0 _write_callback - C (14)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\packages\six.py
+    F 817:4 print_ - C (17)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\packages\backports\makefile.py
+    F 13:0 backport_makefile - C (15)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\util\retry.py
+    M 506:4 Retry.increment - D (23)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\util\ssltransport.py
+    M 105:4 SSLTransport.makefile - C (15)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\util\ssl_.py
+    F 364:0 ssl_wrap_socket - D (22)
+    F 259:0 create_urllib3_context - C (12)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\util\ssl_match_hostname.py
+    F 98:0 match_hostname - C (19)
+src\backend\venv\Lib\site-packages\pip\_vendor\urllib3\util\url.py
+    F 333:0 parse_url - D (23)
+src\backend\venv\Lib\site-packages\pip_api\_parse_requirements.py
+    F 484:0 parse_requirements - D (25)
+    F 430:0 _parse_requirement_url - C (14)
+    F 245:0 _parse_local_package_name - C (12)
+    F 142:0 _url_to_path - C (11)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\pyparsing.py
+    M 1647:4 ParserElement._parseNoCache - E (35)
+    M 4374:4 Each.parseImpl - D (28)
+    M 2628:4 ParserElement.runTests - D (25)
+    F 5462:0 oneOf - D (22)
+    M 2215:4 ParserElement.__mul__ - D (22)
+    M 3140:4 Word.__init__ - C (20)
+    F 5988:0 infixNotation - C (19)
+    M 4126:4 Or.parseImpl - C (18)
+    M 957:4 ParseResults.asXML - C (16)
+    M 554:4 ParseResults.__init__ - C (15)
+    M 1959:4 ParserElement.scanString - C (14)
+    M 2952:4 Keyword.parseImpl - C (14)
+    C 3087:0 Word - C (14)
+    M 3197:4 Word.parseImpl - C (14)
+    M 3449:4 QuotedString.__init__ - C (14)
+    M 4031:4 And.streamline - C (14)
+    M 1065:4 ParseResults.dump - C (13)
+    M 4941:4 SkipTo.parseImpl - C (13)
+    C 363:0 ParseException - C (12)
+    M 387:4 ParseException.explain - C (11)
+    M 3514:4 QuotedString.parseImpl - C (11)
+    M 3928:4 ParseExpression.streamline - C (11)
+    M 5212:4 Dict.postParse - C (11)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\packaging\requirements.py
+    M 100:4 Requirement.__init__ - C (11)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\packaging\specifiers.py
+    M 777:4 SpecifierSet.filter - C (13)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\packaging\tags.py
+    F 170:0 cpython_tags - C (15)
+    F 345:0 mac_platforms - C (15)
+    F 134:0 _cpython_abis - C (13)
+    F 313:0 _mac_binary_formats - C (12)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\packaging\_manylinux.py
+    F 231:0 _is_compatible - C (11)
+src\backend\venv\Lib\site-packages\pip_api\_vendor\tomli\_parser.py
+    F 584:0 parse_value - C (18)
+    F 69:0 loads - C (11)
+src\backend\venv\Lib\site-packages\pip_audit\_cli.py
+    F 441:0 audit - F (49)
+src\backend\venv\Lib\site-packages\pip_audit\_dependency_source\requirement.py
+    M 217:4 RequirementSource._fix_file - C (15)
+    M 295:4 RequirementSource._collect_preresolved_deps - C (14)
+    M 141:4 RequirementSource._collect_from_files - C (12)
+src\backend\venv\Lib\site-packages\pip_audit\_format\columns.py
+    M 76:4 ColumnsFormat.format - D (21)
+src\backend\venv\Lib\site-packages\pip_audit\_service\esms.py
+    M 54:4 EcosystemsService.query - C (16)
+src\backend\venv\Lib\site-packages\pip_audit\_service\osv.py
+    M 55:4 OsvService.query - C (19)
+    C 28:0 OsvService - C (11)
+src\backend\venv\Lib\site-packages\pip_audit\_service\pypi.py
+    M 51:4 PyPIService.query - C (13)
+src\backend\venv\Lib\site-packages\platformdirs\android.py
+    F 171:0 _android_folder - C (13)
+src\backend\venv\Lib\site-packages\pluggy\_callers.py
+    F 76:0 _multicall - D (22)
+src\backend\venv\Lib\site-packages\pluggy\_hooks.py
+    F 293:0 varnames - C (18)
+    M 451:4 HookCaller._add_hookimpl - C (11)
+src\backend\venv\Lib\site-packages\pluggy\_manager.py
+    M 328:4 PluginManager._verify_hook - C (15)
+src\backend\venv\Lib\site-packages\prettytable\prettytable.py
+    M 245:4 PrettyTable.__init__ - E (35)
+    M 2774:4 PrettyTable._get_formatted_html_string - E (31)
+    M 2050:4 PrettyTable._compute_widths - D (28)
+    M 2468:4 PrettyTable._stringify_row - D (28)
+    M 2390:4 PrettyTable._stringify_header - D (27)
+    M 2948:4 PrettyTable._get_formatted_latex_string - D (24)
+    M 2200:4 PrettyTable.get_string - D (22)
+    M 564:4 PrettyTable._validate_option - C (17)
+    M 2714:4 PrettyTable._get_simple_html_string - C (16)
+    M 838:4 PrettyTable.field_names - C (15)
+    M 2325:4 PrettyTable._stringify_hrule - C (15)
+    M 3010:4 PrettyTable.get_mediawiki_string - C (15)
+    F 3267:0 from_mediawiki - C (14)
+    M 2584:4 PrettyTable.get_csv_string - C (12)
+    M 2625:4 PrettyTable.get_json_string - C (12)
+src\backend\venv\Lib\site-packages\pydantic\color.py
+    F 280:0 parse_str - C (13)
+src\backend\venv\Lib\site-packages\pydantic\fields.py
+    F 1169:0 Field - D (21)
+    M 835:4 FieldInfo.__repr_args__ - C (19)
+    M 379:4 FieldInfo.from_annotated_attribute - C (17)
+    M 480:4 FieldInfo._construct - C (14)
+    M 577:4 FieldInfo.merge_field_infos - C (14)
+    M 228:4 FieldInfo.__init__ - C (12)
+src\backend\venv\Lib\site-packages\pydantic\json_schema.py
+    M 1625:4 GenerateJsonSchema._update_class_schema - D (24)
+    M 881:4 GenerateJsonSchema.enum_schema - C (15)
+    M 1836:4 GenerateJsonSchema.arguments_schema - C (15)
+    M 1363:4 GenerateJsonSchema._extract_discriminator - C (14)
+    M 1173:4 GenerateJsonSchema.default_schema - C (13)
+    M 2752:4 Examples.__get_pydantic_json_schema__ - C (13)
+    M 1457:4 GenerateJsonSchema.typed_dict_schema - C (12)
+    F 2795:0 _get_all_json_refs - C (11)
+    M 838:4 GenerateJsonSchema.literal_schema - C (11)
+src\backend\venv\Lib\site-packages\pydantic\main.py
+    M 317:4 BaseModel.model_construct - D (23)
+    M 904:4 BaseModel.__class_getitem__ - C (17)
+    M 1164:8 BaseModel.__eq__ - C (14)
+    F 1735:0 create_model - C (13)
+    M 1511:4 BaseModel.copy - C (12)
+    M 1052:8 BaseModel._setattr_handler - C (11)
+src\backend\venv\Lib\site-packages\pydantic\mypy.py
+    M 553:4 PydanticModelTransformer.collect_config - D (30)
+    M 711:4 PydanticModelTransformer.collect_field_or_class_var_from_stmt - D (30)
+    M 886:4 PydanticModelTransformer.add_initializer - C (20)
+    M 629:4 PydanticModelTransformer.collect_fields_and_class_vars - C (15)
+    F 1306:0 add_method - C (13)
+    M 187:4 PydanticPlugin._pydantic_create_model_callback - C (13)
+    M 343:4 PydanticModelField.expand_type - C (13)
+    C 459:0 PydanticModelTransformer - C (11)
+    M 526:4 PydanticModelTransformer.adjust_decorator_signatures - C (11)
+    M 1008:4 PydanticModelTransformer.get_config_update - C (11)
+src\backend\venv\Lib\site-packages\pydantic\types.py
+    M 3075:4 Discriminator._convert_schema - D (21)
+    C 2979:0 Discriminator - C (13)
+src\backend\venv\Lib\site-packages\pydantic\deprecated\copy_internals.py
+    F 29:0 _iter - E (33)
+    F 124:0 _get_value - D (24)
+    F 198:0 _calculate_keys - C (11)
+src\backend\venv\Lib\site-packages\pydantic\deprecated\decorator.py
+    M 77:4 ValidatedFunction.__init__ - C (16)
+    M 153:4 ValidatedFunction.build_values - C (16)
+    M 196:4 ValidatedFunction.execute - C (11)
+src\backend\venv\Lib\site-packages\pydantic\deprecated\parse.py
+    F 26:0 load_str_bytes - C (12)
+src\backend\venv\Lib\site-packages\pydantic\experimental\pipeline.py
+    F 443:0 _apply_constraint - F (75)
+src\backend\venv\Lib\site-packages\pydantic\plugin\_loader.py
+    F 22:0 get_plugins - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\class_validators.py
+    F 288:0 _generic_validator_cls - C (11)
+    F 322:0 _generic_validator_basic - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\color.py
+    F 222:0 parse_str - C (13)
+src\backend\venv\Lib\site-packages\pydantic\v1\datetime_parse.py
+    F 213:0 parse_duration - C (14)
+src\backend\venv\Lib\site-packages\pydantic\v1\decorator.py
+    M 61:4 ValidatedFunction.__init__ - C (16)
+    M 136:4 ValidatedFunction.build_values - C (16)
+    M 179:4 ValidatedFunction.execute - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\env_settings.py
+    M 166:4 EnvSettingsSource.__call__ - C (14)
+src\backend\venv\Lib\site-packages\pydantic\v1\fields.py
+    M 581:4 ModelField._type_analysis - F (62)
+    M 814:4 ModelField.populate_validators - D (24)
+    M 898:4 ModelField._validate_sequence_like - C (19)
+    M 850:4 ModelField.validate - C (17)
+    M 1053:4 ModelField._validate_singleton - C (14)
+    M 1100:4 ModelField._validate_discriminated_union - C (14)
+    M 440:4 ModelField._get_field_info - C (13)
+    C 364:0 ModelField - C (11)
+    M 1171:4 ModelField._type_display - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\generics.py
+    F 251:0 replace_types - D (27)
+    M 75:4 GenericModel.__class_getitem__ - D (21)
+    C 64:0 GenericModel - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\main.py
+    M 124:4 ModelMetaclass.__new__ - F (57)
+    C 122:0 ModelMetaclass - E (31)
+    M 845:4 BaseModel._iter - D (28)
+    F 1053:0 validate_model - D (27)
+    M 752:4 BaseModel._get_value - D (25)
+    M 375:4 BaseModel.__setattr__ - D (22)
+    F 973:0 create_model - C (14)
+src\backend\venv\Lib\site-packages\pydantic\v1\mypy.py
+    M 375:4 PydanticModelTransformer.collect_fields - C (20)
+    M 171:4 PydanticPlugin._pydantic_field_callback - C (15)
+    F 824:0 add_method - C (13)
+    M 344:4 PydanticModelTransformer.collect_config - C (12)
+    M 572:4 PydanticModelTransformer.get_config_update - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\networks.py
+    M 342:4 AnyUrl.validate_host - C (15)
+    M 215:4 AnyUrl.build - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\parse.py
+    F 15:0 load_str_bytes - C (12)
+src\backend\venv\Lib\site-packages\pydantic\v1\schema.py
+    F 826:0 field_singleton_schema - D (29)
+    F 432:0 field_type_schema - C (17)
+    F 681:0 field_singleton_sub_fields_schema - C (15)
+    F 289:0 get_field_schema_validations - C (14)
+    F 976:0 encode_default - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\types.py
+    M 695:4 ConstrainedDecimal.validate - C (12)
+src\backend\venv\Lib\site-packages\pydantic\v1\typing.py
+    F 218:4 convert_generics - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\utils.py
+    F 236:0 generate_model_signature - C (17)
+    M 563:4 ValueItems.merge - C (15)
+    M 523:4 ValueItems._normalize_indexes - C (13)
+    F 760:0 get_discriminator_alias_and_values - C (11)
+src\backend\venv\Lib\site-packages\pydantic\v1\validators.py
+    F 699:0 find_validators - D (28)
+src\backend\venv\Lib\site-packages\pydantic\v1\_hypothesis_plugin.py
+    F 356:0 resolve_constr - C (16)
+    F 282:0 resolve_confloat - C (11)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_config.py
+    M 163:4 ConfigWrapper.core_config - C (12)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_core_metadata.py
+    F 47:0 update_core_metadata - C (11)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_core_utils.py
+    F 110:0 _clean_schema_for_pretty_print - C (13)
+    F 65:0 get_type_ref - C (12)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_dataclasses.py
+    F 230:0 patch_base_fields - C (14)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_decorators.py
+    M 432:4 DecoratorInfos.build - C (13)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_decorators_v1.py
+    F 54:0 make_generic_v1_field_validator - C (11)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_discriminated_union.py
+    M 304:4 _ApplyInferredDiscriminator._infer_discriminator_values_for_choice - C (20)
+    M 237:4 _ApplyInferredDiscriminator._handle_choice - C (16)
+    M 170:4 _ApplyInferredDiscriminator._apply_to_root - C (12)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_docs_extraction.py
+    F 52:0 _extract_source_from_frame - C (11)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_fields.py
+    F 224:0 collect_model_fields - E (37)
+    F 527:0 collect_dataclass_fields - C (19)
+    F 78:0 _check_protected_namespaces - C (15)
+    F 141:0 _apply_alias_generator_to_field_info - C (15)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_generate_schema.py
+    M 1045:4 GenerateSchema.match_type - F (52)
+    M 2258:4 GenerateSchema._apply_single_annotation - E (35)
+    M 1394:4 GenerateSchema._typed_dict_schema - D (27)
+    M 756:4 GenerateSchema._model_schema - D (21)
+    M 1167:4 GenerateSchema._match_generic_type - D (21)
+    M 1835:4 GenerateSchema._dataclass_schema - D (21)
+    M 1982:4 GenerateSchema._arguments_schema - C (16)
+    M 2057:4 GenerateSchema._arguments_v3_schema - C (15)
+    M 1727:4 GenerateSchema._subclass_schema - C (14)
+    F 2612:0 apply_model_validators - C (13)
+    M 410:4 GenerateSchema._enum_schema - C (11)
+    M 901:4 GenerateSchema._generate_schema_from_get_schema_method - C (11)
+    M 1674:4 GenerateSchema._tuple_schema - C (11)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_generics.py
+    F 245:0 replace_types - D (28)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_known_annotated_metadata.py
+    F 169:0 apply_known_metadata - D (27)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_model_construction.py
+    F 400:0 inspect_namespace - E (40)
+    M 84:4 ModelMetaclass.__new__ - E (33)
+    F 600:0 complete_model_class - C (14)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_repr.py
+    F 92:0 display_as_type - C (12)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_schema_gather.py
+    F 96:0 traverse_schema - F (50)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_signature.py
+    F 81:0 _generate_signature_parameters - C (20)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_typing_extra.py
+    F 662:4 get_type_hints - D (29)
+src\backend\venv\Lib\site-packages\pydantic\_internal\_utils.py
+    M 245:4 ValueItems.merge - C (15)
+    M 207:4 ValueItems._normalize_indexes - C (13)
+src\backend\venv\Lib\site-packages\pygments\cmdline.py
+    F 182:0 main_inner - F (92)
+    F 87:0 _print_list - C (15)
+src\backend\venv\Lib\site-packages\pygments\lexer.py
+    C 779:0 ExtendedRegexLexer - D (23)
+    M 784:4 ExtendedRegexLexer.get_tokens_unprocessed - D (22)
+    C 667:0 RegexLexer - C (20)
+    M 702:4 RegexLexer.get_tokens_unprocessed - C (19)
+    M 206:4 Lexer._preprocess_lexer_input - C (16)
+    F 851:0 do_insertions - C (14)
+    M 518:4 RegexLexerMeta._process_new_state - C (14)
+    M 553:4 RegexLexerMeta._process_state - C (12)
+src\backend\venv\Lib\site-packages\pygments\regexopt.py
+    F 37:0 regex_opt_inner - C (17)
+src\backend\venv\Lib\site-packages\pygments\sphinxext.py
+    M 150:4 PygmentsDoc.document_lexers - C (17)
+src\backend\venv\Lib\site-packages\pygments\style.py
+    M 60:4 StyleMeta.__new__ - D (23)
+    M 128:4 StyleMeta.style_for_token - C (11)
+src\backend\venv\Lib\site-packages\pygments\formatters\bbcode.py
+    M 78:4 BBCodeFormatter.format_unencoded - C (12)
+src\backend\venv\Lib\site-packages\pygments\formatters\groff.py
+    M 138:4 GroffFormatter.format_unencoded - C (11)
+src\backend\venv\Lib\site-packages\pygments\formatters\html.py
+    M 830:4 HtmlFormatter._format_lines - D (28)
+    M 650:4 HtmlFormatter._wrap_tablelinenos - C (13)
+src\backend\venv\Lib\site-packages\pygments\formatters\img.py
+    M 129:4 FontManager._create_mac - C (13)
+src\backend\venv\Lib\site-packages\pygments\formatters\latex.py
+    M 333:4 LatexFormatter.format_unencoded - E (34)
+    C 147:0 LatexFormatter - C (13)
+    M 279:4 LatexFormatter._create_stylesheet - C (12)
+src\backend\venv\Lib\site-packages\pygments\formatters\rtf.py
+    M 278:4 RtfFormatter.format_unencoded - D (23)
+src\backend\venv\Lib\site-packages\pygments\formatters\svg.py
+    M 106:4 SvgFormatter.format_unencoded - C (15)
+src\backend\venv\Lib\site-packages\pygments\formatters\terminal256.py
+    M 224:4 Terminal256Formatter._setup_styles - C (12)
+    M 252:4 Terminal256Formatter.format_unencoded - C (12)
+src\backend\venv\Lib\site-packages\pygments\lexers\carbon.py
+    C 19:0 CarbonLexer - C (12)
+    M 73:4 CarbonLexer.analyse_text - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\c_cpp.py
+    M 271:4 CFamilyLexer.get_tokens_unprocessed - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\data.py
+    C 436:0 JsonLexer - F (51)
+    M 469:4 JsonLexer.get_tokens_unprocessed - F (50)
+src\backend\venv\Lib\site-packages\pygments\lexers\freefem.py
+    C 18:0 FreeFemLexer - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\haskell.py
+    M 518:4 LiterateLexer.get_tokens_unprocessed - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\int_fiction.py
+    M 501:4 Inform6Lexer.get_tokens_unprocessed - C (13)
+src\backend\venv\Lib\site-packages\pygments\lexers\julia.py
+    C 245:0 JuliaConsoleLexer - C (12)
+    M 255:4 JuliaConsoleLexer.get_tokens_unprocessed - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\lisp.py
+    M 2421:4 ShenLexer._process_declaration - C (20)
+src\backend\venv\Lib\site-packages\pygments\lexers\matlab.py
+    C 2760:0 MatlabSessionLexer - C (12)
+    M 2771:4 MatlabSessionLexer.get_tokens_unprocessed - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\modula2.py
+    M 1452:4 Modula2Lexer.get_tokens_unprocessed - F (46)
+    C 22:0 Modula2Lexer - C (16)
+    M 1302:4 Modula2Lexer.set_dialect - C (12)
+src\backend\venv\Lib\site-packages\pygments\lexers\pascal.py
+    M 422:4 DelphiLexer.get_tokens_unprocessed - F (98)
+    C 42:0 DelphiLexer - F (53)
+src\backend\venv\Lib\site-packages\pygments\lexers\rebol.py
+    C 241:0 RedLexer - C (17)
+    M 256:4 RedLexer.word_callback - C (16)
+    M 35:4 RebolLexer.word_callback - C (14)
+src\backend\venv\Lib\site-packages\pygments\lexers\ruby.py
+    M 43:4 RubyLexer.heredoc_callback - C (11)
+src\backend\venv\Lib\site-packages\pygments\lexers\scripting.py
+    C 1319:0 EasytrieveLexer - D (29)
+    M 1429:4 EasytrieveLexer.analyse_text - D (28)
+src\backend\venv\Lib\site-packages\pygments\lexers\shell.py
+    C 151:0 ShellSessionBaseLexer - C (15)
+    M 161:4 ShellSessionBaseLexer.get_tokens_unprocessed - C (14)
+src\backend\venv\Lib\site-packages\pygments\lexers\sql.py
+    C 306:0 PostgresConsoleLexer - C (15)
+    M 318:4 PostgresConsoleLexer.get_tokens_unprocessed - C (14)
+src\backend\venv\Lib\site-packages\pygments\lexers\templates.py
+    M 74:4 ErbLexer.get_tokens_unprocessed - C (13)
+src\backend\venv\Lib\site-packages\pygments\lexers\tnt.py
+    M 192:4 TNTLexer.get_tokens_unprocessed - C (15)
+src\backend\venv\Lib\site-packages\pygments\lexers\_php_builtins.py
+    F 3263:4 get_php_functions - C (16)
+src\backend\venv\Lib\site-packages\pygments\lexers\__init__.py
+    F 304:0 guess_lexer - C (11)
+src\backend\venv\Lib\site-packages\pyparsing\core.py
+    M 2287:4 ParserElement.run_tests - E (36)
+    M 916:4 ParserElement._parseNoCache - E (35)
+    M 3167:4 Word.__init__ - E (35)
+    M 5024:4 Each.parseImpl - E (32)
+    M 4700:4 Or.parseImpl - D (27)
+    M 3674:4 QuotedString.__init__ - D (23)
+    M 1687:4 ParserElement.__mul__ - D (22)
+    M 4536:4 And.streamline - C (19)
+    M 6230:4 Forward.parseImpl - C (18)
+    M 1350:4 ParserElement.scan_string - C (15)
+    M 2871:4 Keyword.parseImpl - C (15)
+    M 1083:4 ParserElement._parseCache - C (14)
+    M 3340:4 Word.parseImpl - C (14)
+    C 3628:0 QuotedString - C (14)
+    M 3809:4 QuotedString.parseImpl - C (14)
+    M 6077:4 SkipTo.parseImpl - C (14)
+    M 6596:4 Dict.postParse - C (14)
+    M 5824:4 DelimitedList.__init__ - C (13)
+    M 1454:4 ParserElement.transform_string - C (12)
+    M 4370:4 ParseExpression.streamline - C (12)
+    C 3088:0 Word - C (11)
+src\backend\venv\Lib\site-packages\pyparsing\exceptions.py
+    M 69:4 ParseBaseException.explain_exception - C (12)
+src\backend\venv\Lib\site-packages\pyparsing\helpers.py
+    F 176:0 one_of - D (27)
+    F 785:0 infix_notation - D (25)
+    F 476:0 nested_expr - C (14)
+src\backend\venv\Lib\site-packages\pyparsing\results.py
+    M 761:4 ParseResults.dump - C (13)
+    M 205:4 ParseResults.__init__ - C (12)
+src\backend\venv\Lib\site-packages\pyparsing\testing.py
+    C 19:0 pyparsing_test - D (24)
+    M 278:4 pyparsing_test.with_line_numbers - D (23)
+src\backend\venv\Lib\site-packages\pyparsing\util.py
+    F 355:0 make_compressed_re - D (25)
+src\backend\venv\Lib\site-packages\pyparsing\diagram\__init__.py
+    F 510:0 _to_diagram_element - F (61)
+    F 231:0 to_railroad - C (11)
+src\backend\venv\Lib\site-packages\pytest_cov\engine.py
+    M 140:4 CovController.summary - D (22)
+src\backend\venv\Lib\site-packages\pytest_cov\plugin.py
+    M 325:4 CovPlugin.pytest_runtestloop - C (20)
+    M 390:4 CovPlugin.pytest_terminal_summary - C (11)
+src\backend\venv\Lib\site-packages\python_multipart\multipart.py
+    M 1075:4 MultipartParser._internal_write - F (58)
+    M 835:4 QuerystringParser._internal_write - C (14)
+    C 979:0 MultipartParser - C (14)
+    F 188:0 parse_options_header - C (13)
+    M 495:4 File._get_disk_file - C (11)
+src\backend\venv\Lib\site-packages\py_serializable\__init__.py
+    M 550:4 _XmlSerializable.from_xml - F (58)
+    C 396:0 _XmlSerializable - F (53)
+    M 398:4 _XmlSerializable.as_xml - F (45)
+    M 300:4 _JsonSerializable.from_json - D (24)
+    M 218:4 _SerializableJsonEncoder.default - D (21)
+    F 171:0 _allow_property_for_view - C (14)
+    C 289:0 _JsonSerializable - C (14)
+src\backend\venv\Lib\site-packages\radon\raw.py
+    F 185:0 analyze - C (15)
+src\backend\venv\Lib\site-packages\radon\cli\harvest.py
+    M 276:4 RawHarvester.to_terminal - C (12)
+src\backend\venv\Lib\site-packages\radon\cli\tools.py
+    F 244:0 iter_filenames - C (11)
+src\backend\venv\Lib\site-packages\radon\tests\test_cli_tools.py
+    F 564:0 test_cc_to_terminal - C (11)
+src\backend\venv\Lib\site-packages\requests\adapters.py
+    M 634:4 HTTPAdapter.send - C (20)
+    M 307:4 HTTPAdapter.cert_verify - C (14)
+src\backend\venv\Lib\site-packages\requests\auth.py
+    M 157:4 HTTPDigestAuth.build_digest_header - C (19)
+src\backend\venv\Lib\site-packages\requests\models.py
+    M 184:4 RequestEncodingMixin._encode_files - D (21)
+    M 574:4 PreparedRequest.prepare_body - C (19)
+    M 481:4 PreparedRequest.prepare_url - C (18)
+    M 152:4 RequestEncodingMixin._encode_params - C (11)
+src\backend\venv\Lib\site-packages\requests\sessions.py
+    M 186:4 SessionRedirectMixin.resolve_redirects - C (15)
+    M 752:4 Session.send - C (12)
+src\backend\venv\Lib\site-packages\requests\utils.py
+    F 810:0 should_bypass_proxies - C (19)
+    F 160:0 super_len - C (18)
+    F 231:0 get_netrc_auth - C (16)
+    F 1008:0 guess_json_utf - C (11)
+src\backend\venv\Lib\site-packages\rich\align.py
+    M 143:4 Align.__rich_console__ - C (11)
+src\backend\venv\Lib\site-packages\rich\ansi.py
+    M 138:4 AnsiDecoder.decode_line - D (22)
+src\backend\venv\Lib\site-packages\rich\color.py
+    M 513:4 Color.downgrade - C (20)
+    M 485:4 Color.get_ansi_codes - C (16)
+    M 349:4 Color.get_truecolor - C (12)
+    M 433:4 Color.parse - C (12)
+src\backend\venv\Lib\site-packages\rich\columns.py
+    M 62:4 Columns.__rich_console__ - D (21)
+src\backend\venv\Lib\site-packages\rich\console.py
+    M 619:4 Console.__init__ - E (32)
+    M 1652:4 Console.print - C (19)
+    M 2352:4 Console.export_svg - C (19)
+    M 2059:4 Console._write_buffer - C (18)
+    M 1005:4 Console.size - C (16)
+    M 2244:4 Console.export_html - C (15)
+    M 157:4 ConsoleOptions.update - C (12)
+    M 1409:4 Console.render_str - C (12)
+    M 1500:4 Console._collect_renderables - C (12)
+    M 1947:4 Console.log - C (11)
+src\backend\venv\Lib\site-packages\rich\containers.py
+    M 111:4 Lines.justify - C (17)
+src\backend\venv\Lib\site-packages\rich\live.py
+    M 145:4 Live.stop - C (16)
+    M 244:4 Live.refresh - C (11)
+src\backend\venv\Lib\site-packages\rich\logging.py
+    M 138:4 RichHandler.emit - C (11)
+src\backend\venv\Lib\site-packages\rich\markdown.py
+    M 579:4 Markdown.__rich_console__ - E (36)
+    C 513:0 Markdown - C (15)
+src\backend\venv\Lib\site-packages\rich\markup.py
+    F 106:0 render - D (21)
+src\backend\venv\Lib\site-packages\rich\padding.py
+    M 79:4 Padding.__rich_console__ - C (11)
+src\backend\venv\Lib\site-packages\rich\panel.py
+    M 141:4 Panel.__rich_console__ - C (16)
+src\backend\venv\Lib\site-packages\rich\progress.py
+    M 1417:4 Progress.update - C (14)
+src\backend\venv\Lib\site-packages\rich\progress_bar.py
+    M 156:4 ProgressBar.__rich_console__ - D (21)
+src\backend\venv\Lib\site-packages\rich\segment.py
+    M 630:4 Segment.divide - C (13)
+src\backend\venv\Lib\site-packages\rich\style.py
+    M 131:4 Style.__init__ - F (49)
+    M 294:4 Style.__str__ - E (35)
+    M 344:4 Style._make_ansi_codes - C (15)
+    M 498:4 Style.parse - C (13)
+    M 564:4 Style.get_html_style - C (12)
+    M 733:4 Style._add - C (11)
+src\backend\venv\Lib\site-packages\rich\syntax.py
+    M 652:4 Syntax._get_syntax - D (26)
+src\backend\venv\Lib\site-packages\rich\table.py
+    M 755:4 Table._render - F (49)
+    M 523:4 Table._calculate_column_widths - D (29)
+    M 589:4 Table._collapse_widths - C (14)
+    M 627:4 Table._get_cells - C (12)
+src\backend\venv\Lib\site-packages\rich\text.py
+    M 1106:4 Text.divide - C (15)
+    M 1201:4 Text.wrap - C (13)
+src\backend\venv\Lib\site-packages\rich\traceback.py
+    M 433:4 Traceback.extract - E (34)
+    M 768:4 Traceback._render_stack - D (22)
+    C 262:0 Traceback - C (12)
+src\backend\venv\Lib\site-packages\rich\tree.py
+    M 86:4 Tree.__rich_console__ - D (23)
+src\backend\venv\Lib\site-packages\rich\_inspect.py
+    M 125:4 Inspect._render - D (28)
+src\backend\venv\Lib\site-packages\rich\_log_render.py
+    M 32:4 LogRender.__call__ - C (17)
+src\backend\venv\Lib\site-packages\rich\_ratio.py
+    F 14:0 ratio_resolve - C (18)
+src\backend\venv\Lib\site-packages\rich\_windows_renderer.py
+    F 7:0 legacy_windows_render - C (20)
+src\backend\venv\Lib\site-packages\rich\_wrap.py
+    F 26:0 divide_line - C (11)
+src\backend\venv\Lib\site-packages\sortedcontainers\sortedlist.py
+    M 2563:4 SortedKeyList._check - D (30)
+    M 1612:4 SortedList._check - D (26)
+    M 2414:4 SortedKeyList.index - C (17)
+    M 816:4 SortedList.__getitem__ - C (16)
+    M 1379:4 SortedList.index - C (14)
+src\backend\venv\Lib\site-packages\starlette\datastructures.py
+    M 29:4 URL.__init__ - C (14)
+    M 115:4 URL.replace - C (11)
+src\backend\venv\Lib\site-packages\starlette\responses.py
+    M 341:4 FileResponse.__call__ - C (16)
+    M 55:4 Response.init_headers - C (12)
+    M 89:4 Response.set_cookie - C (12)
+    M 460:4 FileResponse._parse_range_header - C (12)
+src\backend\venv\Lib\site-packages\starlette\routing.py
+    M 672:4 Router.app - C (15)
+    M 198:4 Route.__init__ - C (13)
+    M 427:4 Mount.url_path_for - C (12)
+    M 493:4 Host.url_path_for - C (11)
+src\backend\venv\Lib\site-packages\starlette\schemas.py
+    M 40:4 BaseSchemaGenerator.get_endpoints - C (15)
+src\backend\venv\Lib\site-packages\starlette\staticfiles.py
+    M 109:4 StaticFiles.get_response - C (17)
+src\backend\venv\Lib\site-packages\starlette\testclient.py
+    M 225:4 _TestClientTransport.handle_request - C (16)
+src\backend\venv\Lib\site-packages\starlette\websockets.py
+    M 59:4 WebSocket.send - C (12)
+src\backend\venv\Lib\site-packages\starlette\middleware\cors.py
+    M 107:4 CORSMiddleware.preflight_response - C (13)
+    M 16:4 CORSMiddleware.__init__ - C (12)
+src\backend\venv\Lib\site-packages\starlette\middleware\gzip.py
+    M 105:4 IdentityResponder.send_with_compression - C (16)
+src\backend\venv\Lib\site-packages\starlette\middleware\trustedhost.py
+    M 31:4 TrustedHostMiddleware.__call__ - C (11)
+src\backend\venv\Lib\site-packages\tomli\_parser.py
+    F 695:0 parse_value - C (19)
+    F 156:0 loads - C (12)
+    C 83:0 TOMLDecodeError - C (11)
+src\backend\venv\Lib\site-packages\tomli_w\_writer.py
+    F 63:0 gen_table_chunks - C (17)
+src\backend\venv\Lib\site-packages\typing_inspection\introspection.py
+    F 387:0 inspect_annotation - D (22)
+    F 103:0 get_literal_values - C (20)
+    F 511:0 _unpack_annotated_inner - C (14)
+src\backend\venv\Lib\site-packages\urllib3\connection.py
+    F 901:0 _ssl_wrap_socket_and_match_hostname - D (24)
+    M 424:4 HTTPConnection.request - C (18)
+    M 724:4 HTTPSConnection.connect - C (17)
+src\backend\venv\Lib\site-packages\urllib3\connectionpool.py
+    M 592:4 HTTPConnectionPool.urlopen - E (37)
+    M 377:4 HTTPConnectionPool._make_request - C (15)
+src\backend\venv\Lib\site-packages\urllib3\poolmanager.py
+    M 423:4 PoolManager.urlopen - C (14)
+src\backend\venv\Lib\site-packages\urllib3\response.py
+    M 1059:4 HTTPResponse.read - D (25)
+    M 1167:4 HTTPResponse.read1 - C (20)
+    M 1378:4 HTTPResponse.read_chunked - C (20)
+    M 954:4 HTTPResponse._fp_read - C (16)
+    M 1007:4 HTTPResponse._raw_read - C (15)
+    M 137:4 GzipDecoder.decompress - C (13)
+    M 893:4 HTTPResponse._error_catcher - C (13)
+    M 254:8 ZstdDecoder.decompress - C (12)
+    M 836:4 HTTPResponse._init_length - C (12)
+src\backend\venv\Lib\site-packages\urllib3\_collections.py
+    M 341:4 HTTPHeaderDict.extend - C (13)
+src\backend\venv\Lib\site-packages\urllib3\contrib\emscripten\fetch.py
+    F 499:0 send_request - C (12)
+src\backend\venv\Lib\site-packages\urllib3\contrib\emscripten\response.py
+    M 140:4 EmscriptenHttpResponseWrapper.read - C (14)
+src\backend\venv\Lib\site-packages\urllib3\http2\connection.py
+    M 170:4 HTTP2Connection.send - C (14)
+    M 226:4 HTTP2Connection.getresponse - C (11)
+src\backend\venv\Lib\site-packages\urllib3\util\retry.py
+    M 452:4 Retry.increment - D (25)
+src\backend\venv\Lib\site-packages\urllib3\util\ssltransport.py
+    M 116:4 SSLTransport.makefile - C (15)
+src\backend\venv\Lib\site-packages\urllib3\util\ssl_.py
+    F 180:0 create_urllib3_context - C (17)
+    F 363:0 ssl_wrap_socket - C (13)
+src\backend\venv\Lib\site-packages\urllib3\util\ssl_match_hostname.py
+    F 95:0 match_hostname - C (19)
+src\backend\venv\Lib\site-packages\urllib3\util\url.py
+    F 367:0 parse_url - D (22)
+src\backend\venv\Lib\site-packages\uvicorn\config.py
+    M 192:4 Config.__init__ - D (23)
+    M 433:4 Config.load - D (23)
+    M 381:4 Config.configure_logging - C (13)
+    F 147:0 resolve_reload_patterns - C (12)
+src\backend\venv\Lib\site-packages\uvicorn\main.py
+    F 494:0 run - C (13)
+src\backend\venv\Lib\site-packages\uvicorn\server.py
+    M 106:4 Server.startup - C (14)
+src\backend\venv\Lib\site-packages\uvicorn\lifespan\on.py
+    M 102:4 LifespanOn.send - C (16)
+src\backend\venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py
+    M 28:4 ProxyHeadersMiddleware.__call__ - C (12)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\http\h11_impl.py
+    M 178:4 H11Protocol.handle_events - C (19)
+    M 460:4 RequestResponseCycle.send - C (16)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py
+    M 463:4 RequestResponseCycle.send - E (31)
+    M 248:4 HttpToolsProtocol.on_headers_complete - C (11)
+    C 379:0 RequestResponseCycle - C (11)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\http\zttp_impl.py
+    M 408:4 RequestResponseCycle.send - E (37)
+    M 145:4 ZttpProtocol.handle_events - C (19)
+    C 319:0 RequestResponseCycle - C (12)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\websockets\websockets_impl.py
+    M 277:4 WebSocketProtocol.asgi_send - C (18)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\websockets\websockets_sansio_impl.py
+    M 432:4 WebSocketsSansIOProtocol.send - D (26)
+src\backend\venv\Lib\site-packages\uvicorn\protocols\websockets\wsproto_impl.py
+    M 377:4 WSProtocol.send - D (22)
+src\backend\venv\Lib\site-packages\watchfiles\cli.py
+    F 198:0 build_filter - C (12)
+    F 27:0 cli - C (11)
+src\backend\venv\Lib\site-packages\watchfiles\main.py
+    F 154:0 awatch - C (11)
+src\backend\venv\Lib\site-packages\wcwidth\grapheme.py
+    F 193:0 _should_break - C (18)
+    F 374:0 _find_cluster_start - C (16)
+    F 79:0 _grapheme_cluster_break - C (14)
+    F 145:0 _simple_break_check - C (14)
+src\backend\venv\Lib\site-packages\wcwidth\sgr_state.py
+    F 211:0 _sgr_state_update - E (35)
+    F 111:0 _sgr_state_is_active - C (12)
+src\backend\venv\Lib\site-packages\wcwidth\textwrap.py
+    M 196:4 SequenceTextWrapper._wrap_chunks - F (48)
+    M 102:4 SequenceTextWrapper._split - C (17)
+    M 406:4 SequenceTextWrapper._handle_long_word - C (14)
+src\backend\venv\Lib\site-packages\wcwidth\text_sizing.py
+    M 100:4 TextSizingParams.from_params - C (12)
+src\backend\venv\Lib\site-packages\wcwidth\_clip.py
+    F 199:0 _clip_simple - F (51)
+    F 478:0 _clip_painter - F (50)
+    F 390:0 _text_sizing_clip - C (16)
+    F 718:0 clip - C (14)
+    F 144:0 _reconstruct_painter - C (13)
+src\backend\venv\Lib\site-packages\wcwidth\_wcswidth.py
+    F 199:0 wcstwidth - F (61)
+    F 60:0 wcswidth - E (32)
+src\backend\venv\Lib\site-packages\wcwidth\_width.py
+    F 73:0 width - F (110)
+src\backend\venv\Lib\site-packages\websockets\client.py
+    M 132:4 ClientProtocol.process_response - C (13)
+src\backend\venv\Lib\site-packages\websockets\frames.py
+    M 242:4 Frame.parse - C (16)
+    F 471:0 is_utf8_fragment - C (14)
+    M 169:4 Frame._data_repr - C (12)
+    M 315:4 Frame.serialize - C (12)
+    C 115:0 Frame - C (11)
+src\backend\venv\Lib\site-packages\websockets\http11.py
+    F 434:0 read_body - C (14)
+src\backend\venv\Lib\site-packages\websockets\protocol.py
+    M 671:4 Protocol.recv_frame - C (16)
+    M 562:4 Protocol.parse - C (14)
+src\backend\venv\Lib\site-packages\websockets\proxy.py
+    F 48:0 parse_proxy - C (13)
+src\backend\venv\Lib\site-packages\websockets\server.py
+    M 234:4 ServerProtocol.process_request - C (18)
+    M 121:4 ServerProtocol.accept - C (15)
+src\backend\venv\Lib\site-packages\websockets\uri.py
+    F 60:0 parse_uri - C (11)
+src\backend\venv\Lib\site-packages\websockets\version.py
+    F 31:4 get_version - C (12)
+src\backend\venv\Lib\site-packages\websockets\asyncio\client.py
+    M 347:4 connect.open_tcp_connection - D (21)
+    M 448:4 connect.process_redirect - C (16)
+src\backend\venv\Lib\site-packages\websockets\asyncio\connection.py
+    M 396:4 Connection.send - E (33)
+    M 860:4 Connection.send_context - C (16)
+    F 1144:0 broadcast - C (14)
+src\backend\venv\Lib\site-packages\websockets\asyncio\server.py
+    M 113:4 ServerConnection.handshake - C (16)
+src\backend\venv\Lib\site-packages\websockets\extensions\permessage_deflate.py
+    M 92:4 PerMessageDeflate.decode - C (19)
+    M 564:4 ServerPerMessageDeflateFactory.process_request_params - C (18)
+    M 370:4 ClientPerMessageDeflateFactory.process_response_params - C (17)
+    F 239:0 _extract_parameters - C (16)
+    C 500:0 ServerPerMessageDeflateFactory - C (15)
+src\backend\venv\Lib\site-packages\websockets\legacy\client.py
+    M 418:4 Connect.__init__ - C (15)
+    M 252:4 WebSocketClientProtocol.handshake - C (11)
+    M 545:4 Connect.handle_redirect - C (11)
+src\backend\venv\Lib\site-packages\websockets\legacy\framing.py
+    M 44:4 Frame.read - C (16)
+src\backend\venv\Lib\site-packages\websockets\legacy\handshake.py
+    F 37:0 check_request - C (14)
+src\backend\venv\Lib\site-packages\websockets\legacy\protocol.py
+    M 1078:4 WebSocketCommonProtocol.read_data_frame - C (15)
+    M 566:4 WebSocketCommonProtocol.send - C (14)
+    M 1003:4 WebSocketCommonProtocol.read_message - C (14)
+    M 1262:4 WebSocketCommonProtocol.close_connection - C (13)
+    M 933:4 WebSocketCommonProtocol.transfer_data - C (12)
+    F 1547:0 broadcast - C (11)
+src\backend\venv\Lib\site-packages\websockets\legacy\server.py
+    M 148:4 WebSocketServerProtocol.handler - C (19)
+    M 970:4 Serve.__init__ - C (11)
+src\backend\venv\Lib\site-packages\websockets\sync\client.py
+    M 418:4 reconnect.process_redirect - C (15)
+src\backend\venv\Lib\site-packages\websockets\sync\connection.py
+    M 416:4 Connection.send - D (25)
+    M 942:4 Connection.send_context - C (15)
+    M 821:4 Connection.recv_events - C (14)
+    M 770:4 Connection.keepalive - C (11)
+src\backend\venv\Lib\site-packages\websockets\sync\server.py
+    F 468:0 serve - C (14)
+    M 122:4 ServerConnection.handshake - C (13)
+    M 352:4 Server.shutdown - C (11)
+src\backend\venv\Lib\site-packages\websockets\trio\client.py
+    M 437:4 connect.process_redirect - C (16)
+src\backend\venv\Lib\site-packages\websockets\trio\connection.py
+    M 412:4 Connection.send - E (33)
+    M 981:4 Connection.send_context - C (17)
+    M 873:4 Connection.recv_events - C (14)
+src\backend\venv\Lib\site-packages\websockets\trio\messages.py
+    M 80:4 Assembler.get - C (14)
+    M 160:4 Assembler.get_iter - C (11)
+src\backend\venv\Lib\site-packages\websockets\trio\server.py
+    M 115:4 ServerConnection.handshake - C (16)
+src\backend\venv\Lib\site-packages\yaml\constructor.py
+    M 67:4 BaseConstructor.construct_object - C (19)
+    M 595:4 FullConstructor.set_python_instance_state - C (11)
+src\backend\venv\Lib\site-packages\yaml\emitter.py
+    M 626:4 Emitter.analyze_scalar - F (46)
+    M 854:4 Emitter.write_single_quoted - D (26)
+    M 926:4 Emitter.write_double_quoted - D (25)
+    M 991:4 Emitter.write_folded - D (24)
+    M 494:4 Emitter.choose_scalar_style - D (23)
+    M 1080:4 Emitter.write_plain - D (22)
+    M 580:4 Emitter.prepare_tag - C (18)
+    M 178:4 Emitter.expect_document_start - C (17)
+    M 469:4 Emitter.process_tag - C (17)
+    M 437:4 Emitter.check_simple_key - C (15)
+    M 1045:4 Emitter.write_literal - C (15)
+    M 232:4 Emitter.expect_node - C (14)
+    M 557:4 Emitter.prepare_tag_prefix - C (11)
+src\backend\venv\Lib\site-packages\yaml\error.py
+    M 58:4 MarkedYAMLError.__str__ - C (11)
+src\backend\venv\Lib\site-packages\yaml\parser.py
+    M 273:4 Parser.parse_node - D (27)
+src\backend\venv\Lib\site-packages\yaml\representer.py
+    M 296:4 Representer.represent_object - D (22)
+    M 103:4 BaseRepresenter.represent_mapping - C (12)
+src\backend\venv\Lib\site-packages\yaml\resolver.py
+    M 38:4 BaseResolver.add_path_resolver - C (19)
+    M 120:4 BaseResolver.check_resolver_prefix - C (16)
+    M 143:4 BaseResolver.resolve - C (12)
+src\backend\venv\Lib\site-packages\yaml\scanner.py
+    M 156:4 Scanner.fetch_more_tokens - D (29)
+    M 1185:4 Scanner.scan_flow_scalar_non_spaces - C (18)
+    M 976:4 Scanner.scan_block_scalar - C (16)
+    M 1270:4 Scanner.scan_plain - C (15)
+    M 1311:4 Scanner.scan_plain_spaces - C (14)
+src\backend\venv\Lib\site-packages\_pytest\cacheprovider.py
+    F 591:0 cacheshow - C (12)
+    M 364:4 LFPlugin.pytest_collection_modifyitems - C (12)
+    M 249:4 LFPluginCollWrapper.pytest_make_collect_report - C (11)
+src\backend\venv\Lib\site-packages\_pytest\compat.py
+    F 108:0 getfuncargnames - C (12)
+src\backend\venv\Lib\site-packages\_pytest\doctest.py
+    M 317:4 DoctestItem.repr_failure - C (13)
+src\backend\venv\Lib\site-packages\_pytest\fixtures.py
+    F 276:0 reorder_items_atscope - C (18)
+    F 2275:0 _showfixtures_main - C (14)
+    M 647:4 FixtureRequest._get_active_fixturedef - C (14)
+    M 911:4 FixtureLookupError.formatrepr - C (13)
+    M 2056:4 FixtureManager.parsefactories - C (11)
+src\backend\venv\Lib\site-packages\_pytest\junitxml.py
+    M 529:4 LogXML.pytest_runtest_logreport - C (19)
+src\backend\venv\Lib\site-packages\_pytest\main.py
+    M 899:4 Session.collect - D (29)
+    F 317:0 wrap_session - C (16)
+    F 437:0 pytest_ignore_collect - C (16)
+    M 789:4 Session.perform_collect - C (12)
+    F 1087:0 resolve_collection_argument - C (11)
+src\backend\venv\Lib\site-packages\_pytest\nodes.py
+    M 555:4 FSCollector.__init__ - C (17)
+    M 400:4 Node._repr_failure_py - C (12)
+src\backend\venv\Lib\site-packages\_pytest\pathlib.py
+    F 502:0 import_path - C (19)
+    F 624:0 _import_module_using_spec - C (14)
+src\backend\venv\Lib\site-packages\_pytest\pytester.py
+    M 354:4 HookRecorder.matchreport - C (11)
+src\backend\venv\Lib\site-packages\_pytest\python.py
+    M 1231:4 Metafunc.parametrize - D (24)
+    M 400:4 PyCollector.collect - C (16)
+    M 899:4 IdMaker.make_unique_parameterset_ids - C (16)
+src\backend\venv\Lib\site-packages\_pytest\python_api.py
+    M 574:4 ApproxTimedelta.__init__ - C (18)
+    M 437:4 ApproxScalar.__eq__ - C (12)
+    M 241:4 ApproxMapping._repr_compare - C (11)
+    C 394:0 ApproxScalar - C (11)
+src\backend\venv\Lib\site-packages\_pytest\raises.py
+    M 1255:4 RaisesGroup._check_exceptions - E (40)
+    M 1092:4 RaisesGroup.matches - D (29)
+    M 367:4 AbstractRaises.__init__ - C (13)
+    M 419:4 AbstractRaises._parse_exc - C (13)
+src\backend\venv\Lib\site-packages\_pytest\recwarn.py
+    M 298:4 WarningsChecker.__exit__ - C (18)
+src\backend\venv\Lib\site-packages\_pytest\reports.py
+    M 384:4 TestReport.from_item_and_call - C (12)
+    F 272:0 _format_exception_group_all_skipped_longrepr - C (11)
+src\backend\venv\Lib\site-packages\_pytest\runner.py
+    M 551:4 SetupState.teardown_exact - C (13)
+    F 72:0 pytest_terminal_summary - C (12)
+src\backend\venv\Lib\site-packages\_pytest\skipping.py
+    F 277:0 pytest_runtest_makereport - C (15)
+    F 89:0 evaluate_condition - C (11)
+src\backend\venv\Lib\site-packages\_pytest\subtests.py
+    F 367:0 pytest_report_teststatus - C (14)
+src\backend\venv\Lib\site-packages\_pytest\terminal.py
+    M 625:4 TerminalReporter.pytest_runtest_logreport - D (22)
+    M 720:4 TerminalReporter._get_progress_information_message - C (17)
+    M 927:4 TerminalReporter._printcollecteditems - C (14)
+    M 810:4 TerminalReporter.report_collect - C (13)
+    F 308:0 getreportopt - C (11)
+src\backend\venv\Lib\site-packages\_pytest\tmpdir.py
+    M 145:4 TempPathFactory.getbasetemp - C (15)
+src\backend\venv\Lib\site-packages\_pytest\assertion\compare_text.py
+    F 41:0 _diff_text - C (12)
+src\backend\venv\Lib\site-packages\_pytest\assertion\rewrite.py
+    M 683:4 AssertionRewriter.run - D (22)
+    F 552:0 _get_assertion_exprs - C (19)
+    M 845:4 AssertionRewriter.visit_Assert - C (15)
+    M 1101:4 AssertionRewriter.visit_Compare - C (11)
+src\backend\venv\Lib\site-packages\_pytest\assertion\util.py
+    F 135:0 assertrepr_compare - C (17)
+src\backend\venv\Lib\site-packages\_pytest\assertion\_compare_any.py
+    F 79:0 _compare_eq_cls - C (20)
+    F 25:0 _compare_eq_any - C (17)
+src\backend\venv\Lib\site-packages\_pytest\assertion\_compare_mapping.py
+    F 11:0 _compare_eq_mapping - C (16)
+src\backend\venv\Lib\site-packages\_pytest\config\argparsing.py
+    M 427:4 DropShorterLongHelpFormatter._format_action_invocation - C (16)
+src\backend\venv\Lib\site-packages\_pytest\config\findpaths.py
+    F 58:0 load_config_dict_from_file - D (23)
+    F 158:0 locate_config - C (15)
+    F 278:0 determine_setup - C (15)
+src\backend\venv\Lib\site-packages\_pytest\config\__init__.py
+    M 1820:4 Config._getini_toml - D (21)
+    M 1759:4 Config._getini_ini - C (17)
+    M 1512:4 Config.parse - C (16)
+    F 2122:0 parse_warning_filter - C (15)
+    F 951:0 _iter_rewritable_modules - C (12)
+    M 615:4 PytestPluginManager._set_initial_conftests - C (12)
+    M 887:4 PytestPluginManager.import_plugin - C (12)
+    M 733:4 PytestPluginManager._importconftest - C (11)
+src\backend\venv\Lib\site-packages\_pytest\mark\expression.py
+    M 80:4 Scanner.lex - C (14)
+src\backend\venv\Lib\site-packages\_pytest\_code\code.py
+    M 378:4 Traceback.cut - C (14)
+    M 1192:4 ExceptionInfoFormatter.repr_excinfo - C (14)
+    M 1068:4 ExceptionInfoFormatter.repr_traceback_entry - C (13)
+    M 795:4 ExceptionInfo._group_contains - C (11)
+    M 933:4 ExceptionInfoFormatter.get_source - C (11)
+src\backend\venv\Lib\site-packages\_pytest\_code\source.py
+    F 181:0 getstatementrange_ast - C (12)
+src\backend\venv\Lib\site-packages\_pytest\_io\pprint.py
+    M 590:4 PrettyPrinter._safe_repr - D (21)
+    M 246:4 PrettyPrinter._pprint_str - C (19)
+src\backend\venv\Lib\site-packages\_pytest\_py\path.py
+    M 1275:4 LocalPath.make_numbered_dir - D (26)
+    M 1070:4 LocalPath.pyimport - C (20)
+    M 1193:4 LocalPath.sysfind - C (17)
+    M 70:4 Checkers._evaluate - C (15)
+    M 153:4 Visitor.gen - C (13)
+    M 834:4 LocalPath.copy - C (12)
+    C 138:0 Visitor - C (11)
+    M 640:4 LocalPath.new - C (11)

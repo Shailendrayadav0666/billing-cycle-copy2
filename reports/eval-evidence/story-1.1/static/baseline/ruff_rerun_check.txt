@@ -1,0 +1,218 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> src\backend\main.py:1:1
+  |
+1 | / from fastapi import FastAPI, HTTPException, status
+2 | | from fastapi.middleware.cors import CORSMiddleware
+3 | | from fastapi.responses import JSONResponse
+4 | | from fastapi.staticfiles import StaticFiles
+5 | | from pydantic import BaseModel
+6 | | from pathlib import Path
+7 | | from datetime import datetime, timedelta
+  | |________________________________________^
+8 |
+9 |   app = FastAPI(title="Billing & Tasks POC")
+  |
+help: Organize imports
+  |
+1 + from datetime import datetime, timedelta
+2 + from pathlib import Path
+3 +
+4 | from fastapi import FastAPI, HTTPException, status
+--------------------------------------------------------------------------------
+8 | from pydantic import BaseModel
+  - from pathlib import Path
+  - from datetime import datetime, timedelta
+9 |
+  |
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\main.py:41:22
+   |
+39 |         "plan": "Standard",
+40 |         "price": "$20/month",
+41 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+42 |     }
+43 | }
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\main.py:49:22
+   |
+47 |         "plan_name": "Standard",
+48 |         "price": "$20/month",
+49 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+50 |         "usages": [
+51 |             {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\main.py:143:22
+    |
+141 |         "plan": "Standard",
+142 |         "price": "$20/month",
+143 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+    |                      ^^^^^^^^^^^^^^^^
+144 |     }
+145 |     billing_data[payload.email] = {
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\main.py:148:22
+    |
+146 |         "plan_name": "Standard",
+147 |         "price": "$20/month",
+148 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+    |                      ^^^^^^^^^^^^^^^^
+149 |         "usages": [
+150 |             {
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ007 Naive datetime constructed using `datetime.datetime.strptime()` without %z
+   --> src\backend\main.py:223:21
+    |
+221 | def _calculate_proration(renew_at: str) -> tuple[int, float]:
+222 |     """Server-side-only proration (REQ-F-04, ARCH-01). Returns (days_remaining, prorated_charge)."""
+223 |     renew_at_date = datetime.strptime(renew_at, "%b %d, %Y")
+    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+224 |     days_remaining = max(1, (renew_at_date - datetime.today()).days)
+225 |     daily_delta = (PLANS["Premium"]["price"] - PLANS["Standard"]["price"]) / DAYS_IN_CYCLE
+    |
+help: Call `.replace(tzinfo=<timezone>)` or `.astimezone()` to convert to an aware datetime
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\main.py:224:46
+    |
+222 |     """Server-side-only proration (REQ-F-04, ARCH-01). Returns (days_remaining, prorated_charge)."""
+223 |     renew_at_date = datetime.strptime(renew_at, "%b %d, %Y")
+224 |     days_remaining = max(1, (renew_at_date - datetime.today()).days)
+    |                                              ^^^^^^^^^^^^^^^^
+225 |     daily_delta = (PLANS["Premium"]["price"] - PLANS["Standard"]["price"]) / DAYS_IN_CYCLE
+226 |     prorated_charge = round(daily_delta * days_remaining, 2)
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\backend\tests\test_billing_upgrade.py:13:1
+   |
+11 |   sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+12 |
+13 | / import pytest
+14 | | from fastapi.testclient import TestClient
+15 | |
+16 | | import main
+   | |___________^
+help: Organize imports
+   |
+12 |
+13 + import main
+14 | import pytest
+15 | from fastapi.testclient import TestClient
+   -
+   - import main
+16 |
+   |
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\tests\test_billing_upgrade.py:29:22
+   |
+27 |         "plan": "Standard",
+28 |         "price": "$20/month",
+29 |         "renew_at": (datetime.today() + timedelta(days=15)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+30 |     }
+31 |     main.billing_data["standard@example.com"] = {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\tests\test_billing_upgrade.py:56:22
+   |
+54 |         "plan": "Standard",
+55 |         "price": "$20/month",
+56 |         "renew_at": (datetime.today() + timedelta(days=15)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+57 |     }
+58 |     main.billing_data["fail@example.com"] = {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\tests\test_billing_upgrade.py:81:22
+   |
+79 |         "plan": "Premium",
+80 |         "price": "$40/month",
+81 |         "renew_at": (datetime.today() + timedelta(days=15)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+82 |     }
+83 |     main.billing_data["premium@example.com"] = {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\tests\test_billing_upgrade.py:151:10
+    |
+149 |     # See the truncation note above for why days_remaining lands on 14 or 15.
+150 |     days_remaining, prorated_charge = main._calculate_proration(
+151 |         (datetime.today() + timedelta(days=15)).strftime("%b %d, %Y")
+    |          ^^^^^^^^^^^^^^^^
+152 |     )
+153 |     assert days_remaining in (14, 15)
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\backend\tests\test_billing_upgrade_api_contract.py:17:1
+   |
+15 |   sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+16 |
+17 | / import pytest
+18 | | from fastapi.testclient import TestClient
+19 | |
+20 | | import main
+   | |___________^
+help: Organize imports
+   |
+16 |
+17 + import main
+18 | import pytest
+19 | from fastapi.testclient import TestClient
+   -
+   - import main
+20 |
+   |
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\tests\test_billing_upgrade_api_contract.py:32:22
+   |
+30 |         "plan": "Standard",
+31 |         "price": "$20/month",
+32 |         "renew_at": (datetime.today() + timedelta(days=10)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+33 |     }
+34 |     main.billing_data["contract@example.com"] = {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `E402`)
+  --> src\backend\tests\test_smoke.py:12:14
+   |
+10 | sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+11 |
+12 | import main  # noqa: E402
+   |              ^^^^^^^^^^^^
+help: Remove unused `noqa` directive
+   |
+11 |
+   - import main  # noqa: E402
+12 + import main
+13 |
+   |
+
+Found 15 errors.
+[*] 4 fixable with the `--fix` option.
