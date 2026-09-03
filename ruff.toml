@@ -1,0 +1,6 @@
+# D1 Lint bootstrap (AIRE eval-framework.md Section 2.3) — recommended default preset.
+# Ruff's own default rule selection (E4, E7, E9, F) — never the strict/all preset.
+line-length = 120
+
+[lint]
+select = ["E4", "E7", "E9", "F"]

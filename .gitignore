@@ -1,1 +1,8 @@
 MIGRATION-PLAN-v1.0.md
+__pycache__/
+*.pyc
+.coverage
+.venv-test/
+node_modules/
+dist/
+

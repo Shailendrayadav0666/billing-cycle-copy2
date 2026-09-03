@@ -1,0 +1,13 @@
+{
+  "judgeModel": "claude-sonnet-5",
+  "rubricVersion": "1.0.0",
+  "rubricSource": "spec/plans/architecture.md#10-verifiable-constraints",
+  "criteria": [
+    {"id": "ARCH-01", "weight": 0.25, "score": 1.0, "note": "Billing.jsx only renders preview.prorated_charge / preview.next_renewal_price via toFixed(2); no client-side arithmetic combining prices/days anywhere in the diff."},
+    {"id": "ARCH-02", "weight": 0.20, "score": 1.0, "note": "charge_card() (src/backend/main.py) contains no random/sleep/network call — keyed only on the email string prefix."},
+    {"id": "ARCH-03", "weight": 0.20, "score": 1.0, "note": "Diff touches only main.py (billing section) and Billing.jsx/App.css; zero lines changed in /api/auth/*, /api/tasks*, /api/users/me, or AuthContext.jsx."},
+    {"id": "ARCH-04", "weight": 0.20, "score": 1.0, "note": "Both billing_upgrade_preview and billing_upgrade check plan_name == 'Premium' and return 409 immediately after the auth check, before any proration/charge_card call."},
+    {"id": "ARCH-05", "weight": 0.15, "score": 1.0, "note": "src/backend/requirements.txt and src/frontend/package.json are unchanged; test-only deps live in a new src/backend/requirements-dev.txt."}
+  ],
+  "weightedScore": 1.0
+}

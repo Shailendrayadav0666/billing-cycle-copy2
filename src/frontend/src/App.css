@@ -664,3 +664,80 @@
 .add-task-form button:hover {
   background: #115e59;
 }
+
+.upgrade-cta {
+  margin-top: 1rem;
+  padding: 0.6rem 1.1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #0f766e;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.upgrade-cta:hover {
+  background: #115e59;
+}
+
+.upgrade-success-banner {
+  background: #d1fae5;
+  color: #047857;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.upgrade-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  display: grid;
+  place-items: center;
+  z-index: 50;
+}
+
+.upgrade-modal {
+  background: #fff;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.upgrade-modal-body p {
+  margin: 0.4rem 0;
+  color: #334155;
+}
+
+.upgrade-modal-error {
+  color: #b91c1c;
+  font-weight: 600;
+  margin-top: 0.75rem;
+}
+
+.upgrade-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.upgrade-modal-actions button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e2e8f0;
+  background: #fff;
+  cursor: pointer;
+}
+
+.upgrade-modal-confirm {
+  background: #0f766e;
+  color: #fff;
+  border: none;
+}
+
+.upgrade-modal-confirm:hover {
+  background: #115e59;
+}

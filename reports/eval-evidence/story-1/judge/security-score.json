@@ -1,0 +1,12 @@
+{
+  "judgeModel": "claude-sonnet-5",
+  "rubricVersion": "1.0.0",
+  "rubricSource": "tests/.evals/rubrics/security-rubric.json",
+  "criteria": [
+    {"id": "SEC-01", "owasp": "A01:2025", "weight": 0.35, "score": 1.0, "note": "Both new endpoints reuse the identical 'email in users' -> 401 check already used by GET /api/billing; no weaker check introduced."},
+    {"id": "SEC-02", "owasp": "A06:2025", "weight": 0.30, "score": 1.0, "note": "Already-premium guard runs unconditionally before any other logic; prorated_charge cannot go negative (days_remaining floored at max(1,...), PLANS prices fixed positive); billing_data/users are mutated only after charge_result.status == 'success' is confirmed."},
+    {"id": "SEC-03", "owasp": "A10:2025", "weight": 0.20, "score": 1.0, "note": "renew_at is always backend-written in a fixed format (never user-supplied), so strptime cannot fail on attacker-controlled input in this diff; the app has no debug=True, so any genuinely unexpected exception returns FastAPI's default generic 500 with no stack trace."},
+    {"id": "SEC-04", "owasp": "A03:2025", "weight": 0.15, "score": 1.0, "note": "requirements.txt and package.json are byte-identical to pre-epic; verified via git diff."}
+  ],
+  "weightedScore": 1.0
+}

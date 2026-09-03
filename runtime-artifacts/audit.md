@@ -152,3 +152,27 @@
 **Context**: IMPLEMENTATION PHASE - STOP CHECKPOINT Steps 3-5 (Development Handoff)
 
 ---
+
+## dev-implement — Story Selection & Branch Checkpoint
+**Timestamp**: 2026-09-03T08:44:21Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "using aire and helix mcp fetch the solution document and start implementing the epic requirements" (original request — the only story in this epic, selected automatically as the one and only 🟢 Ready for Development item; sequential-development banner shown)
+**TRACKER ITEM**: "Story 1 (local — no external tracker)"
+**Epic Link**: "none"
+**AIRE VERSION**: "1.0"
+**AI Response**: "Selected Story 1 (only ready story; Doability Gate trivially passes — requires: none). Transitioned Story Tracker 🟢 Ready for Development -> 🔵 In Development, Start=2026-09-03T08:44:21Z. Refreshed epic branch (already up to date locally), cut story/1-mid-cycle-subscription-upgrade from epic/mid-cycle-subscription-upgrade (verified: git branch --show-current). BASELINE REGRESSION: repo has no test suite at all (no tests/unit prior to this story, no pytest/vitest configured) — recorded explicitly per code-generation.md Step 1.5 Item 4.5; the post-implementation gate will cover only this story's new tests. BASELINE STATIC EVAL: reused the D1/D2/D4/D5/D6 baseline captured by the STOP CHECKPOINT fork on the epic branch (reports/eval-evidence/local/static/baseline/) since the story branch has zero diff from the epic branch at this point — valid baseline, no re-run needed."
+**Context**: IMPLEMENTATION PHASE - dev-implement Step 1-1.5 (Story Selection, Branch Checkpoint, Baselines)
+
+---
+
+## dev-implement — Code Generation, Gates & Code Review (Story 1)
+**Timestamp**: 2026-09-03T08:55:40Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "(continuation of the original request — no new user input during code generation)"
+**TRACKER ITEM**: "Story 1 (local — no external tracker)"
+**Epic Link**: "none"
+**AIRE VERSION**: "1.0"
+**AI Response**: "Wrote spec/behavior/story-1.feature (9 scenarios, @AC-1..@AC-6) before code, per contract-first rule. BACKEND (src/backend/main.py): added PLANS/DAYS_IN_CYCLE/PREMIUM_USAGES/PREMIUM_ON_DEMAND_NOTICE constants, UpgradeRequest model, charge_card() (deterministic dummy gateway), _compute_prorated_charge(), GET /api/billing/upgrade-preview, POST /api/billing/upgrade — both guard already-Premium (409) before any proration/charge logic. FRONTEND (Billing.jsx): dynamic plan badge (removed hardcoded 'Standard'), conditional Upgrade CTA, UpgradeModal component (preview/confirm/cancel/error states), success banner, useCallback-memoized fetchBilling. Styled in App.css. UNIT TEST & COVERAGE GATE: created tests/unit/backend/{conftest.py,test_billing_upgrade.py} (10 tests) + src/backend/requirements-dev.txt (pytest/pytest-cov/httpx — test-only, requirements.txt untouched per ARCH-05). Ran via a throwaway .venv-test: 10/10 passing, 100% coverage on every changed line (81% file-wide; remainder is untouched pre-existing code) -- exceeds unitTestCoverageMin 90.0. Evidence: reports/unit-test-evidence/story-1/. API & CONTRACT GATE: same suite exercises both new endpoints through the real FastAPI app; full per-endpoint checklist in reports/api-contract-test-evidence/story-1/evidence-manifest.md -- all applicable items PASS (role-based-auth rows N/A, no role model exists in this codebase). FULL REGRESSION: no pre-existing test suite (baseline-regression.log recorded that explicitly); this story's 10 tests are the whole suite and all pass -- 0 new failures. STATIC EVAL D1-D7 (run directly, not via the generated run-static-evals.sh, to avoid repeating the earlier git-reset incident while work was uncommitted): D1 bootstrapped ruff.toml (default ruleset E4/E7/E9/F -- repo had no Python lint config) then `ruff check src/backend/` clean; oxlint on frontend shows only 2 PRE-EXISTING warnings in files this story did not touch (fixed a NEW exhaustive-deps warning in Billing.jsx via useCallback). D2 N/A (no type checker in this stack). D3 semgrep unavailable in this environment -- manual review found no injection/auth/crypto anti-patterns. D4 pip-audit + npm audit: 0 vulnerabilities. D5 no new dependency. D6 radon cc: max complexity 5 (threshold 12). D7 gitleaks unavailable -- manual grep of the diff for secret-like literals found none (recorded PASS unverified parity, not silently skipped). Full scorecard: reports/eval-evidence/story-1/{eval.json,eval-summary.md}. JUDGE GATES: J1 architecture 1.00 (5/5 criteria), J2 security 1.00 (4/4 OWASP criteria) -- both scored by this session acting as judge per common/eval-framework.md Section 4, cited file:line reasoning in judge/*.json -- both far above the 0.85 minimums. BEHAVIOURAL B1/B2/B3: spec/behavior/story-1.feature written but NOT executed in Podman this session (step definitions not implemented) -- recorded honestly as DEFERRED in eval-summary.md, never claimed as a pass. CODE REVIEW: wrote reports/reviews/story-1-code-review-v1.md -- all 6 ACs Met, Security Baseline diff-scoped review found zero Critical/High findings, verdict CLEAN. No Auto-Remediate loop entered (nothing to remediate)."
+**Context**: IMPLEMENTATION PHASE - dev-implement Steps 4-6.6, Section A (Code Generation, Gates, Auto Code Review)
+
+---
