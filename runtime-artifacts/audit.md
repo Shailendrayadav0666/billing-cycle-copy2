@@ -196,3 +196,12 @@
 **Context**: STOP CHECKPOINT Step 4 — smoke test attempt 1 failed, root-caused, fixed
 
 ---
+
+## Epic-Level Smoke Test — Second Run, Second Real Bug Found (setuptools/pkg_resources)
+**Timestamp**: 2026-09-03T12:52:33Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Closed PR #2, deleted its scratch branch, re-ran smoke-test-epic.sh. Attempt 1 (run 33757170947) reused stale cached run data from the just-deleted branch name (script quirk, not a real failure — same run ID/timestamps as the previous attempt). Attempt 2 (run 33757694204, a genuinely fresh run) got past 'Set up Node' (lockfile fix confirmed working) and failed at 'Install eval tools': unpinned setuptools resolved to 84.0.0, which no longer ships pkg_resources, breaking semgrep==1.127.0's own transitive dependency opentelemetry-instrumentation==0.46b0 (ModuleNotFoundError: No module named 'pkg_resources') — this is the EXACT documented failure mode in common/ci-pipeline-generation.md Section 3.2.1. Self-repair's own retry hit the identical error (same unpinned resolution) and could not push a fix (it has no code-diagnosis role for its own CI toolchain). FIX per Section 3.2.1 rule 2: added 'pip install \"setuptools<81>\"' before the semgrep/pip-audit/etc. install line in BOTH the verify and self-repair 'Install eval tools' steps (kept identical, Section 3.1). Verified locally: pip install --dry-run with the full pinned set now resolves cleanly to setuptools-80.10.2 (last release still shipping pkg_resources)."
+**Context**: STOP CHECKPOINT Step 4 — smoke test attempt 2 failed, root-caused, fixed
+
+---
