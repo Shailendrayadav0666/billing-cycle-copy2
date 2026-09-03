@@ -214,3 +214,12 @@
 **Context**: STOP CHECKPOINT Step 4 — smoke test attempt 3 in progress, unit-test bootstrap applied
 
 ---
+
+## Epic-Level Smoke Test — RETRY LIMIT REACHED (SonarQube infra, not fixable from the repo)
+**Timestamp**: 2026-09-03T13:07:52Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Ran the smoke test a 4th time (3rd distinct root-cause fix cycle: lockfile, setuptools pin, test bootstrap). All code/environment gates now PASS: static, unit, coverage, behavior, judge (CLAUDE_CODE_OAUTH_TOKEN confirmed working end-to-end for J1/J2). Only 'sonar' still fails, both within-run self-repair attempts (run 33758297148 and 33759059192) diagnosed identically by auto-fix-agent.sh's own triage as 'sonar failed WITHOUT reported conditions (auth/unreachable/timeout) — infrastructure, not a code defect', deliberately not consuming a repair retry (correct behavior). This is a real external SonarQube server/token/project-key configuration problem outside anything fixable from the repository. Per SH policy (3-attempt cap) and Section 4.0.6 ('On exhaustion: leave the draft PR OPEN for human inspection, HALT with the Retry-Limit Report... Development Handoff does NOT happen until this is resolved'), HALTING here. PR #5 left open at https://github.com/Shailendrayadav0666/billing-cycle-copy2/pull/5. Reporting to the user with two paths: fix the Sonar secrets/server, or switch the answer to 'skip' (sonarqube.enabled=false) to unblock the epic without SonarQube."
+**Context**: STOP CHECKPOINT Step 4 — HALT, Retry-Limit Report, awaiting user decision
+
+---
