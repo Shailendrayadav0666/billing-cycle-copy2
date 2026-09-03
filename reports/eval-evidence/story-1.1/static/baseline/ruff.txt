@@ -1,0 +1,92 @@
+I001 [*] Import block is un-sorted or un-formatted
+ --> src\backend\main.py:1:1
+  |
+1 | / from fastapi import FastAPI, HTTPException, status
+2 | | from fastapi.middleware.cors import CORSMiddleware
+3 | | from fastapi.staticfiles import StaticFiles
+4 | | from pydantic import BaseModel
+5 | | from pathlib import Path
+6 | | from datetime import datetime, timedelta
+  | |________________________________________^
+7 |
+8 |   app = FastAPI(title="Billing & Tasks POC")
+  |
+help: Organize imports
+  |
+1 + from datetime import datetime, timedelta
+2 + from pathlib import Path
+3 +
+4 | from fastapi import FastAPI, HTTPException, status
+5 | from fastapi.middleware.cors import CORSMiddleware
+6 | from fastapi.staticfiles import StaticFiles
+7 | from pydantic import BaseModel
+  - from pathlib import Path
+  - from datetime import datetime, timedelta
+8 |
+  |
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\main.py:27:22
+   |
+25 |         "plan": "Standard",
+26 |         "price": "$20/month",
+27 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+28 |     }
+29 | }
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+  --> src\backend\main.py:35:22
+   |
+33 |         "plan_name": "Standard",
+34 |         "price": "$20/month",
+35 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+   |                      ^^^^^^^^^^^^^^^^
+36 |         "usages": [
+37 |             {
+   |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\main.py:125:22
+    |
+123 |         "plan": "Standard",
+124 |         "price": "$20/month",
+125 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+    |                      ^^^^^^^^^^^^^^^^
+126 |     }
+127 |     billing_data[payload.email] = {
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+DTZ002 `datetime.datetime.today()` used
+   --> src\backend\main.py:130:22
+    |
+128 |         "plan_name": "Standard",
+129 |         "price": "$20/month",
+130 |         "renew_at": (datetime.today() + timedelta(days=30)).strftime("%b %d, %Y"),
+    |                      ^^^^^^^^^^^^^^^^
+131 |         "usages": [
+132 |             {
+    |
+help: Use `datetime.datetime.now(tz=...)` instead
+
+RUF100 [*] Unused `noqa` directive (non-enabled: `E402`)
+  --> src\backend\tests\test_smoke.py:12:14
+   |
+10 | sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+11 |
+12 | import main  # noqa: E402
+   |              ^^^^^^^^^^^^
+help: Remove unused `noqa` directive
+   |
+11 |
+   - import main  # noqa: E402
+12 + import main
+13 |
+   |
+
+Found 6 errors.
+[*] 2 fixable with the `--fix` option.

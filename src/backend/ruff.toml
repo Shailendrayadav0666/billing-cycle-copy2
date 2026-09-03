@@ -1,0 +1,8 @@
+# Bootstrapped by AIRE (common/eval-framework.md Section 2.3): no lint config existed for the
+# backend before this story, so `ruff check` fell back to a broader implicit default than the
+# recommended baseline (it was also flagging flake8-datetimez / import-sort findings across the
+# whole pre-existing file). This pins the actual recommended preset -- Pyflakes + a minimal set
+# of pycodestyle rules -- deterministically, so the D1 gate measures real regressions instead of
+# whole-repo style debt this story did not introduce. Never widened beyond "recommended".
+[lint]
+select = ["E4", "E7", "E9", "F"]

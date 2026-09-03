@@ -4,3 +4,8 @@ MIGRATION-PLAN-v1.0.md
 /coverage.xml
 .coverage
 .coverage.*
+
+# Python bytecode / test caches
+__pycache__/
+*.pyc
+.pytest_cache/

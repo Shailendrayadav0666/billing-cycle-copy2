@@ -1,0 +1,3 @@
+src\backend\main.py:203: error: Value of type variable "SupportsRichComparisonT" of "max" cannot be "object"  [type-var]
+src\backend\main.py:203: error: Unsupported operand types for + ("object" and "int")  [operator]
+Found 2 errors in 1 file (checked 1 source file)

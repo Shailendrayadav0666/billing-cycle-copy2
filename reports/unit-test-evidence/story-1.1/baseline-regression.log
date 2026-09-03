@@ -1,0 +1,6 @@
+..                                                                       [100%]
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.13.3-final-0 _______________
+
+Coverage XML written to file reports/unit-test-evidence/story-1.1/baseline-coverage.xml
+2 passed in 0.62s

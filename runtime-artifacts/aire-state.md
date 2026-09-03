@@ -4,7 +4,7 @@
 - **Workflow Type**: epic
 - **Started**: 2026-09-03T11:26:15Z
 - **Current Phase**: IMPLEMENTATION
-- **Current Stage**: STOP CHECKPOINT complete — Design complete, awaiting `dev-implement`
+- **Current Stage**: Story 1.1 code generation + gates complete, review clean, committing and raising PR
 
 ## Stage Progress
 ### PLANNING PHASE
@@ -90,7 +90,7 @@
 
 | Story | Title | Requires | Tracker ID | Status | PR | Merged | Start | End | Recorded |
 |---|---|---|---|---|---|---|---|---|---|
-| 1.1 | Self-Serve Mid-Cycle Upgrade: Standard → Premium | none | LOCAL | 🟢 Ready for Development | — | — | — | — | 2026-09-03T11:43:57Z |
+| 1.1 | Self-Serve Mid-Cycle Upgrade: Standard → Premium | none | LOCAL | 🔵 In Development | — | — | 2026-09-03T13:20:36Z | — | 2026-09-03T13:20:36Z |
 
 ## Dependency Graph
 - **team_size**: 2 (target ≥2 independent stories available at a time — not achievable this cycle by explicit user override: single story, see runtime-artifacts/audit.md)
