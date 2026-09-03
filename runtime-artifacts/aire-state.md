@@ -90,7 +90,7 @@
 
 | Story | Title | Requires | Tracker ID | Status | PR | Merged | Start | End | Recorded |
 |---|---|---|---|---|---|---|---|---|---|
-| 1.1 | Self-Serve Mid-Cycle Upgrade: Standard → Premium | none | LOCAL | 🔵 In Development | — | — | 2026-09-03T13:20:36Z | — | 2026-09-03T13:20:36Z |
+| 1.1 | Self-Serve Mid-Cycle Upgrade: Standard → Premium | none | LOCAL | 🔵 In Development | https://github.com/Shailendrayadav0666/billing-cycle-copy2/pull/7 | no | 2026-09-03T13:20:36Z | — | 2026-09-03T13:39:00Z |
 
 ## Dependency Graph
 - **team_size**: 2 (target ≥2 independent stories available at a time — not achievable this cycle by explicit user override: single story, see runtime-artifacts/audit.md)
