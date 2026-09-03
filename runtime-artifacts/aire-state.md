@@ -3,8 +3,26 @@
 - **Project**: Billing-Cycle Mid-Cycle Subscription Upgrade
 - **Workflow Type**: epic
 - **Started**: 2026-09-03T11:26:15Z
-- **Current Phase**: PLANNING
-- **Current Stage**: Requirements Analysis (Reverse Engineering skipped — Atlas full coverage)
+- **Current Phase**: PLANNING → IMPLEMENTATION
+- **Current Stage**: Workflow Planning complete; Application Design + all system-level design stages SKIPPED (see spec/plans/executions.md); proceeding to STOP CHECKPOINT
+
+## Stage Progress
+### PLANNING PHASE
+- [x] Workspace Detection
+- [x] Reverse Engineering (SKIPPED — Atlas full coverage)
+- [x] Requirements Analysis
+- [x] User Stories
+- [x] Dependency Graph
+- [x] Workflow Planning
+- [x] Application Design — SKIP (no new components/services)
+
+### IMPLEMENTATION PHASE
+- [x] Functional Design — SKIP (no new data models)
+- [x] NFR Requirements — SKIP (tech stack unchanged, NFRs already in requirements.md)
+- [x] NFR Design — SKIP (NFR Requirements skipped)
+- [x] Infrastructure Design — SKIP (no infra change)
+- [ ] STOP CHECKPOINT (architecture.md, rubrics, CI pipeline)
+- [ ] Code Generation — awaiting `dev-implement`
 
 ## Tracker
 - Type: LOCAL
@@ -42,6 +60,11 @@
 | Resiliency Baseline | No | Requirements Analysis |
 | Property-Based Testing | No | Requirements Analysis |
 
+## CI Setup Gate (Section 4.1.2)
+- **Answer**: proceed (2026-09-03T12:45:18Z) — user confirmed CLAUDE_CODE_OAUTH_TOKEN / SONAR_TOKEN / SONAR_HOST_URL secrets added and sonar.organization set (shailendrayadav0666) in sonar-project.properties.
+- **sonarqube.enabled**: true. "sonarqube" gate appended to tests/.evals/config.json ci.gates.
+- Next: STOP CHECKPOINT Step 4 — epic-level pre-handoff smoke test (common/ci-pipeline-generation.md Section 4.0.6).
+
 ## Code Root
 - `src/` — `src/backend` (FastAPI) and `src/frontend` (React/Vite). Matches default convention, no override needed.
 
@@ -51,12 +74,24 @@
 ## team_size
 - 2 (fixed default, never asked)
 
+## story_creation_mode
+- all-at-once (fixed default, never asked)
+
+## target_story_count
+- 1 (user override — explicitly confirmed after sizing-ceiling/parallelism trade-off was flagged; see runtime-artifacts/audit.md "User Stories — Story Count Answer & Trade-off Confirmation")
+
 ## Story Tracker
 
 | Story | Title | Requires | Tracker ID | Status | PR | Merged | Start | End | Recorded |
 |---|---|---|---|---|---|---|---|---|---|
-| 1.1 | Upgrade CTA on Billing Page | — | LOCAL | 📋 Planned | — | — | — | — | — |
-| 1.2 | Proration Confirmation Modal | 1.1 | LOCAL | 📋 Planned | — | — | — | — | — |
-| 1.3 | Execute Upgrade & Dummy Payment | 1.1, 1.2 | LOCAL | 📋 Planned | — | — | — | — | — |
-| 1.4 | Premium Plan Quotas & Billing Data | 1.3 | LOCAL | 📋 Planned | — | — | — | — | — |
-| 1.5 | Already-Premium Guard | 1.1, 1.2, 1.3 | LOCAL | 📋 Planned | — | — | — | — | — |
+| 1.1 | Self-Serve Mid-Cycle Upgrade: Standard → Premium | none | LOCAL | 🟢 Ready for Development | — | — | — | — | 2026-09-03T11:43:57Z |
+
+## Dependency Graph
+- **team_size**: 2 (target ≥2 independent stories available at a time — not achievable this cycle by explicit user override: single story, see runtime-artifacts/audit.md)
+- **Total stories**: 1 | **Immediately startable**: 1 | **Blocked**: 0
+- **Inferred edges**: none — Story 1.1 has no prerequisites (only story in the set)
+
+```mermaid
+graph TD
+    S1_1["1.1 Self-Serve Mid-Cycle Upgrade"]
+```

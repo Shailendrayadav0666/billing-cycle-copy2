@@ -1,0 +1,18 @@
+# Behaviour test image — built and run by Podman locally and in CI (identical image, Section 4.1b).
+# Base image resolved for this stack: Python 3.12 (backend, FastAPI) — the frontend has no
+# behaviour-test surface separate from the backend API this epic's ACs exercise.
+FROM docker.io/library/python:3.12-slim
+
+WORKDIR /work
+
+# The generator appends the stack's Gherkin runner install between the markers (Section 3):
+#   Python  : pip install pytest-bdd
+# >>> STACK-RESOLVED BEHAVIOUR DEPS START <<<
+RUN pip install --no-cache-dir "pytest-bdd==7.3.0" "pytest==8.3.3" "fastapi" "uvicorn[standard]" "httpx"
+# >>> STACK-RESOLVED BEHAVIOUR DEPS END <<<
+
+# run.sh is bind-mounted with the repo at runtime; nothing to COPY.
+#
+# ENTRYPOINT ["/bin/sh", "-c"] REQUIRES a SINGLE combined command string as the CMD — never two
+# separate argv elements (see common/behavior-spec.md Section 5.3).
+ENTRYPOINT ["/bin/sh", "-c"]
