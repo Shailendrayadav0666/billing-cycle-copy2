@@ -64,12 +64,11 @@
 - **Answer**: proceed (2026-09-03T12:45:18Z) — user confirmed CLAUDE_CODE_OAUTH_TOKEN / SONAR_TOKEN / SONAR_HOST_URL secrets added and sonar.organization set (shailendrayadav0666) in sonar-project.properties.
 - **sonarqube.enabled**: true. "sonarqube" gate appended to tests/.evals/config.json ci.gates.
 
-## Epic-Level Smoke Test — HALTED (Section 4.0.6, retry limit reached)
-- **Status**: BLOCKED. Development Handoff cannot proceed until resolved.
+## Epic-Level Smoke Test — HALTED then RESOLVED via skip (Section 4.0.6 / 4.1.3)
+- **Status**: RESOLVED. User answered "skip" (2026-09-03T13:14:36Z) after all non-Sonar gates passed and Sonar's quality-gate step repeatedly failed for infrastructure reasons.
 - **Fixed during this smoke test** (3 real bugs found and fixed, each verified by a subsequent run): (1) src/frontend/package-lock.json was gitignored and never committed — fixed; (2) unpinned setuptools broke semgrep's opentelemetry dependency (pkg_resources removed) — pinned setuptools<81; (3) no backend test suite existed — bootstrapped src/backend/tests/.
-- **Remaining blocker**: SonarQube quality-gate step fails on every run; auto-fix-agent.sh's own triage diagnoses it as infrastructure (auth/unreachable/timeout), not a code defect — outside what AIRE can fix from the repo. All other gates (static, unit, coverage, behavior, judge) PASS.
-- **Open PR for inspection**: https://github.com/Shailendrayadav0666/billing-cycle-copy2/pull/5 (draft, scratch branch ci/epic-smoke-3157, zero-diff)
-- **Next**: user decides — fix SONAR_TOKEN/SONAR_HOST_URL/sonar-project.properties.sonar.organization, or answer "skip" to disable SonarQube (sets sonarqube.enabled=false) and unblock.
+- **SonarQube**: disabled per Section 4.1.3 skip handling — tests/.evals/config.json sonarqube.enabled=false, "SonarQube scan"/"SonarQube quality gate" steps commented out in the workflow with a note naming the secrets/steps to re-enable, sonar-project.properties kept as-is. Semgrep (D3) and the Security Baseline review still fully enforce security.
+- **Next**: re-run the epic-level smoke test once more without Sonar in the tally; on green, merge into the epic branch and proceed to Development Handoff.
 
 ## Code Root
 - `src/` — `src/backend` (FastAPI) and `src/frontend` (React/Vite). Matches default convention, no override needed.

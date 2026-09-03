@@ -223,3 +223,12 @@
 **Context**: STOP CHECKPOINT Step 4 — HALT, Retry-Limit Report, awaiting user decision
 
 ---
+
+## CI Setup Gate — Skip Decision (post-halt)
+**Timestamp**: 2026-09-03T13:14:36Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "Skip SonarQube"
+**AI Response**: "Per Section 4.1.3 skip handling: commented out the 'SonarQube scan' and 'SonarQube quality gate' steps in .github/workflows/agentic-eval-pipeline.yml (both verify job only — self-repair never had Sonar steps) with a note naming SONAR_TOKEN/SONAR_HOST_URL and how to re-enable. Set tests/.evals/config.json sonarqube.enabled=false and removed \"sonarqube\" from ci.gates. Kept sonar-project.properties untouched so a later proceed only needs the secrets fixed. Recorded in aire-state.md and here. Proceeding to close PR #5 / delete its scratch branch and re-run the smoke test."
+**Context**: STOP CHECKPOINT Step 1.6/4.1.3 — skip applied
+
+---

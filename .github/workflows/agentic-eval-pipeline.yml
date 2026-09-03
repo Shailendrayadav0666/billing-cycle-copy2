@@ -178,23 +178,31 @@ jobs:
         run: bash tests/.evals/scripts/run-evals.sh "${{ steps.basesha.outputs.sha }}"
 
       # SonarQube LAST among the gates, if: always(), continue-on-error — one input, never a kill switch.
-      - name: "SonarQube scan"
-        id: sonarscan
-        if: always()
-        continue-on-error: true
-        uses: SonarSource/sonarqube-scan-action@v4
-        env:
-          SONAR_TOKEN: "${{ secrets.SONAR_TOKEN }}"
-          SONAR_HOST_URL: "${{ secrets.SONAR_HOST_URL }}"
-
-      - name: "SonarQube quality gate"
-        id: sonar
-        if: always()
-        continue-on-error: true
-        uses: SonarSource/sonarqube-quality-gate-action@v1
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: "${{ secrets.SONAR_TOKEN }}"
+      # SKIPPED — the user answered "skip" at the CI setup gate after the epic-level smoke test
+      # (common/ci-pipeline-generation.md Section 4.0.6) reported the SonarQube quality-gate step
+      # failing for infrastructure reasons (auth/unreachable/timeout, diagnosed by auto-fix-agent.sh's
+      # own triage) that could not be resolved from the repository. Add SONAR_TOKEN and
+      # SONAR_HOST_URL as GitHub Actions secrets, verify sonar-project.properties (sonar.organization,
+      # project exists on the server), then uncomment these two steps and set
+      # tests/.evals/config.json sonarqube.enabled=true to re-enable. Semgrep (D3) and the Security
+      # Baseline review still fully enforce security in the meantime.
+      # - name: "SonarQube scan"
+      #   id: sonarscan
+      #   if: always()
+      #   continue-on-error: true
+      #   uses: SonarSource/sonarqube-scan-action@v4
+      #   env:
+      #     SONAR_TOKEN: "${{ secrets.SONAR_TOKEN }}"
+      #     SONAR_HOST_URL: "${{ secrets.SONAR_HOST_URL }}"
+      #
+      # - name: "SonarQube quality gate"
+      #   id: sonar
+      #   if: always()
+      #   continue-on-error: true
+      #   uses: SonarSource/sonarqube-quality-gate-action@v1
+      #   timeout-minutes: 5
+      #   env:
+      #     SONAR_TOKEN: "${{ secrets.SONAR_TOKEN }}"
 
       - name: "Record SonarQube gate status"
         id: sonarstatus
