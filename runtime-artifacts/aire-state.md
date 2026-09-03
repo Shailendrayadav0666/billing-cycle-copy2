@@ -70,7 +70,7 @@
 ## Story Tracker
 | Story ID | Title | Requires | Tracker ID | Status | PR | Merged | Start | End | Recorded |
 |---|---|---|---|---|---|---|---|---|---|
-| 1 | Mid-Cycle Subscription Upgrade (Standard → Premium) | none | LOCAL | 🔵 In Development | — | — | 2026-09-03T08:44:21Z | — | 2026-09-03T08:44:21Z |
+| 1 | Mid-Cycle Subscription Upgrade (Standard → Premium) | none | LOCAL | 🔵 In Development | https://github.com/Shailendrayadav0666/billing-cycle-copy2/pull/1 | no | 2026-09-03T08:44:21Z | — | 2026-09-03T09:05:00Z |
 
 ## Dependency Graph
 ```mermaid
