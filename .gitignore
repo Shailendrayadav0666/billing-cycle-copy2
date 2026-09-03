@@ -1,1 +1,6 @@
 MIGRATION-PLAN-v1.0.md
+
+# Coverage artifacts written by the eval pipeline's coverage command
+/coverage.xml
+.coverage
+.coverage.*

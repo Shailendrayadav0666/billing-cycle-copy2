@@ -205,3 +205,12 @@
 **Context**: STOP CHECKPOINT Step 4 — smoke test attempt 2 failed, root-caused, fixed
 
 ---
+
+## Epic-Level Smoke Test — Third Run: unit gate had no existing test suite; Sonar infra failure surfaced
+**Timestamp**: 2026-09-03T12:59:47Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Closed PR #3, deleted its scratch branch, re-ran smoke-test-epic.sh. Real progress: static/coverage/behavior/judge gates all PASSED (confirms CLAUDE_CODE_OAUTH_TOKEN works end-to-end for J1/J2 judge scoring). Two real failures: (1) 'unit' gate failed — pytest --cov=src/backend --cov-report=xml src/backend/tests errored because src/backend/tests/ did not exist; this repo had no pre-existing test suite at all. Per common/eval-framework.md Section 2.3 ('a check with no config is not N/A, it is not set up yet'), bootstrapped src/backend/tests/__init__.py + test_smoke.py (imports main.py, asserts app + seed-data shapes) — verified locally via the repo's own src/backend/venv: 2 passed. Added coverage.xml/.coverage to .gitignore (root) so pipeline-generated coverage artifacts are never committed. (2) 'sonar' gate failed — auto-fix-agent.sh's own triage correctly diagnosed this as infrastructure (auth/unreachable/timeout), not a code defect, and did NOT consume a self-repair retry, consistent with its documented behavior. This is an external SonarQube server/token/project configuration issue outside what AIRE can fix from the repository side — flagging to the user after the fix + one more smoke-test attempt."
+**Context**: STOP CHECKPOINT Step 4 — smoke test attempt 3 in progress, unit-test bootstrap applied
+
+---
