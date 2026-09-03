@@ -169,3 +169,30 @@
 **Context**: STOP CHECKPOINT Step 1.6 — Section 4.1.3 gate resolved
 
 ---
+
+## STOP CHECKPOINT — Design/CI Commit & Push (Step 3)
+**Timestamp**: 2026-09-03T12:45:18Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Committed 22 files (architecture.md, rubrics, config.json, behavior.feature, executions.md, stories.md, personas.md, dependency-graph.yml, story-generation-generation.md, the CI workflow, sonar-project.properties, and all tests/.evals/scripts + behavior/ files) on epic/3157-mid-cycle-subscription-upgrade, commit 063c7f2. Pushed to origin — f7b1967..063c7f2. Left aire-workflow/common/question-format-guide.md unstaged (a stray blank-line diff unrelated to this cycle's work, not part of this commit). Proceeding to Step 4 — the epic-level pre-handoff smoke test."
+**Context**: STOP CHECKPOINT Step 3
+
+---
+
+## STOP CHECKPOINT — Epic-Level Pre-Handoff Smoke Test (Step 4, started)
+**Timestamp**: 2026-09-03T12:45:18Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic, precondition satisfied: proceed/skip answer recorded above)
+**AI Response**: "gh CLI confirmed installed (v2.89.0) and authenticated as Shailendrayadav0666. Launched tests/.evals/scripts/smoke-test-epic.sh epic/3157-mid-cycle-subscription-upgrade 3157 in the background — cuts scratch branch ci/epic-smoke-3157, opens a draft [CI-SMOKE] PR into the epic branch, watches the real GitHub Actions run (up to 1 self-repair retry). Awaiting completion."
+**Context**: STOP CHECKPOINT Step 4
+
+---
+
+## Epic-Level Smoke Test — First Run FAILED, Real Environment Bug Found
+**Timestamp**: 2026-09-03T12:47:07Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Smoke test opened draft PR #2 (ci/epic-smoke-3157 -> epic/3157-mid-cycle-subscription-upgrade), watched run 33757170947. FAILED: 'Set up Node' step failed both jobs with '##[error]Some specified paths were not resolved, unable to cache dependencies.' Root cause investigated via gh api: src/frontend/.gitignore listed package-lock.json, so it was never committed to the repo despite existing on disk locally (git ls-tree confirmed absent from the epic branch tree) — a fresh CI checkout has no lockfile at all, breaking both actions/setup-node's cache-dependency-path resolution and the npm ci install command. Self-repair could not run either (its own 'Set up Node' step failed identically before reaching 'Autonomous self-repair'). SonarQube scan/quality-gate steps ran (if:always()) but quality gate outcome was 'failure' (masked by continue-on-error) since no coverage report existed. FIX: removed 'package-lock.json' from src/frontend/.gitignore and committed the real lockfile. This is exactly the class of defect Section 4.0.6 exists to catch before any story starts — real repo hygiene bug, not a pipeline generation defect."
+**Context**: STOP CHECKPOINT Step 4 — smoke test attempt 1 failed, root-caused, fixed
+
+---
