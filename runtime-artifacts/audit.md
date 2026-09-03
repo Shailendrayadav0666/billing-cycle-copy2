@@ -356,3 +356,18 @@ STATIC EVAL GATE D1-D7 (SH-LOOP-4): attempt 1 — root cause diagnosed BEFORE th
 **Context**: dev-implement Section F — Next-Action Handoff, run complete
 
 ---
+
+## Test Plan (ve-implement skill)
+**Timestamp**: 2026-09-03T14:32:59Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "/ve-implement" (auto-resolved single story, no identifier needed — this epic's Story Tracker holds exactly one story); applicability answer "yes"; completion checkpoint answer "Approve — accept this as final"
+**Story**: "Story 1.1 — Self-Serve Mid-Cycle Upgrade: Standard → Premium — local Story ID (no external tracker)"
+**Output folder**: `spec/test-plans/story-1.1-self-serve-mid-cycle-upgrade/`
+**ve branch / PR**: "ve/story-1.1-self-serve-mid-cycle-upgrade → PR https://github.com/Shailendrayadav0666/billing-cycle-copy2/pull/8 into epic/3157-mid-cycle-subscription-upgrade — labels ai-generated + aire-v1.0 (both pre-existing, matched by exact name)"
+**Test plans generated**: "Integration (3 cases), E2E (5 cases), API (8 cases), Security (4 cases), Accessibility (4 cases) — 24 manual test cases total. N/A plans: Contract (single monolithic system, no consumer/provider services), Performance (no latency/throughput target stated in requirements.md or epic-brief.md)"
+**Coverage**: "7/7 acceptance criteria covered (AC-1..AC-7)"
+**Approve / Request Changes checkpoint**: "Approved"
+**AI Response**: "Generated the full black-box Test Plan for Story 1.1 from stories.md's 7 ACs, requirements.md, and epic-brief.md — no application source code was read despite this session having earlier verified the implementation manually (that verification was out-of-band, not used as input here). Noted PR #7 (the dev's story PR) had already merged into the epic branch (b96fbe3, 2026-09-03T13:45:28Z) before this run started, so the ve branch was cut from a fully up-to-date epic branch. Committed and pushed the 6-file test-plan folder, raised PR #8 with both canonical labels. This epic has no further stories, so the Next Actions handoff below tells the user this was the last one."
+**Context**: `/ve-implement` skill — Test Plan (`test-plan.md`)
+
+---
