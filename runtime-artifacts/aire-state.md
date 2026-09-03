@@ -3,8 +3,8 @@
 - **Project**: Billing-Cycle Mid-Cycle Subscription Upgrade
 - **Workflow Type**: epic
 - **Started**: 2026-09-03T11:26:15Z
-- **Current Phase**: PLANNING → IMPLEMENTATION
-- **Current Stage**: Workflow Planning complete; Application Design + all system-level design stages SKIPPED (see spec/plans/executions.md); proceeding to STOP CHECKPOINT
+- **Current Phase**: IMPLEMENTATION
+- **Current Stage**: STOP CHECKPOINT complete — Design complete, awaiting `dev-implement`
 
 ## Stage Progress
 ### PLANNING PHASE
@@ -21,7 +21,7 @@
 - [x] NFR Requirements — SKIP (tech stack unchanged, NFRs already in requirements.md)
 - [x] NFR Design — SKIP (NFR Requirements skipped)
 - [x] Infrastructure Design — SKIP (no infra change)
-- [ ] STOP CHECKPOINT (architecture.md, rubrics, CI pipeline)
+- [x] STOP CHECKPOINT (architecture.md, rubrics, CI pipeline, epic-level smoke test PASSED)
 - [ ] Code Generation — awaiting `dev-implement`
 
 ## Tracker
@@ -68,7 +68,8 @@
 - **Status**: RESOLVED. User answered "skip" (2026-09-03T13:14:36Z) after all non-Sonar gates passed and Sonar's quality-gate step repeatedly failed for infrastructure reasons.
 - **Fixed during this smoke test** (3 real bugs found and fixed, each verified by a subsequent run): (1) src/frontend/package-lock.json was gitignored and never committed — fixed; (2) unpinned setuptools broke semgrep's opentelemetry dependency (pkg_resources removed) — pinned setuptools<81; (3) no backend test suite existed — bootstrapped src/backend/tests/.
 - **SonarQube**: disabled per Section 4.1.3 skip handling — tests/.evals/config.json sonarqube.enabled=false, "SonarQube scan"/"SonarQube quality gate" steps commented out in the workflow with a note naming the secrets/steps to re-enable, sonar-project.properties kept as-is. Semgrep (D3) and the Security Baseline review still fully enforce security.
-- **Next**: re-run the epic-level smoke test once more without Sonar in the tally; on green, merge into the epic branch and proceed to Development Handoff.
+- **Result**: PASSED (run 33760101210). PR #6 merged into the epic branch (commit 8b59a56) after manually completing the merge (`gh pr ready` + `gh pr merge` — the canonical smoke-test-epic.sh template has a bug: opens the PR as --draft but never un-drafts it before attempting to merge). Epic branch fast-forwarded locally.
+- **Design complete — awaiting dev-implement.**
 
 ## Code Root
 - `src/` — `src/backend` (FastAPI) and `src/frontend` (React/Vite). Matches default convention, no override needed.

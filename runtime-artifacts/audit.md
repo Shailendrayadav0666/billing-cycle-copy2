@@ -232,3 +232,12 @@
 **Context**: STOP CHECKPOINT Step 1.6/4.1.3 — skip applied
 
 ---
+
+## Epic-Level Smoke Test — PASSED
+**Timestamp**: 2026-09-03T13:14:36Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: (n/a — automatic)
+**AI Response**: "Closed PR #5, deleted scratch branch, re-ran smoke-test-epic.sh. Attempt 1 (run 33759059192) reused stale cached run data (same script quirk as before). Attempt 2 (run 33760101210) PASSED — static, unit, coverage, behavior, judge all success; sonar no longer in the tally. The script's own merge step failed with 'GraphQL: Pull Request is still a draft (mergePullRequest)' — a real gap in the canonical templates/ci/smoke-test-epic.sh (opens the PR with --draft but never calls 'gh pr ready' before 'gh pr merge'). Resolved manually: 'gh pr ready 6' then 'gh pr merge 6 --merge --delete-branch' — PR #6 merged (commit 8b59a56), scratch branch ci/epic-smoke-3157 deleted. Fast-forwarded the local epic branch to match. Epic-level pre-handoff validation is now genuinely green: dependency-install conflicts resolved (lockfile + setuptools pin), the existing test suite runs, and self-repair itself worked end-to-end (its OAuth token, judge invocation, and triage logic all exercised for real). Proceeding to Development Handoff."
+**Context**: STOP CHECKPOINT Step 4 — smoke test PASSED, epic branch validated
+
+---
