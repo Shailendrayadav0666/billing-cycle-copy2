@@ -1,0 +1,12 @@
+version: 1
+generated_at: 2026-09-03
+team_size: 2
+
+shared_files: []
+
+stories:
+  - id: "1"
+    title: Mid-Cycle Subscription Upgrade (Standard -> Premium)
+    tracker_id: LOCAL
+    requires: []
+    enables: []

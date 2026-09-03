@@ -1,0 +1,39 @@
+{
+  "rubricName": "Security — OWASP Top 10:2025 — Billing-Cycle (Mid-Cycle Subscription Upgrade)",
+  "rubricVersion": "1.0.0",
+  "derivedFrom": ["OWASP Top 10:2025", "spec/plans/architecture.md"],
+  "evalCriteria": [
+    {
+      "id": "SEC-01",
+      "owasp": "A01:2025",
+      "metric": "Broken access control",
+      "weight": 0.35,
+      "prompt": "Review the two new endpoints (GET /api/billing/upgrade-preview, POST /api/billing/upgrade). Both accept an 'email' identifying the target account with no session/token verification beyond the existing 'email in users' check already used by GET /api/billing. Score 0 if either new endpoint introduces a WEAKER check than the existing /api/billing pattern (e.g. skips the 'email in users' / 401 check, or lets the caller mutate a different account than the one the check validated). Cite the file and line.",
+      "source": "https://owasp.org/Top10/2025/A01_2025-Broken_Access_Control/"
+    },
+    {
+      "id": "SEC-02",
+      "owasp": "A06:2025",
+      "metric": "Insecure design",
+      "weight": 0.30,
+      "prompt": "Check the proration and upgrade-execution logic. Score 0 if: the already-premium guard (409) can be bypassed by any request shape; prorated_charge can be computed or accepted as negative or zero due to a malformed/past renew_at; or the upgrade endpoint mutates billing_data/users before charge_card returns success. Cite the file and line.",
+      "source": "https://owasp.org/Top10/2025/A06_2025-Insecure_Design/"
+    },
+    {
+      "id": "SEC-03",
+      "owasp": "A10:2025",
+      "metric": "Mishandling of exceptional conditions",
+      "weight": 0.20,
+      "prompt": "Check error handling in the two new endpoints. Score 0 if an unhandled exception (e.g. a malformed renew_at string, or an unknown email) leaks a stack trace, internal file path, or raw exception message to the client instead of a clean HTTPException with a 'detail'/'message' shape matching the rest of main.py. Cite the file and line.",
+      "source": "https://owasp.org/Top10/2025/A10_2025-Mishandling_of_Exceptional_Conditions/"
+    },
+    {
+      "id": "SEC-04",
+      "owasp": "A03:2025",
+      "metric": "Software supply chain failures",
+      "weight": 0.15,
+      "prompt": "Confirm no new third-party package was added to src/backend/requirements.txt or src/frontend/package.json for this epic (the dummy gateway must be pure in-repo Python with no new import). Score 0 if any new dependency was introduced. Cite the file and line.",
+      "source": "https://owasp.org/Top10/2025/A03_2025-Software_Supply_Chain_Failures/"
+    }
+  ]
+}

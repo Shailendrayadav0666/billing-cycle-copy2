@@ -1,0 +1,2 @@
+mypy-error	src\backend\main.py:203	 Unsupported operand types for + ("object" and "int")  [operator]
+mypy-error	src\backend\main.py:203	 Value of type variable "SupportsRichComparisonT" of "max" cannot be "object"  [type-var]

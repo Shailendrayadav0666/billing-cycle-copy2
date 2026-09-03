@@ -1,0 +1,42 @@
+{
+  "rubricName": "Architectural Alignment — Billing-Cycle (Mid-Cycle Subscription Upgrade)",
+  "rubricVersion": "1.0.0",
+  "derivedFrom": ["spec/plans/architecture.md#10-verifiable-constraints"],
+  "evalCriteria": [
+    {
+      "id": "ARCH-01",
+      "metric": "Server-side-only monetary computation",
+      "weight": 0.25,
+      "prompt": "No changed frontend file (Billing.jsx or any new component) contains an arithmetic expression combining plan prices, days, or DAYS_IN_CYCLE. Score 0 if any such computation appears client-side instead of rendering the API response value.",
+      "source": "spec/plans/requirements.md (REQ-NF-04), spec/plans/architecture.md Section 5"
+    },
+    {
+      "id": "ARCH-02",
+      "metric": "Deterministic payment gateway",
+      "weight": 0.20,
+      "prompt": "The changed charge_card function body contains no call to random, time.sleep, requests/httpx, or any non-deterministic source. Score 0 if any such call is present.",
+      "source": "spec/plans/requirements.md (REQ-NF-01), spec/plans/architecture.md Section 6"
+    },
+    {
+      "id": "ARCH-03",
+      "metric": "Isolation from unrelated flows",
+      "weight": 0.20,
+      "prompt": "The PR diff contains zero changed lines in /api/auth/* handlers, /api/tasks* handlers, /api/users/me, or AuthContext.jsx. Score 0 if any line in them is modified.",
+      "source": "spec/plans/requirements.md (REQ-NF-03)"
+    },
+    {
+      "id": "ARCH-04",
+      "metric": "Already-Premium guard on both endpoints",
+      "weight": 0.20,
+      "prompt": "Each of GET /api/billing/upgrade-preview and POST /api/billing/upgrade contains an early guard clause checking plan_name == 'Premium' that returns/raises HTTP 409 before computing proration or calling charge_card. Score 0 if either endpoint is missing this guard or the guard is not the first check.",
+      "source": "spec/plans/requirements.md (REQ-F-10), spec/plans/stories.md (AC-5)"
+    },
+    {
+      "id": "ARCH-05",
+      "metric": "No new dependency",
+      "weight": 0.15,
+      "prompt": "src/backend/requirements.txt and src/frontend/package.json are byte-identical to their pre-epic versions. Score 0 if either file's dependency list changed.",
+      "source": "spec/plans/requirements.md (REQ-NF-02)"
+    }
+  ]
+}

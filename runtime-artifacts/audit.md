@@ -62,3 +62,84 @@
 **Context**: PLANNING PHASE - Requirements Analysis Step 7-9
 
 ---
+
+## Requirements Analysis — Approval Response
+**Timestamp**: 2026-09-03T08:03:30Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "Approve & Continue"
+**AI Response**: "Committed spec/plans/{deep-dive.md,epic-brief.md,requirements.md} and runtime-artifacts/{aire-state.md,audit.md} on epic/mid-cycle-subscription-upgrade (commit 0a81e23), pushed to origin. Epic PR not raised (raised manually at cycle end via pr-generator)."
+**Context**: PLANNING PHASE - Requirements Analysis Step 9-10 (Epic Branch Commit & Push)
+
+---
+
+## User Stories — Story Count Override
+**Timestamp**: 2026-09-03T08:07:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "single story" (first response); then, after being shown the parallelism/sizing-ceiling trade-off and asked to confirm: "1 story anyway"
+**AI Response**: "AIRE computed a recommendation of 6 stories (SPIDR-sliced from the Epic's 5 capabilities, splitting Story 3's happy/decline paths) to satisfy team_size=2 parallelism and the Step 1.5 hard sizing ceilings. Flagged the trade-off explicitly (no parallelism, ceiling violations on AC-count/layers/scenario-classes) and asked for confirmation. User confirmed the override twice. Recorded target_story_count: 1 (user override) in aire-state.md. Proceeding to generate a single Story 1 covering all 15 REQ-IDs; Step 18.6 granularity violations documented in stories.md rather than auto-split, per this explicit override."
+**Context**: PLANNING PHASE - User Stories Step 3 (mandatory story-count question) / Step 9-10 (answer analysis + override handling)
+
+---
+
+## User Stories — GATE 1: Story Set Approval (awaiting response)
+**Timestamp**: 2026-09-03T08:09:15Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "(system step — no direct user input)"
+**AI Response**: "Generated spec/plans/stories.md (1 story, 6 ACs, Covers all 15 REQ-IDs — Requirements Coverage Matrix: 15/15 PASS) and spec/plans/personas.md (Priya - Standard Subscriber, Devraj - Premium Subscriber). Populated Story Tracker with 1 row (Story 1, Tracker ID LOCAL, Status Ready for Development). Step 18.6 granularity check: 4 ceiling violations found (AC count, layers, scenario classes, parallelism) — NOT auto-split, per the user's explicit override logged above. Presenting GATE 1 for approval."
+**Context**: PLANNING PHASE - User Stories Steps 17-20
+
+---
+
+## User Stories — GATE 1: Story Set Approval (response received)
+**Timestamp**: 2026-09-03T08:10:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "Approve & Continue"
+**AI Response**: "GATE 1 passed. Tracker Type=LOCAL -> Part 3 (Push to Tracker) is a no-op by design; Story 1 stays in stories.md + Story Tracker with Tracker ID LOCAL. Proceeding to Dependency Graph."
+**Context**: PLANNING PHASE - User Stories Step 21-22
+
+---
+
+## Dependency Graph
+**Timestamp**: 2026-09-03T08:11:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "(system step — no direct user input)"
+**AI Response**: "Generated spec/plans/dependency-graph.yml: 1 story, requires: [], enables: []. No shared_files (single story owns the whole diff). Announced as auto-approved (no gate) per common process."
+**Context**: PLANNING PHASE - Dependency Graph stage
+
+---
+
+## Workflow Planning - Plan Finalized (auto-approved, no gate)
+**Timestamp**: 2026-09-03T08:13:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**AI Response**: "Execution plan created (spec/plans/executions.md): risk Low, single-component brownfield change. Application Design, Functional Design, NFR Requirements/Design, and Infrastructure Design all SKIPPED (no new components/services, business logic fully specified, no new NFRs/tech-stack/infra). Code Generation set to EXECUTE via dev-implement. Proceeded automatically to the System-Level Design stages (all skipped) and then to the MANDATORY STOP CHECKPOINT without an approval gate."
+**Status**: Auto-approved
+**Context**: Workflow plan created with 1 stage to execute (Code Generation), 5 skipped
+
+---
+
+## STOP CHECKPOINT — architecture.md + rubrics
+**Timestamp**: 2026-09-03T08:15:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "(system step — no direct user input)"
+**AI Response**: "Wrote spec/behavior.feature (single cross-cycle scenario, single-unit cycle so B3 runs on Story 1 + this file). Wrote spec/plans/architecture.md v1.0.0 (Section 10: 5 verifiable constraints, weights sum 1.0). Derived tests/.evals/rubrics/architecture-rubric.json (5 criteria, mechanical 1:1 from Section 10) and tests/.evals/rubrics/security-rubric.json (4 OWASP Top 10:2025 criteria: A01 broken access control, A06 insecure design, A10 mishandling of exceptional conditions, A03 supply chain). Created tests/.evals/config.json from the eval-framework.md template with resolved ci block (installCommands, coverageCommand, sourcePaths, testPaths for this Python/FastAPI + React/Vite stack)."
+**Context**: IMPLEMENTATION PHASE - STOP CHECKPOINT Steps 1.3-1.5
+
+---
+
+## STOP CHECKPOINT — CI/Eval Scaffolding Scope Decision
+**Timestamp**: 2026-09-03T08:19:00Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "Full AIRE CI/eval scaffolding"
+**AI Response**: "Flagged that the remaining STOP CHECKPOINT work (GitHub Actions pipeline, Podman-sandboxed Gherkin runner, D1-D7 static-eval scripts, SonarQube setup gate, CI self-repair job) was substantial ceremony for a 1-story demo, and asked whether to scope down or do it in full. User chose full scaffolding. Delegated the work to a background fork (agent a6d0588) since it is large and tool-call-heavy, to keep it out of the main session's context."
+**Context**: IMPLEMENTATION PHASE - STOP CHECKPOINT Step 1.6
+
+---
+
+## INCIDENT — Background fork `git reset --hard` reverted tracked state files
+**Timestamp**: 2026-09-03T08:41:32Z
+**User Email**: shailendra.yadav@3pillarglobal.com
+**User Input**: "(none — detected during an autonomous background-task check, no user message)"
+**AI Response**: "The CI-scaffolding fork's first invocation ended prematurely (3 tool calls, no real work — it appears to have mistakenly waited for a nonexistent peer instead of doing the work itself). It was resumed with corrected instructions. During its (correct) D1-D7 baseline-capture routine — checkout a clean commit, run static tools, checkout back — it used `git checkout <sha>` / `git reset --hard` against a repo that still had UNCOMMITTED edits to two TRACKED files: this file and aire-state.md (both committed at 0a81e23, both edited further since without a commit). `git reset --hard` reverted both to their 0a81e23 content, wiping the User Stories/Dependency Graph/Workflow Planning/STOP-CHECKPOINT entries recorded above. New untracked files created since that commit (stories.md, personas.md, dependency-graph.yml, executions.md, architecture.md, spec/behavior.feature, tests/.evals/**) were unaffected — `reset --hard` never touches untracked files. HEAD was also left detached at 0a81e23. Detected via a git-status/reflog check during a routine autonomous-loop tick; stopped the fork immediately (TaskStop) to prevent further damage, checked out epic/mid-cycle-subscription-upgrade again (fast-forward, no conflicts — branch ref was untouched), and re-verified both files: by the time of re-check they had already self-corrected back to their full content (the fork's own subsequent step apparently restored them before being stopped, or an earlier transient read caught it mid-cycle) — no permanent content loss occurred, but the exposure was real. Added a permanent Incident Note to aire-state.md documenting the root cause and the lesson (state-tracking files must be committed/stashed before any git operation that can discard tracked changes)."
+**Context**: IMPLEMENTATION PHASE - STOP CHECKPOINT Step 1.6 (background agent supervision)
+
+---

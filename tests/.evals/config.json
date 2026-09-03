@@ -1,0 +1,46 @@
+{
+  "evalFrameworkVersion": "1.0.0",
+  "scope": "changed-files",
+  "retryLimitForSelfRepair": 3,
+  "thresholds": {
+    "lintErrorsAllowedDelta": 0,
+    "typeErrorsAllowed": 0,
+    "semgrepFindingsAllowed": { "critical": 0, "high": 0, "medium": 5 },
+    "dependencyVulnerabilitiesAllowed": { "critical": 0, "high": 0 },
+    "disallowedLicenses": ["GPL-2.0", "GPL-3.0", "AGPL-3.0", "SSPL-1.0"],
+    "maxCyclomaticComplexity": 12,
+    "secretFindingsAllowed": 0,
+    "unitTestCoverageMin": 90.0,
+    "behaviorScenarioPassRateMin": 100.0,
+    "llmJudgeArchitectureScoreMin": 0.85,
+    "llmJudgeSecurityScoreMin": 0.85,
+    "securityVulnerabilitiesAllowed": 0
+  },
+  "behavior": {
+    "containerRuntime": "podman",
+    "image": "aire-behavior:local",
+    "containerfile": "tests/.evals/behavior/Containerfile",
+    "entrypoint": "tests/.evals/behavior/run.sh",
+    "_comment": "Same image + command locally and in CI. A missing runtime degrades to native execution, recorded, never blocking."
+  },
+  "sonarqube": {
+    "enabled": false,
+    "_comment": "Set true when CI generation creates sonar-project.properties and the user answers proceed at the setup gate. Additive to semgrep, never a replacement."
+  },
+  "judge": { "model": "claude-sonnet-5", "rubricVersion": "1.0.0" },
+  "ci": {
+    "baseBranch": "main",
+    "integrationBranchPrefixes": ["epic", "bug", "enh", "ci", "story", "ve"],
+    "installCommands": ["pip install -r src/backend/requirements.txt", "npm install --prefix src/frontend"],
+    "installCommandsNote": "src/frontend has no committed lockfile (package-lock.json/yarn.lock/pnpm-lock.yaml) — npm install used instead of npm ci; installs are non-reproducible until one is added",
+    "coverageCommand": "pytest tests/unit/backend --cov=src/backend --cov-report=xml",
+    "coverageReportPath": "coverage.xml",
+    "coverageFormat": "cobertura",
+    "sourcePaths": ["src/backend", "src/frontend/src"],
+    "testPaths": ["tests/unit"],
+    "tools": ["semgrep", "pip-audit", "gitleaks", "ruff", "mypy", "pip-licenses", "radon"],
+    "gates": ["D1_lint", "D2_types", "D3_sast", "D4_deps", "D5_licenses", "D6_complexity", "D7_secrets",
+              "unitCoverage", "behaviorB1", "behaviorB2", "behaviorB3", "J1_architecture", "J2_security"],
+    "_comment": "CI SINGLE SOURCE OF TRUTH. The generated pipeline reads THIS block — it never re-authors any of these facts."
+  }
+}
